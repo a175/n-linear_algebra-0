@@ -944,14 +944,6 @@ $k$個の$A$の積を$A^k$とかく.
     \end{cases}
   \end{align*}
 \end{definition}
-\begin{prop}
-  $\alpha$を数,
-  $A$を正方行列, $k$を正の整数とする.
-  このとき,
-  \begin{align*}
-    (\alpha A)^k&=\alpha^k A^{k}.
-  \end{align*}
-\end{prop}
 
 \begin{definition}
   \label{def:mat:polynomial}
@@ -1087,31 +1079,13 @@ $k$個の$A$の積を$A^k$とかく.
   とすると, これは交代行列である.
 \end{example}
 
-%% \begin{prop}
-%%   $1+1\neq 0$とする.
-%%   $A$が対称行列でありまた交代行列でもあるならば,
-%%   $A$は零行列である.
-%% \end{prop}
-%% \begin{prop}
-%%   $1+1\neq 0$とする.
-%%   $A$を正方行列とする.
-%%   \begin{align*}
-%%     A'&=\frac{1}{2}(A+\transposed{A})
-%%     A''&=\frac{1}{2}(A-\transposed{A})
-%%   \end{align*}
-%%   とすると, 次が成り立つ:
-%%   \begin{enumerate}
-%%   \item $A=A'+A''$.
-%%   \item $A'$は対称行列.
-%%   \item $A''$は交代行列.
-%%   \end{enumerate}
-%% \end{prop}
 
 \subsection{演算の性質}
 ここでは, 今まで見てきた演算の性質について紹介する.
 
 まず最初に転置の性質について紹介する.
 \begin{prop}
+  \provelater{X123}
   $A$, $A'$を$(m,n)$-行列
   $B$を$(n,k)$-行列,
   $\alpha$を数とする.
@@ -1123,6 +1097,7 @@ $k$個の$A$の積を$A^k$とかく.
     \item $\transposed{(AB)}=\transposed{B}+\transposed{A}$
   \end{enumerate}
 \end{prop}
+
 \begin{remark}
   積の順序が入れ替わることに注意する.
 \end{remark}
@@ -1281,6 +1256,25 @@ $A$, $B$によっては,
 
 
 
+%% \begin{prop}
+%%   $1+1\neq 0$とする.
+%%   $A$が対称行列でありまた交代行列でもあるならば,
+%%   $A$は零行列である.
+%% \end{prop}
+%% \begin{prop}
+%%   $1+1\neq 0$とする.
+%%   $A$を正方行列とする.
+%%   \begin{align*}
+%%     A'&=\frac{1}{2}(A+\transposed{A})
+%%     A''&=\frac{1}{2}(A-\transposed{A})
+%%   \end{align*}
+%%   とすると, 次が成り立つ:
+%%   \begin{enumerate}
+%%   \item $A=A'+A''$.
+%%   \item $A'$は対称行列.
+%%   \item $A''$は交代行列.
+%%   \end{enumerate}
+%% \end{prop}
 
 
 \chapter{行列式と逆行列}
@@ -5454,3 +5448,10 @@ $E_2$も直交行列である.
   $A$を実対称行列とする.
   このとき, $P^{-1}AP$が対角行列となる直交行列$P$が存在する.
 \end{theorem}
+
+
+\chapter{証明}
+\section{証明}
+\begin{proofof}{X123}
+
+\end{proofof}

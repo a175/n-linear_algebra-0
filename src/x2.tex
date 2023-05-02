@@ -263,6 +263,8 @@
 \left(#1 \mathrel{}\middle|\mathrel{}  #2\right)
 }
 
+\newcommand{\provelater}[1]{\makebox{}\label{statement:#1}\marginpar{証明は\Cref{proof:#1}.}}
+\newenvironment{proofof}[1]{\begin{proof}[\Cref{statement:#1}の証明]\label{proof:#1}}{\end{proof}}
 % misc (command)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
