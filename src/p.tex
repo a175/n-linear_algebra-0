@@ -2540,7 +2540,7 @@ $\xx=A^{-1}\bbb$というただ一つの解をもつ.
     0&1&4
   \end{pmatrix}
 \end{align*}
-さらに,
+よって,
 この連立方程式の解は,
 \begin{align*}
   \begin{pmatrix}
@@ -2629,15 +2629,17 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
 \begin{example}
   $(2,2)$-行列の場合について考える.
   
-  階数が$2$の被約階段行列は,
+  階数が$0$の被約階段行列は,
+  $1$行目と$2$行目の成分は$0$ということなので, すべて$0$である
   \begin{align*}
     \begin{pmatrix}
-      1&0\\0&1
+      0&0\\0&0
     \end{pmatrix}
   \end{align*}
   のみである.
 
   階数が$1$の被約階段行列は,
+  $2$行目が$0$ということなので,
   \begin{align*}
     \begin{pmatrix}
       0&1\\0&0
@@ -2651,40 +2653,31 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
   \end{align*}
   と表せる行列の$2$種類があり,
   これらで全てである.
-  
-  階数が$0$の被約階段行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      0&0\\0&0
-    \end{pmatrix}
-  \end{align*}
-  のみである.
-\end{example}
-\begin{example}
-  $(2,3)$-行列の場合について考える.
-  
+
   階数が$2$の被約階段行列は,
   \begin{align*}
     \begin{pmatrix}
-     0& 1&0\\0&0&1
+      1&0\\0&1
     \end{pmatrix}
   \end{align*}
-  と
-  \begin{align*}
-    \begin{pmatrix}
-      1&0&0\\0&0&1
-    \end{pmatrix}
-  \end{align*}
-  に加え, 数$a,b$を使って表せる
-  \begin{align*}
-    \begin{pmatrix}
-      1&0&a\\0&1&b
-    \end{pmatrix}
-  \end{align*}
-  の$3$種類がある. これらですべてである.
+  のみである.
 
   
+\end{example}
+\begin{example}
+  $(2,3)$-行列の場合について考える.
+
+  階数が$0$の被約階段行列は,
+  $1$行目と$2$行目の成分は$0$でないといけないので,
+  \begin{align*}
+    \begin{pmatrix}
+      0&0&0\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  のみである.
+  
   階数が$1$の被約階段行列は,
+  $2$行目の成分は$0$でないといけない.
   \begin{align*}
     \begin{pmatrix}
       0&0&1\\0&0&0
@@ -2704,14 +2697,27 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
   \end{align*}
   と表せる$3$種類の行列がある.
   これらで全てである.
-  
- 階数が$0$の被約階段行列は,
+
+  階数が$2$の被約階段行列は,
   \begin{align*}
     \begin{pmatrix}
-      0&0&0\\0&0&0
+     0& 1&0\\0&0&1
     \end{pmatrix}
   \end{align*}
-  のみである.
+  と,
+  数$a$を使って表せる
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  と, 数$a,b$を使って表せる
+  \begin{align*}
+    \begin{pmatrix}
+      1&0&a\\0&1&b
+    \end{pmatrix}
+  \end{align*}
+  の$3$種類がある. これらですべてである.
 \end{example}
 
 
@@ -2798,7 +2804,7 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
 \end{example}
 
 \begin{remark}
-  行基本変形を用いて行列を被役階段行列に変形することを,
+  行基本変形を用いて行列を被約階段行列に変形することを,
   ガウスの消去法とか掃き出し法と呼ぶこともある.
 \end{remark}
 拡大係数行列を
@@ -2859,46 +2865,6 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
 以下の2つの例である
 いずれの場合も解が存在しない.
 \begin{example}
-    \label{eg:eq:reduced:2}
-  拡大係数行列が,
-  \begin{align*}
-    \begin{pmatrix}
-      1&0&0\\0&0&1
-    \end{pmatrix}
-  \end{align*}
-  の場合について考える.
-  係数行列は,
-  \begin{align*}
-    \begin{pmatrix}
-      1&0\\0&0
-    \end{pmatrix}
-  \end{align*}
-  である.
-  この場合の連立方程式は,
-  \begin{align*}
-    \begin{pmatrix}
-      1&0\\0&0
-    \end{pmatrix}
-    \begin{pmatrix}x\\y\end{pmatrix}
-      =
-      \begin{pmatrix}
-        0\\1
-      \end{pmatrix}
-  \end{align*}
-  であるので,
-  \begin{align*}
-    \begin{cases}
-      x=0\\
-      0=1
-    \end{cases}
-  \end{align*}
-  という連立方程式を考えていることになる.
-  $0=1$が成り立つことはないので,
-  解はない.
-\end{example}
-
-
-\begin{example}
     \label{eg:eq:reduced:3}
   拡大係数行列が,
   \begin{align*}
@@ -2936,6 +2902,46 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
   $0=1$が成り立つことはないので,
   解はない.
 \end{example}
+\begin{example}
+    \label{eg:eq:reduced:2}
+  拡大係数行列が,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  の場合について考える.
+  係数行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  この場合の連立方程式は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&a\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}
+        0\\1
+      \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{cases}
+      x+ay=0\\
+      0=1
+    \end{cases}
+  \end{align*}
+  という連立方程式を考えていることになる.
+  $0=1$が成り立つことはないので,
+  解はない.
+\end{example}
+
+
 
 拡大係数行列が階数$1$の被約階段行列であり,
 係数行列も階数$1$の被約階段行列である場合は,
