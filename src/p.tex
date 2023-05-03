@@ -1085,16 +1085,17 @@ $k$個の$A$の積を$A^k$とかく.
 
 まず最初に転置の性質について紹介する.
 \begin{prop}
-  \provelater{X123}
+  \provelater**{transpose}
   $A$, $A'$を$(m,n)$-行列
   $B$を$(n,k)$-行列,
   $\alpha$を数とする.
   このとき次が成り立つ:
   \begin{enumerate}
-    \item $\transposed{(\transposed{A})}=A$
-    \item $\transposed{(A+A')}=\transposed{A}+\transposed{A'}$
-    \item $\transposed{(\alpha A)}=\alpha(\transposed{A})$
-    \item $\transposed{(AB)}=\transposed{B}+\transposed{A}$
+  \item \provelater*{involutive}
+    $\transposed{(\transposed{A})}=A$
+  \item $\transposed{(A+A')}=\transposed{A}+\transposed{A'}$
+  \item $\transposed{(\alpha A)}=\alpha(\transposed{A})$
+  \item $\transposed{(AB)}=\transposed{B}+\transposed{A}$
   \end{enumerate}
 \end{prop}
 
@@ -1306,7 +1307,7 @@ $2$次正方行列の場合に関して考えたあと,
 \begin{align*}
   \tilde A =
   \begin{pmatrix}
-    d&-c\\-b&a
+    d&-b\\-c&a
   \end{pmatrix}
 \end{align*}
 とする.

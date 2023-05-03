@@ -19,13 +19,6 @@
   \thm@postskip\thm@preskip%
 }
 %
-\def\th@numberedproof{\pushQED{\qed}	%
-  \thm@headfont{\itshape}%
-  \normalfont % body font
-  \thm@preskip\topsep \divide\thm@preskip\tw@%
-  \thm@postskip\thm@preskip%
-}
-%
 \let\nous@old@endtheorem\@endtheorem
 \def\@endtheorem{\popQED\nous@old@endtheorem}
 %
