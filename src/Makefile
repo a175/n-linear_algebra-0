@@ -4,7 +4,7 @@ LATEX=platex
 BIBTEX=pbibtex
 DVI2PDF=dvipdfmx
 TEXFILE=x2
-MAINTEXFILES=p.tex
+MAINTEXFILES=p.tex a.tex
 
 all: pdf
 dvi: ${TEXFILE}.dvi

@@ -14,7 +14,16 @@
 %%%%
 % \makeatletter
 \def\th@japanese{\def\qedsymbol{\statementendsymbol}\pushQED{\qed}	%
-\normalfont % body font
+  \normalfont % body font
+  \thm@preskip\topsep \divide\thm@preskip\tw@%
+  \thm@postskip\thm@preskip%
+}
+%
+\def\th@numberedproof{\pushQED{\qed}	%
+  \thm@headfont{\itshape}%
+  \normalfont % body font
+  \thm@preskip\topsep \divide\thm@preskip\tw@%
+  \thm@postskip\thm@preskip%
 }
 %
 \let\nous@old@endtheorem\@endtheorem

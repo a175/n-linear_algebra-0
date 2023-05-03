@@ -52,6 +52,8 @@
 \newtheorem{conjecture}[thm]{Conjecture}
 \newtheorem{conj}[thm]{Conjecture}
 
+\theoremstyle{numberedproof}
+\newtheorem{numberedproof}[thm]{Proof}
 
 % Cref
 \crefname{section}{Section}{Sections}
@@ -264,7 +266,7 @@
 }
 
 \newcommand{\provelater}[1]{\makebox{}\label{statement:#1}\marginpar{証明は\Cref{proof:#1}.}}
-\newenvironment{proofof}[1]{\begin{proof}[\Cref{statement:#1}の証明]\label{proof:#1}}{\end{proof}}
+\newenvironment{proofof}[1]{\begin{numberedproof}[\Cref{statement:#1}]\label{proof:#1}}{\end{numberedproof}}
 % misc (command)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -291,8 +293,9 @@
 \maketitle
 
 % Introduction
-\input{p.tex}
+
 % Main part
+\input{p.tex}
 
 % References
 %\bibliography{by-mr,by-arxiv,by-isbn-j}
@@ -300,5 +303,8 @@
 %\bibliographystyle{amsplain-url}
 \bibliographystyle{jplain}
 
+% appendix
+\appendix
+\input{a.tex}
 \end{document}
 
