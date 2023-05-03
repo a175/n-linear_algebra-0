@@ -1,0 +1,23 @@
+
+\def\th@numberedproof{\pushQED{\qed}	%
+  \thm@headfont{\itshape}%
+  \normalfont % body font
+  \thm@preskip\topsep \divide\thm@preskip\tw@%
+  \thm@postskip\thm@preskip%
+}
+%
+
+\newcommand{\nu@numberedproof@statementlabel}{}
+\newcommand{\nu@numberedproof@label@S}[1]{\label{nu@statement@#1}\def\nu@numberedproof@statementlabel{#1}}
+
+\newcommand{\nu@numberedproof@prove@this@later}[1]{\makebox{}\nu@numberedproof@label@S{#1}\marginpar{証明は\Cref{nu@proof@#1}.}}
+\newcommand{\nu@numberedproof@prove@item@later}[1]{\makebox{}\label{nu@statement@\nu@numberedproof@statementlabel:item@#1}%
+  \marginpar{証明は\Cref{nu@proof@\nu@numberedproof@statementlabel:item@#1}.}}
+\newcommand{\nu@numberedproof@prove@each@later}{\@ifstar{\nu@numberedproof@label@S}{\nu@numberedproof@prove@item@later}}
+
+\newcommand{\provelater}{\@ifstar{\nu@numberedproof@prove@each@later}{\nu@numberedproof@prove@this@later}}
+\newenvironment{proofof}[1]{\begin{numberedproof}[\Cref{nu@statement@#1}]\label{nu@proof@#1}}{\end{numberedproof}}
+\newenvironment{proofof*}[2]{\begin{numberedproof}[\Cref{nu@statement@#1} -- \Cref{nu@statement@#1:item@#2}]%
+    \label{nu@proof@#1:item@#2}}{\end{numberedproof}}
+
+
