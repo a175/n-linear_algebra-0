@@ -1094,9 +1094,12 @@ $k$個の$A$の積を$A^k$と書く.
   \begin{enumerate}
   \item \provelater*{involutive}
     $\transposed{(\transposed{A})}=A$
-  \item $\transposed{(A+A')}=\transposed{A}+\transposed{A'}$
-  \item $\transposed{(\alpha A)}=\alpha(\transposed{A})$
-  \item $\transposed{(AB)}=\transposed{B}+\transposed{A}$
+  \item \provelater*{sum}
+    $\transposed{(A+A')}=\transposed{A}+\transposed{A'}$
+  \item \provelater*{scalar}
+    $\transposed{(\alpha A)}=\alpha(\transposed{A})$
+  \item \provelater*{prod}
+    $\transposed{(AB)}=\transposed{B}+\transposed{A}$
   \end{enumerate}
 \end{prop}
 
@@ -1106,6 +1109,7 @@ $k$個の$A$の積を$A^k$と書く.
 
 次に, 和とスカラー倍の性質について紹介する.
 \begin{prop}
+  \provelater**{matspace_is_vectorspace}
   $A$, $B$, $C$はサイズの等しい行列とする.
   $O$はそれらとサイズの等しい零行列とする.
   $\alpha,\beta$は数とする.
@@ -1115,9 +1119,9 @@ $k$個の$A$の積を$A^k$と書く.
   \begin{enumerate}
   \item\label{item:sum:c}
     $(A+B)+C=A+(B+C)$
-    \item $O+A=A$
-    \item $A+(-A)=O$
-    \item $A+B=B+A$
+  \item $O+A=A$
+  \item $A+(-A)=O$
+  \item $A+B=B+A$
   \end{enumerate}
   \item スカラー倍に関するもの
   \begin{enumerate}

@@ -8,7 +8,76 @@
 ここでは, \Cref{chap:mat}に現れる命題の証明を行う.
 
 \begin{proofof*}{transpose}{involutive}
+  $A$を$(m,n)$-行列とし, 
+  $A$の$(i,j)$-成分を$a_{i,j}$とする.
+  $T=\transposed{A}$とおくと,
+  $T$は$(n,m)$-行列である.
+  このとき, $\transposed{T}$の$(i,j)$-成分と$A$の$(i,j)$-成分が等しいことを示す.
 
+  $T$の$(i,j)$-成分を$t_{i,j}$とすると,
+  $t_{i,j}=a_{i,j}$である.
+  また,
+  $\transposed{T}$の$(i,j)$-成分は, $t_{j,i}$である.
+  したがって, $\transposed{T}$の$(i,j)$-成分は, $a_{i,j}$である.
+\end{proofof*}
+\begin{proofof*}{transpose}{sum}
+  $A$を$(m,n)$-行列とし, 
+  $A$の$(i,j)$-成分を$a_{i,j}$とする.
+  $A'$を$(m,n)$-行列とし, 
+  $A'$の$(i,j)$-成分を$a'_{i,j}$とする.
+  このとき, $\transposed{A+A'}$の$(i,j)$-成分と
+  $\transposed{A}+\transposed{A'}$の$(i,j)$-成分が等しいことを示す.
+
+  $A+A'$の$(i,j)$-成分は, $a_{i,j}+a'_{i,j}$である.
+  したがって,
+  $\transposed{A+A'}$の$(i,j)$-成分は, $a_{j,i}+a'_{j,i}$である.
+  一方,
+  $\transposed{A}$の$(i,j)$-成分は$a_{j,i}$であり,
+  $\transposed{A'}$の$(i,j)$-成分は$a'_{j,i}$である.
+  したがって,
+  $\transposed{A}+\transposed{A'}$の$(i,j)$-成分は, $a_{j,i}+a'_{j,i}$である.
+\end{proofof*}
+\begin{proofof*}{transpose}{scalar}
+  $A$を$(m,n)$-行列とし, 
+  $A$の$(i,j)$-成分を$a_{i,j}$とする.
+  $\alpha$を数とする.
+  このとき, $\transposed{\alpha A}$の$(i,j)$-成分と
+  $\alpha\transposed{A}$の$(i,j)$-成分が等しいことを示す.
+
+  $\alpha A$の$(i,j)$-成分は, $\alpha a_{i,j}$である.
+  したがって,
+  $\transposed{\alpha A}$の$(i,j)$-成分は, $\alpha a_{j,i}$である.
+  一方,
+  $\transposed{A}$の$(i,j)$-成分は$a_{j,i}$である.
+  したがって,
+  $\alpha \transposed{A}$の$(i,j)$-成分は, $\alpha a_{j,i}$である.
+\end{proofof*}
+
+\begin{proofof*}{transpose}{prod}
+  $A$を$(m,n)$-行列とし, 
+  $A$の$(i,j)$-成分を$a_{i,j}$とする.
+  $B$を$(n,k)$-行列とし, 
+  $B$の$(i,j)$-成分を$b_{i,j}$とする.
+  $T=\transposed{A}$, $S=\transposed{B}$とする.
+  このとき, $\transposed{AB}$の$(i,j)$-成分と
+  $ST$の$(i,j)$-成分が等しいことを示す.
+
+  $AB$の$(i,j)$-成分は, $\sum_{l=1}^{n} a_{i,l}b_{l,j}$である.
+  したがって,
+  $\transposed{AB}$の$(i,j)$-成分は, $\sum_{l=1}^{n} a_{j,l}b_{l,i}$である.
+  一方,
+  $S$の$(i,j)$-成分を$s_{i,j}$とすると,
+  $S=\transposed{B}$であるので
+  $s_{i,j}=b_{j,i}$である.
+  また, 
+  $T$の$(i,j)$-成分を$t_{i,j}$とすると,
+  $T=\transposed{A}$であるので
+  $t_{i,j}=a_{j,i}$である.
+  $ST$の$(i,j)$-成分は,
+  $\sum_{l=1}^{n}s_{i,l}t_{l,j}$である.
+  $\sum_{l=1}^{n}s_{i,l}t_{l,j}=\sum_{l=1}^{n}b_{l,i}a_{j,l}=\sum_{l=1}^{n}a_{j,l}b_{l,i}$
+  であるので,
+  $ST$の$(i,j)$-成分は, $\transposed{AB}$の$(i,j)$-成分と等しい.
 \end{proofof*}
 
 
