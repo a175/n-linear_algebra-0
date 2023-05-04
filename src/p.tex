@@ -3622,7 +3622,7 @@ $\RR^2$を2次元実ベクトル空間と呼ぶ.
 \end{remark}
 
 
-$\RR^2$を平面だと思い,
+$\RR^2$を平面だと思い, \Cref{fig:vectoraspoint}の様に,
 \begin{align*}
   \begin{pmatrix}
     a\\b
@@ -3632,8 +3632,23 @@ $\RR^2$を平面だと思い,
 横軸の座標が$a$縦軸の座標が$b$である
 点だと思う.
 $\zzero$が原点である.
+\begin{figure}
+  \centering
+  \begin{picture}(100,100)
+    \put(20,0){\vector(0,1){100}}
+    \put(0,20){\vector(1,0){100}}
+    \put(60,10){\makebox(0,0)[b]{$a$}}
+    \put(10,70){\makebox(0,0)[r]{$b$}}
+    \put(60,70){\makebox(0,0){$\bullet$}}
+    \put(62,68){\makebox(0,0)[tl]{\small$\begin{pmatrix}a\\b\end{pmatrix}$}}
+    \qbezier[30](14,70)(52,70)(90,70)
+    \qbezier[30](60,18)(60,54)(60,90)
+  \end{picture}
+  \caption{ベクトルの表す点}
+  \label{fig:vectoraspoint}
+\end{figure}
 また, 平面上の図形は$\RR^2$の部分集合として捉える.
-例えば,
+例えば, \Cref{fig:ptonline}のように,
 $\aaa$と$\bbb$を通る直線上の点は
 \begin{align*}
   t\aaa + (1-t) \bbb &&(t\in \RR) 
@@ -3644,9 +3659,29 @@ $\aaa$と$\bbb$を通る直線は
 \begin{align*}
  \Set{ t\aaa + (1-t) \bbb |t\in \RR }
 \end{align*}
-という$\RR^2$の部分集合である.
-\footnote{直線を表すには, この方法以外にも, $\aaa$を通り方向ベクトルが$\vv$であるという指定もできるが, この場合は $\Set{\aaa+t\vv|t\in\RR}$となる}
+という$\RR^2$の部分集合である.\footnote{直線を表すには, この方法以外にも, $\aaa$を通り方向ベクトルが$\vv$であるという指定もできるが, この場合は $\Set{\aaa+t\vv|t\in\RR}$となる}
 \label{def:line}
+\begin{figure}
+  \centering
+  \begin{picture}(100,100)
+    \put(5,0){\vector(0,1){100}}
+    \put(0,20){\vector(1,0){100}}
+    \put(80,40){\makebox(0,0){$\bullet$}}
+    \put(30,65){\makebox(0,0){$\bullet$}}
+    \put(85,45){\makebox(0,0)[b]{\small$\aaa$}}
+    \put(30,70){\makebox(0,0)[b]{\small$\bbb$}}
+    \put(50,55){\makebox(0,0){$\times$}}
+    \put(8,50){\makebox(0,0)[tl]{\small$t\aaa+(1-t)\bbb$}}
+    \put(8,40){\makebox(0,0)[tl]{\small$=\bbb+t(\aaa-\bbb)$}}
+    \put(45,75){\makebox(0,0)[b]{\small$t$}}
+    \put(75,60){\makebox(0,0)[b]{\small$1-t$}}
+    \put(30,65){\line(2,-1){60}}
+    \put(30,65){\line(-2,1){30}}
+    \qbezier[30](30,65)(45,75)(50,55)
+    \qbezier[30](50,55)(75,60)(80,40)
+  \end{picture}
+  \caption{直線の上の点}\label{fig:ptonline}
+\end{figure}
 
 \begin{definition}
   \label{def:linindep}
