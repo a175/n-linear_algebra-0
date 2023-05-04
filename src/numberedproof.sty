@@ -6,20 +6,22 @@
   \thm@postskip\thm@preskip%
 }
 %
-
-\newcommand{\nu@numberedproof@create@new@prooflabellist}[1]{\expandafter\def\csname nu@list@prooflabel@#1\endcsname{}}
-\newcommand{\nu@numberedproof@append@prooflabellist}[2]{\def\nu@list@prooflabel@oldlist{\csname nu@list@prooflabel@#1\endcsname}\let\nu@list@prooflabel@temp\nu@list@prooflabel@oldlist\global\expandafter\edef\csname nu@list@prooflabel@#1\endcsname{\nu@list@prooflabel@temp,#2}}
+\newcommand{\nu@numberedproof@varname@prooflabellist}[1]{nu@list@prooflabel@#1}
+\newcommand{\nu@numberedproof@create@new@prooflabellist}[1]{\expandafter\def\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname{}}
+\newcommand{\nu@numberedproof@append@prooflabellist}[2]{%
+  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#1}}{\nu@numberedproof@create@new@prooflabellist{#1}}{}
+  \def\nu@list@prooflabel@oldlist{\csname nu@list@prooflabel@#1\endcsname}\let\nu@list@prooflabel@temp\nu@list@prooflabel@oldlist\global\expandafter\edef\csname nu@list@prooflabel@#1\endcsname{\nu@list@prooflabel@temp,#2}}
 \newcommand{\nu@numberedproof@prooflabellist}[1]{\csname nu@list@prooflabel@#1\endcsname}
 
 %\nu@numberedproof@append@prooflabellist{test}{qq}
 %\nu@numberedproof@append@prooflabellist{test}{rr}
 
 \newcommand{\nu@numberedproof@label@S}[1]{%
-  \makebox{}
+  \makebox{}%
   \label{nu@statement@#1}%
   \def\nu@numberedproof@statementlabel{#1}%
-  \immediate\write\@auxout{\string\nu@numberedproof@create@new@prooflabellist{#1}}%
-  \callbackToAnnounceProveLater{\nu@numberedproof@prooflabellist{#1}}
+  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#1}}{}{\callbackToAnnounceProveLater{\nu@numberedproof@prooflabellist{#1}}}
+%   \immediate\write\@auxout{\string\nu@numberedproof@create@new@prooflabellist{#1}}%
 }
 \newcommand{\nu@numberedproof@prove@this@later}[1]{\makebox{}%
   \nu@numberedproof@label@S{#1}
@@ -29,7 +31,7 @@
 \newcommand{\nu@numberedproof@prove@item@later}[1]{\makebox{}%
   \label{nu@statement@\nu@numberedproof@statementlabel:item@#1}%
   \immediate\write\@auxout{\string\nu@numberedproof@append@prooflabellist{\nu@numberedproof@statementlabel}{nu@proof@\nu@numberedproof@statementlabel:item@#1}}%
-\callbackToAnnounceProveEachItemLater{nu@proof@\nu@numberedproof@statementlabel:item@#1}  
+\callbackToAnnounceProveEachItemLater{nu@proof@\nu@numberedproof@statementlabel:item@#1}%  
 }
 \newcommand{\nu@numberedproof@prove@each@later}{\@ifstar{\nu@numberedproof@label@S}{\nu@numberedproof@prove@item@later}}
 
