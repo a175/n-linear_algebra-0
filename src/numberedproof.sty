@@ -29,15 +29,25 @@
 \newcommand{\nu@numberedproof@prove@item@later}[1]{\makebox{}%
   \label{nu@statement@\nu@numberedproof@statementlabel:item@#1}%
   \immediate\write\@auxout{\string\nu@numberedproof@append@prooflabellist{\nu@numberedproof@statementlabel}{nu@proof@\nu@numberedproof@statementlabel:item@#1}}%
-  %\marginpar{証明は\Cref{nu@proof@\nu@numberedproof@statementlabel:item@#1}.}
+\callbackToAnnounceProveEachItemLater{nu@proof@\nu@numberedproof@statementlabel:item@#1}  
 }
 \newcommand{\nu@numberedproof@prove@each@later}{\@ifstar{\nu@numberedproof@label@S}{\nu@numberedproof@prove@item@later}}
 
 \newcommand{\provelater}{\@ifstar{\nu@numberedproof@prove@each@later}{\nu@numberedproof@prove@this@later}}
-\newenvironment{proofof}[1]{\begin{numberedproof}[\callbackToAnnounceTheoremProvedHere{nu@statement@#1}]\label{nu@proof@#1}}{\end{numberedproof}}
-\newenvironment{proofof*}[2]{\begin{numberedproof}[\callbackToAnnounceTheoremItemProvedHere{nu@statement@#1}{nu@statement@#1:item@#2}]%
-    \label{nu@proof@#1:item@#2}}{\end{numberedproof}}
+%\newenvironment{proofof}[1]{\begin{numberedproof}[\callbackToAnnounceTheoremProvedHere{nu@statement@#1}]\label{nu@proof@#1}}{\end{numberedproof}}
+%\newenvironment{proofof*}[2]{\begin{numberedproof}[\callbackToAnnounceTheoremItemProvedHere{nu@statement@#1}{nu@statement@#1:item@#2}]%
+%    \label{nu@proof@#1:item@#2}}{\end{numberedproof}}
 
+\newcommand{\newnumberedproof}[2]{%
+  \newenvironment{#1}[1]{%
+    \begin{#2}[\callbackToAnnounceTheoremProvedHere{nu@statement@##1}]%
+      \label{nu@proof@##1}%
+  }{\end{#2}}
+  \newenvironment{#1*}[2]{%
+    \begin{#2}[\callbackToAnnounceTheoremItemProvedHere{nu@statement@##1}{nu@statement@##1:item@##2}]%
+      \label{nu@proof@##1:item@##2}%
+  }{\end{#2}}
+}
 
 \newcommand{\callbackToAnnounceTheoremProvedHere}[1]{%
   \Cref{#1}%
@@ -46,5 +56,9 @@
   \Cref{#1} -- \Cref{#2}%
 }
 \newcommand{\callbackToAnnounceProveLater}[1]{%
+  \marginpar{We will show this later in \cref{#1}.}%
+}
+
+\newcommand{\callbackToAnnounceProveEachItemLater}[1]{%
   \marginpar{We will show this later in \cref{#1}.}%
 }
