@@ -1224,6 +1224,7 @@ $k$個の$A$の積を$A^k$と書く.
 指数法則が成り立つ.
 \begin{prop}
   \provelater**{mat:posipower}
+  \label{thm:mat:posipower}
   $A$を正方行列, $k$, $k'$を正の整数とする.
   このとき,
   \begin{enumerate}
@@ -1445,6 +1446,7 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
 
 冒頭での議論から$2$次正方行列のときには次が言える.
 \begin{theorem}
+  %proved already
   \begin{align*}
     A=
   \begin{pmatrix}
@@ -1465,16 +1467,24 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
 つぎに,
 逆行列に関する性質を紹介する.
 \begin{proposition}
+  \provelater**{inverse}
+  \label{thm:inverse:operation}
   $X$, $Y$を$n$次正則行列とする.
-  $r\neq 0$とする.
+  %$r\neq 0$とする.
+  $r$を逆数を持つ数(つまり $r\neq 0$)とする.
   $l$を正の整数とする.
   このとき次が成り立つ:
   \begin{enumerate}
-  \item $X^{-1}$も正則. $(X^{-1})^{-1}=X$.
-  \item $(\transposed X)^{-1}$も正則. $(\transposed X)^{-1}=\transposed {(X^{-1})}$.
-  \item $rX$も正則. $(rX)^{-1}=\frac{1}{r}X^{-1}$.
-  \item $XY$も正則. $(XY)^{-1}=Y^{-1}X^{-1}$.
-  \item $X^l$も正則. $(X^l)^{-1}=(X^{-1})^l$.
+  \item\provelater*{inverse}
+    $X^{-1}$も正則. $(X^{-1})^{-1}=X$.
+  \item\provelater*{transpose}
+    $(\transposed X)^{-1}$も正則. $(\transposed X)^{-1}=\transposed {(X^{-1})}$.
+  \item\provelater*{scalar}
+    $rX$も正則. $(rX)^{-1}=\frac{1}{r}X^{-1}$.
+  \item\provelater*{prod}
+    $XY$も正則. $(XY)^{-1}=Y^{-1}X^{-1}$.
+  \item\provelater*{power}
+    $X^l$も正則. $(X^l)^{-1}=(X^{-1})^l$.
   \end{enumerate}
 \end{proposition}
 
@@ -1489,11 +1499,14 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
 このように拡張された冪に対しても,
 指数法則が成り立つ.
 \begin{prop}
+  \provelater**{negpower}
   正則行列$A$と整数$l,k$に対し,
-  \begin{align*}
-    A^{l+k}&=A^lA^k\\
-    A^{lk}&=(A^l)^k
-  \end{align*}
+  \begin{enumerate}
+  \item\provelater*{prod}
+    $A^{l+k}=A^lA^k$
+  \item\provelater*{power}
+    $A^{lk}=(A^l)^k$
+  \end{enumerate}
 が成り立つ.
 \end{prop}
 
@@ -1610,6 +1623,7 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
 \Cref{sec:regular}の冒頭の議論から次がわかる.
 \begin{theorem}
   \label{thm:det:reg}
+  %proved
   $A$を$2$次正方行列とする.
   このとき次は同値:
   \begin{enumerate}
@@ -1621,6 +1635,7 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
 行列式と積について,
 次が成り立つ.
 \begin{theorem}
+  \provelater{det:hom}
   \label{thm:det:hom}
   $A$, $B$を$2$次正方行列とする.
   このとき,
@@ -1630,10 +1645,11 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
   が成り立つ.
 \end{theorem}
 
-
-$\alpha A=(\alpha E_2) A$であるので, 次が成り立つ.
+$A$が$2$次正則行列なら, $AA^{-1}=E_2$であり, $\det(E_2)=1$である.
+したがって$\det(A)\det(A^{-1})=\det(AA^{-1})=\det(E_2)=1$となるので,
+次が成り立つ.
 \begin{cor}
-  \label{thm:det:scalar}
+  %proved
   $A$を$2$次正方行列とし, $\det(A)\neq 0$とする.
   このとき,
   \begin{align*}
@@ -1642,10 +1658,23 @@ $\alpha A=(\alpha E_2) A$であるので, 次が成り立つ.
   が成り立つ.  
 \end{cor}
 
+また$\alpha A=(\alpha E_2) A$であるので, 次が成り立つ.
+\begin{cor}
+  \label{thm:det:scalar}
+  %proved
+  $A$を$2$次正方行列とする.
+  このとき,
+  \begin{align*}
+   \det(\alpha A)=\alpha^2 \det(A)
+  \end{align*}
+  が成り立つ.  
+\end{cor}
+
 
 
 行列式と転置に関して次が成り立つ.
 \begin{theorem}
+  \provelater{det:transpose}
   \label{thm:det:transpose}
   $A$を$2$次正方行列とする.
   このとき,
@@ -1666,6 +1695,7 @@ $2$次正方行列においては,
 この講義では使う機会はほとんどないが,
 一応紹介する.
 \begin{theorem}
+  \provelater{det:alt:row}
   \label{thm:det:alt:row}
   $A$を
   $2$次正方行列とする.
@@ -1679,7 +1709,10 @@ $2$次正方行列においては,
   \end{align*}
   が成り立つ.
 \end{theorem}
+\Cref{thm:det:transpose,thm:det:alt:row}
+を組み合わせることで次がわかる.
 \begin{theorem}
+%proved
   \label{thm:det:alt:col}
   $A$を$2$次正方行列とする.
   $A$の1列目と2列目を入れ替えて得られる行列を$A'$とすると,
@@ -1700,6 +1733,7 @@ $2$次正方行列においては,
 この講義では使う機会はほとんどないが,
 一応紹介する.
 \begin{theorem}
+  \provelater{multlin:row:add}
   \label{thm:multlin:row:add}
   $A$, $A'$, $A''$を$2$次正方行列とする.
   $A$の$k$行目は, $A'$の$k$行目と$A''$は$k$行目の和となっているとする.
@@ -1724,6 +1758,7 @@ $2$次正方行列においては,
 \end{theorem}
 
 \begin{theorem}
+  \provelater{multlin:row:prod}
   \label{thm:multlin:row:prod}
   $A$を$2$次正方行列とし,
   $A$の$k$行目だけを$\alpha$倍することで得られる行列を$A'$とおく.
@@ -1745,14 +1780,17 @@ $2$次正方行列においては,
   \end{enumerate}
 \end{theorem}
 
-
+\Cref{thm:det:transpose,thm:multlin:row:add,thm:multlin:row:prod}
+を組み合わせることで
 \Cref{thm:multlin:col:add,thm:multlin:col:prod}
-は, 行列式の列に関する多重線型性と呼ばれる性質である.
+がわかる.
+これらは, 行列式の列に関する多重線型性と呼ばれる性質である.
 $2$次正方行列においては,
 直接計算することが多いので,
 この講義では使う機会はほとんどないが,
 一応紹介する.
 \begin{theorem}
+  %proved
   \label{thm:multlin:col:add}
   $A$, $A'$, $A''$を$2$次正方行列とする.
   $A$の$k$列目は, $A'$の$k$列目と$A''$は$k$列目の和となっているとする.
@@ -1777,6 +1815,7 @@ $2$次正方行列においては,
 \end{theorem}
 
 \begin{theorem}
+  %proved
   \label{thm:multlin:col:prod}
   $A$を$2$次正方行列とし,
   $A$の$k$列目だけを$\alpha$倍することで得られる行列を$A'$とおく.
@@ -3383,6 +3422,7 @@ $\zzero$がその解である.
 
 より一般には次が成り立つ:
 \begin{theorem}
+ \label{thm:solution:homoge}
 $A$を$(m,n)$-行列とする.
 $n$個の未知数$\xx$に関する
 $A\xx=\zzero$という方程式について考える.
@@ -3441,6 +3481,7 @@ $n$個の未知数$\xx$に関する
 
 正方行列$A$が正則であるかを$\rank(A)$を使って判定をすることもできる.
 \begin{theorem}
+  \label{thm:rank:regular}
   $A$が$n$次正方行列であるとする.
   このとき, 次は同値:
   \begin{enumerate}
@@ -3880,6 +3921,7 @@ $\aaa$と$\bbb$を通る直線は
 
 これらの例で見たことは次のように一般化できる:
 \begin{theorem}
+  \provelater{linindep:det}
   \label{thm:linindep:det}
   \begin{align*}
     \aaa&=\begin{pmatrix}a\\a'\end{pmatrix}\\
@@ -3888,8 +3930,10 @@ $\aaa$と$\bbb$を通る直線は
   \end{align*}
   とする.  このとき, 次は同値である:
   \begin{enumerate}
-  \item $(\aaa,\bbb)$が一次独立である.
-  \item $\det(A)\neq 0$.
+  \item \label{thm:linindep:det:item:linindep}
+    $(\aaa,\bbb)$が一次独立である.
+  \item\label{thm:linindep:det:item:det}
+    $\det(A)\neq 0$.
   \end{enumerate}
 \end{theorem}
 

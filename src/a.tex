@@ -5,6 +5,7 @@
 \chapter{命題の証明}
 \section{証明に必要となる基本的な事実}
 \begin{lemma}
+  $a,b,c$を数とすると以下が成り立つ:
   \label{lem:numbers:field}
   \begin{enumerate}
   \item $(a+b)+c=a+(b+c)$.
@@ -18,8 +19,10 @@
   \item $a(b+c)=ab+ac$.
   \item $(a+b)c=ac+bc$.
   \end{enumerate}
+%  また, 次も成り立つ: $0a=0$
 \end{lemma}
-\section{証明}
+
+\section{行列の演算に関する命題の証明}
 ここでは, \Cref{chap:mat}に現れる命題の証明を行う.
 
 \begin{proofof*}{transpose}{involutive}
@@ -390,17 +393,34 @@
 \end{proofof*}
   
 \begin{proofof}{mat:zeroprod}
-  零行列は$(i,j)$-成分が$0$である行列である.
-  $A$を$(m,n)$-行列とし, $(i,j)$-成分を$a_{i,j}$とする.
-  
-  $0A$の$(i,j)$-成分は$0a_{i,j}=0$であるので,
-  $O_{m,n}$の$(i,j)$-成分と等しい.
+  $A$を$(m,n)$行列とする.
 
-  $AO_{n,k}$の$(i,j)$-成分は$\sum_{t=0}^{n}a_{i,t}\cdot 0=0$であるので,
-  $O_{m,k}$の$(i,j)$-成分と等しい.
+  $1+(-1)=0$であるので,
+  \begin{align*}
+    0A&=(1+(-1))A\\
+    &=1A+(-1)A\\
+    &=A-A\\
+    &=O_{m,n}\\
+  \end{align*}
+  である.
 
-  $O_{k,m}A$の$(i,j)$-成分は$\sum_{t=0}^{m}0\cdot a_{i,t}=0$であるので,
-  $O_{k,n}$の$(i,j)$-成分と等しい.
+  $O_{k,m}+(-1)O_{k,m}=O_{k,m}$であるので,
+  \begin{align*}
+    O_{k,m}A&=(O_{k,m}+(-1)O_{k,m})A\\
+    &=O_{k,m}A+((-1)O_{k,m})A\\
+    &=O_{k,m}A+(-1)(O_{k,m}A)\\
+    &=O_{k,m}\\
+  \end{align*}
+  である.
+
+  $O_{n,k}+(-1)O_{n,k}=O_{n,k}$であるので,
+  \begin{align*}
+    AO_{n,k}&=A(O_{n,k}+(-1)O_{n,k})\\
+    &=AO_{n,k}+A((-1)O_{n,k})\\
+    &=AO_{n,k}+(-1)(AO_{n,k})\\
+    &=O_{n,k}\\
+  \end{align*}
+  である.
 \end{proofof}
 
 \begin{proofof*}{mat:posipower}{prod}
@@ -548,4 +568,436 @@
       0&0\\0&0
     \end{pmatrix}\\
   \end{align*}
+\end{proofof}
+
+
+\section{行列の演算に関する命題の証明}
+ここでは, \Cref{chap:inverse}に現れる命題の証明を行う.
+
+
+\begin{proofof*}{inverse}{inverse}
+  $X$を$n$次正則行列とする.
+  $A=X^{-1}$とし,
+  $B=X$とする.
+  このとき, $A$が正則であることを示す.
+  そのために$B$が$A$の逆行列であることを示す.
+
+  まず$AB=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    AB=X^{-1}X=E_n
+  \end{align*}
+  である.
+
+  次に$BA=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    BA=XX^{-1}=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{inverse}{transpose}
+  $X$を$n$次正則行列とする.
+  $A=\transposed{X}$とし,
+  $B=\transposed{X^{-1}}$とする.
+  このとき, $A$が正則であることを示す.
+  そのために$B$が$A$の逆行列であることを示す.
+
+  まず$AB=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    AB=\transposed{X}\transposed{X^{-1}}=\transposed{X^{-1}X}=\transposed{E_n}=E_n
+  \end{align*}
+  である.
+
+  次に$BA=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    BA=\transposed{X^{-1}}\transposed{X}=\transposed{XX^{-1}}=\transposed{E_n}=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+
+\begin{proofof*}{inverse}{scalar}
+  $X$を$n$次正則行列とする.
+  $r$を$0$でない数とする.
+  $A=rX$とし,
+  $B=\frac{1}{r}X^{-1}$とする.
+  このとき, $A$が正則であることを示す.
+  そのために$B$が$A$の逆行列であることを示す.
+
+  まず$AB=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    AB=(rX)(\frac{1}{r}X^{-1})=\frac{1}{r}(rXX^{-1})=(\frac{1}{r}r)(XX^{-1})=1E_n=E_n
+  \end{align*}
+  である.
+
+  次に$BA=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列であるので,
+  \begin{align*}
+    AB=(\frac{1}{r}X^{-1})(rX)=r(\frac{1}{r}X^{-1}X)=(r\frac{1}{r})(X^{-1}X)=1E_n=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{inverse}{prod}
+  $X$, $Y$を$n$次正則行列とする.
+  $A=XY$とし,
+  $B=Y^{-1}X^{-1}$とする.
+  このとき, $A$が正則であることを示す.
+  そのために$B$が$A$の逆行列であることを示す.
+
+  まず$AB=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列,
+  $Y^{-1}$は$Y$の逆行列
+  であるので,
+  \begin{align*}
+    AB=(XY)(Y^{-1}X^{-1})=X(YY^{-1})X^{-1}=XE_nX^{-1}=XX^{-1}=E_n
+  \end{align*}
+  である.
+
+  次に$BA=E_n$となることを示す.
+  $X^{-1}$は$X$の逆行列,
+  $Y^{-1}$は$Y$の逆行列
+  であるので,
+  \begin{align*}
+    BA=(Y^{-1}X^{-1})(XY)=Y^{-1}(X^{-1}X)Y=Y^{-1}E_nY=Y^{-1}Y=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+
+
+\begin{proofof*}{inverse}{power}
+  $X$を$n$次正則行列とし,
+  $l$を正の整数とする.
+  このとき, $X^l$が正則であることを示す.
+  そのために$(X^{-1})^l$が$X^l$の逆行列であることを,
+  $l$に関する数学的帰納法により示す.
+
+  \paragraph{Base case}
+  $(X)^{1}=X$, $(X^{-1})^{1}=X^{-1}$であるから,
+  $(X^{-1})^{1}$が
+  $(X)^{1}$の逆行列である.
+
+  \paragraph{Induction Step}
+  $(X^-1)^{l-1}$が$(X)^{l-1}$の逆行列であることを仮定して,
+  $(X^-1)^{l}$が$(X)^{l}$の逆行列であることを示す.
+  
+  
+  まず, $(X^l)((X^{-1})^l)=E_n$となることを示す.
+  $X^l=X^{l-1}X$, 
+  $(X^{-1})^l=X^{-1}(X^{-1})^{l-1}$であるから,
+  \begin{align*}
+    (X^l)((X^{-1})^l)
+    &=(X^{l-1}X)(X^{-1}(X^{-1})^{l-1})\\
+    &=X^{l-1}(XX^{-1})(X^{-1})^{l-1}\\
+    &=X^{l-1}E_n(X^{-1})^{l-1}\\
+    &=X^{l-1}(X^{-1})^{l-1}\\
+    &=E_n
+  \end{align*}
+  である.
+
+  次に, $((X^{-1})^l)(X^l)=E_n$となることを示す.
+  $X^l=X^{l-1}X$, 
+  $(X^{-1})^l=X^{-1}(X^{-1})^{l-1}$であるから,
+  \begin{align*}
+    ((X^{-1})^l)(X^l)
+    &=(X^{-1}(X^{-1})^{l-1})(X^{l-1}X)\\
+    &=X^{-1}((X^{-1})^{l-1})X^{l-1})X\\
+    &=X^{-1}E_nX\\
+    &=X^{-1}X\\
+    &=E_n
+  \end{align*}
+  である.
+\end{proofof*}
+
+
+
+  
+\begin{proofof*}{negpower}{prod}
+  $X$を$n$次正則行列とする.
+  このとき, 整数$k$, $k'$に対し, $X^{k}X^{k'}=X^{k+k'}$となることを示す.
+  
+  $X^{0}=E_n$であるので,
+  $X^{0}X^{k'}=E_nX^{k'}=X^{k'}$である.
+  また,
+  $X^{k}X^{0}=X^{k}E_n=X^{k}$でもある.
+
+  
+  $k$も$k'$も$0$ではない場合について考える.
+  $p$, $p'$を正の整数とする.
+  $k=p$も$k'=p'$である場合は,
+  \Cref{thm:mat:posipower}である.
+  $k=-p$も$k'=-p'$である場合は,
+  \begin{align*}
+    A^{-p}A^{-p'}&=(A^{-1})^{p}(A^{-1})^{p'}=(A^{-1})^{p+p'}=A^{-(p+p')}=A^{(-p)+(-p')}.
+  \end{align*}
+  であることがわかる.
+
+  ここまでの議論で,
+  $k\leq 0$かつ$k'\leq 0$の場合と,
+  $k\geq 0$かつ$k'\geq 0$の場合は証明できた.  
+  それら以外の場合について考える.
+
+  
+  $p$, $p'$を正の整数とし,
+  $k=-p$かつ$k'=p'$の場合と
+  $k=p$かつ$k'=-p'$の場合について示す.
+  $p=p'$なら
+  \begin{align*}
+    A^{-p}A^{p'}&=A^{-p}A^{p}=(A^{p})^{-1}A^{p}=E_n=A^{0}=A^{-p+p}=A^{-p+p'}\\
+    A^{p}A^{-p'}&=A^{p}A^{-p}=(A^{p})^{-1}A^{p}=E_n=A^{0}=A^{p-p}=A^{p-p'}
+  \end{align*}
+  である.
+  $p>p'$であるなら, $p=d+p'$とおくと,
+  \begin{align*}
+    A^{-p}A^{p'}&=A^{-(d+p')}A^{p'}=(A^{-d}A^{-p'})A^{p'}=A^{-d}(A^{-p'}A^{p'})=A^{-d}A^{0}=A^{-d}=A^{-p+p'}\\
+    A^{p}A^{-p'}&=A^{d+p'}A^{-p'}=(A^{d}A^{p'})A^{-p'}=A^{d}(A^{p'}A^{-p'})=A^{d}A^{0}=A^{d}=A^{p-p'}
+  \end{align*}
+  である.
+  $p<p'$であるなら, $p+d=p'$とおくと,
+  \begin{align*}
+    A^{-p}A^{p'}&=A^{-p}A^{p+d}
+    =A^{-p}A^{p}A^{d}=A^{-p+p}A^{d}=A^{0}A^{d}=A^{d}=A^{-p+p'},\\ 
+    A^{p}A^{-p'}&=A^{p}A^{-(p+d)}=A^{p}A^{-p-d)}=A^{p}A^{-p}A^{-d}=A^{0}A^{d}=A^{0+d}=A^{p-p'}
+ \end{align*}
+  である.
+
+\end{proofof*}
+
+
+
+  
+\begin{proofof*}{negpower}{power}
+  $X$を$n$次正則行列とする.
+  このとき, 整数$k$, $k'$に対し, $(X^{k})^{k'}=X^{kk'}$となることを示す.
+
+  定義から
+  $(X^{k})^{0}=E_n$である.
+  また,
+  $X^{k\cdot 0}=X^0=E_n$
+  であるので, $(X^{k})^{0}=X^{k\cdot0}$である.
+
+  定義から
+  $(X^{0})^{k'}=E_n^{k'}=E_n$である.
+  また,
+  $X^{0k'}=X^0=E_n$
+  であるので, $(X^{0})^{k'}=X^{0\cdot k'}$である.
+
+  
+  $X^{-k}X^{k}=X^0=E_n$かつ
+  $X^{k}X^{-k}=X^0=E_n$であるので,
+  $X^{-k}$は$X^k$の逆行列である.
+  したがって$(X^{k})^{-1}=X^{-k}=X^{k\cdot -1}$である.
+
+  $p'$を正の整数とすると,
+  \Cref{thm:inverse:operation}より,
+  $(X^{-1})^{p'}$は$X^{p'}$の逆行列である.
+  したがって$(X^{-1})^{p'}=(X^{p'})^{-1}=X^{-p'}=X^{-1\cdot p'}$である.
+
+  $p$, $p'$を正の整数とすると,
+  $k=p$, $k'=p'$のときは,
+  \Cref{thm:mat:posipower}より,
+  $(X^{k})^{k'}=X^{kk'}$である.
+
+  $k=p$, $k'=-p'$のときは,
+  \begin{align*}
+    (X^{p})^{-p'}&=((X^{p})^{p'})^{-1}=(X^{pp'})^{-1}=X^{-pp'}
+  \end{align*}
+  である.
+
+  $k=-p$, $k'=p'$のときは,
+  \begin{align*}
+    (X^{-p})^{p'}&=((X^{p})^{-1})^{p'}=(X^{p})^{-p'}=X^{-pp'}
+  \end{align*}
+  である.
+
+  $k=-p$, $k'=-p'$のときは,
+  \begin{align*}
+    (X^{-p})^{-p'}&=((X^{-p})^{p'})^{-1}=(X^{-pp'})^{-1}=X^{-(-pp')}=X^{(-p)(-p')}
+  \end{align*}
+  である.
+
+\end{proofof*}
+
+
+\begin{proofof}{det:hom}
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      a&b\\c&d
+    \end{pmatrix},&
+    B&=
+    \begin{pmatrix}
+      a'&b'\\c'&d'
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{align*}
+    AB=
+    \begin{pmatrix}
+      a&b\\c&d
+    \end{pmatrix}
+    \begin{pmatrix}
+      a'&b'\\c'&d'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    aa'+bc'&ab'+bd'\\ca'+dc'&db'+dd'
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \det(AB)&=(aa'+bc')(db'+dd')-(ab'+bd')(ca'+dc')\\
+    &=aa'(db'+dd')+bc'(db'+dd')-ab'(ca'+dc')-bd'(ca'+dc')\\
+    &=aa'db'+aa'dd'+bc'db'+bc'dd'-ab'ca'-ab'dc'-bd'ca'-bd'dc'\\
+    &=ada'b'+ada'd'+bdb'c'+bdc'd'-aca'b'-adb'c'-bca'd'-bdc'd'\\
+    &=ada'd'-adb'c'-bca'd'+bcb'c'
+  \end{align*}
+  である.
+  一方,
+  $\det(A)=ad-bc$,
+  $\det(B)=a'd'-b'c'$
+  であるので,
+  \begin{align*}
+    \det(A)\det(B)&=(ad-bc)(a'd'-b'c')\\
+    &=ad(a'd'-b'c')-bc(a'd'-b'c')\\
+    &=ada'd'-adb'c'-bca'd'+bcb'c'
+  \end{align*}
+  である.
+\end{proofof}
+
+\begin{proofof}{det:transpose}
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      a&b\\c&d
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  このとき, $\det(A)=ad-bc$である.
+  一方
+  \begin{align*}
+    \transposed{A}&=
+    \begin{pmatrix}
+      a&c\\b&d
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  $\det(A)=ad-cb=ad-bc$である.
+\end{proofof}
+
+\begin{proofof}{det:alt:row}
+  \begin{align*}
+    A&=\begin{pmatrix}a&b\\c&d\end{pmatrix},&
+    A'&=\begin{pmatrix}c&d\\a&b\end{pmatrix}
+  \end{align*}
+  とする.
+  このとき, $\det(A)=ad-bc$である.
+  一方$-\det(A')=-(cb-da)=-cb+da=ad-bc$である.
+\end{proofof}
+  
+  
+\begin{proofof}{multlin:row:add}
+      \begin{align*}
+        \det(\begin{pmatrix}a'+a''&b'+b''\\c&d\end{pmatrix})
+          &=(a'+a'')d-(b'+b'')c=a'd+a''d-b'c-b''c\\
+        \det(\begin{pmatrix}a'&b'\\c&d\end{pmatrix})
+          +
+          \det(\begin{pmatrix}a''&b''\\c&d\end{pmatrix})
+            &=(a'd-b'c)+(a''d-b''c)=a'd+a''d-b'c-b''c
+      \end{align*}
+      である.
+      また
+      \begin{align*}
+        \det(\begin{pmatrix}a&b\\c'+c''&d'+d''\end{pmatrix})&=
+          a(d'+d'')-b(c'+c'')=ad'+ad''-bc'-bc''\\
+        \det(\begin{pmatrix}a&b\\c'&d'\end{pmatrix})+
+          \det(\begin{pmatrix}a&b\\c''&d''\end{pmatrix})
+            &=(ad'-bc')+(ad''-bc'')=ad'+ad''-bc'-bc''
+      \end{align*}
+      である.
+\end{proofof}
+
+\begin{proofof}{multlin:row:prod}
+  \begin{align*}
+    \alpha\det(\begin{pmatrix}a&b\\c&d\end{pmatrix})
+      &=\alpha(ad-bc)=\alpha ad-\alpha bc\\
+      \det(\begin{pmatrix}\alpha  a&\alpha b\\c&d\end{pmatrix})
+        &=\alpha a d-\alpha bc
+  \end{align*}
+  である.
+  また
+  \begin{align*}
+    \alpha\det(\begin{pmatrix}a&b\\c&d\end{pmatrix})
+      &=\alpha(ad-bc)=\alpha ad-\alpha bc\\
+      \det(\begin{pmatrix}a&b\\\alpha   c&\alpha  d\end{pmatrix}).
+        &=a\alpha d-b\alpha c=\alpha ad-\alpha bc
+  \end{align*}
+  である.
+\end{proofof}
+
+\section{階数に関する命題の証明}
+
+\section{平面に関する命題の証明}
+ここでは, \Cref{chap:lintrans}に現れる命題の証明を行う.
+
+\begin{proofof}{linindep:det}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a\\a'\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}b\\b'\end{pmatrix}\\
+    A&=\begin{pmatrix}a&b\\a'&b'\end{pmatrix}
+  \end{align*}
+  とする. このとき,
+  \begin{align*}
+    x\aaa+y\bbb=\begin{pmatrix}ax+by\\a'x+b'y\end{pmatrix}=A\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  である.
+
+  \paragraph{\Cref{thm:linindep:det:item:det}$\implies$\Cref{thm:linindep:det:item:linindep}}
+  $\det(A)\neq 0$を仮定する.
+  $x\aaa+y\bbb=\zzero$とする.
+  このとき, $x=y=0$となることを示す.
+
+  $x\aaa+y\bbb=\zzero$であるので,
+  \begin{align*}
+    A\begin{pmatrix}x\\y\end{pmatrix}=\zzero
+  \end{align*}
+  である.
+  $\det(A)\neq 0$であるので, $A$は正則である.
+  したがって,
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}=A^{-1}\zzero=\zzero
+  \end{align*}
+  である.
+  
+  
+  \paragraph{\Cref{thm:linindep:det:item:linindep}$\implies$\Cref{thm:linindep:det:item:det}}
+  対偶を示す.
+  $\det A=0$を仮定する.
+  $x\aaa+y\bbb=\zzero$を満たす
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  が$\zzero$以外にもあることを示す.
+  
+    
+  $\det(A)\neq 0$であるので,
+  \cref{thm:rank:regular}より,
+  $\rank(A)<2$である.
+  したがって, \Cref{thm:solution:homoge}より, 
+  \begin{align*}
+    A\begin{pmatrix}x\\y\end{pmatrix}&=\zzero,
+    \begin{pmatrix}x\\y\end{pmatrix}&\neq\zzero
+  \end{align*}
+  を満たす
+  \begin{align*}
+    \begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  がとれる. この$x,y$に対し,
+  $x\aaa+y\bbb=\zzero$が成り立つ.
 \end{proofof}
