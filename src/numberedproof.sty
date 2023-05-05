@@ -92,7 +92,7 @@
   \nu@numberedproof@label@S{#1}
   \immediate\write\@auxout{\string\nu@numberedproof@append@prooflabellist{#1}{nu@proof@#1}}%
 }
-\newcommand{\nu@numberedproof@prove@item@later}[1]{\makebox{}%
+\newcommand{\nu@numberedproof@prove@item@later}[1]{%\makebox{}%
   \label{nu@statement@\nu@numberedproof@statementlabel:item@#1}%
   \immediate\write\@auxout{\string\nu@numberedproof@append@prooflabellist{\nu@numberedproof@statementlabel}{nu@proof@\nu@numberedproof@statementlabel:item@#1}}%
 \callbackToAnnounceProveEachItemLater{nu@proof@\nu@numberedproof@statementlabel:item@#1}%  

@@ -1117,22 +1117,30 @@ $k$個の$A$の積を$A^k$と書く.
   \begin{enumerate}
   \item 和に関するもの
   \begin{enumerate}
-  \item\label{item:sum:c}
+  \item \provelater*{ass}
+    \label{item:sum:c}
     $(A+B)+C=A+(B+C)$
-  \item $O+A=A$
-  \item $A+(-A)=O$
-  \item $A+B=B+A$
+  \item \provelater*{zero}
+    $O+A=A$
+  \item \provelater*{minus}
+    $A+(-A)=O$
+  \item \provelater*{com}
+    $A+B=B+A$
   \end{enumerate}
   \item スカラー倍に関するもの
   \begin{enumerate}
-  \item\label{item:sc:c}
+  \item \provelater*{action:ass}
+    \label{item:sc:c}
     $(\alpha\beta)A=\alpha(\beta A)$
-    \item $1A=A$
+  \item \provelater*{action:iden}
+    $1A=A$
   \end{enumerate}  
   \item 和とスカラー倍に関するもの
   \begin{enumerate}
-    \item $(\alpha+\beta)A=\alpha A+\beta A$
-    \item $\alpha (A+B)=\alpha A+\alpha B$
+  \item \provelater*{disttoscalarsum}
+    $(\alpha+\beta)A=\alpha A+\beta A$
+  \item \provelater*{disttomatsum}
+    $\alpha (A+B)=\alpha A+\alpha B$
   \end{enumerate}  
   \end{enumerate}
 \end{prop}
@@ -1153,6 +1161,7 @@ $k$個の$A$の積を$A^k$と書く.
 
 次に, 積の性質について紹介する.
 \begin{prop}
+  \provelater**{matspace_is_algebra}
   $A,A'$を$(m,n)$-行列,
   $B,B'$を$(n,k)$-行列,
   $C$を$(k,l)$-行列,
@@ -1161,22 +1170,30 @@ $k$個の$A$の積を$A^k$と書く.
   \begin{enumerate}
   \item 積に関するもの
     \begin{enumerate}
-    \item \label{item:prod:c}
+    \item \provelater*{ass}
+      \label{item:prod:c}
       $(AB)C=A(BC)$
-    \item $AE_n=A$
-    \item $E_m A=A$
+    \item \provelater*{rightidentity}
+      $AE_n=A$
+    \item \provelater*{leftidentity}
+      $E_m A=A$
     \end{enumerate}
   \item 積と和に関するもの
     \begin{enumerate}      
-    \item $(A+A')B=AB+A'B$
-    \item $A(B+B')=AB+AB'$
+    \item \provelater*{rightdist}
+      $(A+A')B=AB+A'B$
+    \item \provelater*{leftdist}
+      $A(B+B')=AB+AB'$
     \end{enumerate}
   \item 積とスカラー倍に関するもの
     \begin{enumerate}      
     \item
+      \provelater*{scalar:ass}
       \label{item:act:c}
       $(\alpha A)B=\alpha(AB)$
-    \item $\alpha (AB)=A(\alpha B)$
+    \item
+      \provelater*{scalar:center}
+      $\alpha (AB)=A(\alpha B)$
     \end{enumerate}
   \end{enumerate}
 \end{prop}
@@ -1194,6 +1211,7 @@ $k$個の$A$の積を$A^k$と書く.
 
 零行列との積や$0$によるスカラー倍は次のようになる.
 \begin{prop}
+  \provelater{mat:zeroprod}
   $A$を$(m,n)$-行列とする.
   \begin{align*}
     0A&=O_{m,n}\\
@@ -1205,15 +1223,19 @@ $k$個の$A$の積を$A^k$と書く.
 冪に関しては
 指数法則が成り立つ.
 \begin{prop}
+  \provelater**{mat:posipower}
   $A$を正方行列, $k$, $k'$を正の整数とする.
   このとき,
-  \begin{align*}
-    A^kA^{k'}&=A^{k+k'}\\
-    (A^k)^{k'}&=A^{kk'}
-  \end{align*}
+  \begin{enumerate}
+  \item \provelater*{prod}
+    $A^kA^{k'}=A^{k+k'}$
+  \item \provelater*{power}
+    $(A^k)^{k'}=A^{kk'}$
+  \end{enumerate}
 \end{prop}
 
 \begin{prop}
+  \provelater{mat:posipower:scalar}
   $A$を正方行列, $\alpha$を数, $k$を正の整数とする.
   このとき,
   \begin{align*}
@@ -1238,6 +1260,7 @@ $A$, $B$によっては,
 ここでは, $2$次正方行列に限って紹介する.
 一般の$n$次正方行列の場合は, \cref{thm:cht:general}で紹介する.
 \begin{prop}
+  \provelater{thm:cht:2dim}
   \label{thm:cht:2dim}
   \begin{align*}
     A=
