@@ -22,6 +22,16 @@
 %  また, 次も成り立つ: $0a=0$
 \end{lemma}
 
+\begin{lemma}
+  $a$を実数とすると以下が成り立つ:
+  \label{lem:numbers:field}
+  \begin{enumerate}
+  \item $a^2\leq 0$.
+  \item $\sqrt{a^2}=|a|$.
+  \end{enumerate}
+%  また, 次も成り立つ: $0a=0$
+\end{lemma}
+
 \section{行列の演算に関する命題の証明}
 ここでは, \Cref{chap:mat}に現れる命題の証明を行う.
 
@@ -942,7 +952,22 @@
 \end{proofof}
 
 \section{階数に関する命題の証明}
+ここでは, \Cref{chap:systemoflineq}に現れる命題の証明を行う.
 
+\begin{proofof*}{thm:ker:vec}{sum}
+  $\vv,\ww$を$A\xx=\zzero$の解とする.
+  このとき$A\vv=\zzero$, $A\ww=\zzero$が成り立つ.
+  したがって,
+  $A(\vv+\ww)=A\vv+A\ww=\zzero+\zzero=\zzero$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:ker:vec}{scalar}
+  $\vv$を$A\xx=\zzero$の解とする.
+  このとき$A\vv=\zzero$, $A\ww=\zzero$が成り立つ.
+  $\alpha$を数とする.
+  このとき,
+  $A(\alpha\vv)=\alpha A\vv=\alpha\zzero=\zzero$である.
+\end{proofof*}
 \section{平面に関する命題の証明}
 ここでは, \Cref{chap:lintrans}に現れる命題の証明を行う.
 
@@ -1000,4 +1025,531 @@
   \end{align*}
   がとれる. この$x,y$に対し,
   $x\aaa+y\bbb=\zzero$が成り立つ.
+\end{proofof}
+\begin{proofof*}{thm:innerprod:is:innerprod}{positive}
+  \begin{align*}
+        \aaa=\begin{pmatrix}a_1\\a_2\end{pmatrix}
+  \end{align*}
+  とし,   $a_i$は実数とする.
+  $a_i$は実数であるから$a_i^2\geq 0$であるので,
+  \begin{align*}
+        \Braket{\aaa,\aaa}=\sum_{i=1}^2 a_i^2\geq 0
+  \end{align*}
+  となる. 
+\end{proofof*}
+
+\begin{proofof*}{thm:innerprod:is:innerprod}{positive}
+  $n=2$とする.
+  \begin{align*}
+        \aaa=\begin{pmatrix}a_1\\a_2\end{pmatrix}
+  \end{align*}
+  とし,   $a_i$は実数とする.
+  $a_i$は実数であるから$a_i^2\geq 0$であるので,
+  \begin{align*}
+        \Braket{\aaa,\aaa}=\sum_{i=1}^n a_i^2\geq 0
+  \end{align*}
+  となる. 
+\end{proofof*}
+
+\begin{proofof*}{thm:innerprod:is:innerprod}{nondeg}
+  \begin{align*}
+        \aaa=\begin{pmatrix}a_1\\a_2\end{pmatrix}
+  \end{align*}
+  とし,   $a_i$は実数とする.
+  また$n=2$とする.
+
+  \paragraph{$\Braket{\aaa,\aaa}=0\implies \aaa=\zzero$.}
+  対偶を示す.
+  $\aaa\neq \zzero$とすると,
+  $a_{i_0}\neq 0$となる$i_0$が存在する.
+  $a_i$は実数であるから,
+  この$i_0$に対して,
+  $a_{i_0}>0$である.
+  また, どの$i$に対して, $a_i^2\leq 0$である.
+  したがって,
+  \begin{align*}
+    \Braket{\aaa,\aaa}=\sum_{i=1}^n a_i^2>0
+  \end{align*}
+  である.
+
+
+  \paragraph{$\aaa=\zzero\implies \Braket{\aaa,\aaa}=0$.}
+  $\aaa=\zzero$とする. このとき, どの$i$に対しても$a_i=0$であるので,
+  \begin{align*}
+    \Braket{\aaa,\aaa}=\sum_{i=1}^n 0^2=0
+  \end{align*}
+  である.
+  
+\end{proofof*}
+
+\begin{proofof*}{thm:innerprod:is:innerprod}{symmetric}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a_1\\a_2\end{pmatrix},&
+    \bbb&=\begin{pmatrix}b_1\\b_2\end{pmatrix}
+  \end{align*}
+  とし,   $a_i$, $b_i$は実数とする.
+  また$n=2$とする.
+  このとき, 
+  \begin{align*}
+    \Braket{\aaa,\bbb}&=\sum_{i=1}^n a_ib_i\\
+    \Braket{\bbb,\aaa}&=\sum_{i=1}^n b_ia_i=\sum_{i=1}^n a_ib_i
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{thm:innerprod:is:innerprod}{additive}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a_1\\a_2\end{pmatrix},&
+    \bbb&=\begin{pmatrix}b_1\\b_2\end{pmatrix},&
+    \ccc&=\begin{pmatrix}c_1\\c_2\end{pmatrix},&
+  \end{align*}
+  とし,   $a_i$, $b_i$, $c_i$は実数とする.
+  また$n=2$とする.
+  このとき, 
+  \begin{align*}
+    \Braket{\aaa+\bbb,\ccc}&=\sum_{i=1}^n (a_i+b_i)c_i=\sum_{i=1}^n (a_ic_i+b_ic_i)=\sum_{i=1}^n a_ic_i+\sum_{i=1}^nb_ic_i\\
+    \Braket{\aaa,\ccc}+\Braket{\bbb,\ccc}&=\sum_{i=1}^n a_ic_i+\sum_{i=1}^nb_ic_i
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{thm:innerprod:is:innerprod}{mult}
+  \begin{align*}
+    \aaa&=\begin{pmatrix}a_1\\a_2\end{pmatrix},&
+    \bbb&=\begin{pmatrix}b_1\\b_2\end{pmatrix},&
+  \end{align*}
+  とし,   $a_i$, $b_i$は実数とする.
+  $r$を実数とする.
+  また$n=2$とする.
+  このとき, 
+  \begin{align*}
+    \Braket{r\aaa,\bbb}&=\sum_{i=1}^n ra_ib_i\\
+    r\Braket{\aaa,\bbb}&=r\left(\sum_{i=1}^n a_ib_i\right)=\sum_{i=1}^n ra_ib_i
+  \end{align*}
+  である.
+\end{proofof*}
+
+\begin{proofof*}{norm:is:norm}{positive}
+  \Cref{thm:innerprod:is:innerprod}より, $\Braket{\aaa,\aaa}\geq 0$である.
+  したがって,
+  $\|\aaa\|=\sqrt{\Braket{\aaa,\aaa}}\geq 0$である.
+\end{proofof*}
+
+\begin{proofof*}{norm:is:norm}{nondeg}
+  \paragraph{$\|\aaa\|=0\implies\aaa=\zzero$.}
+  $\|\aaa\|=0$とする.
+  このとき, $\Braket{\aaa,\aaa}=\|\aaa\|^2=0$である.
+  \Cref{thm:innerprod:is:innerprod}より, $\aaa=\zzero$である.
+  \paragraph{$\aaa=\zzero\implies\|\aaa\|=0$.}
+  $\aaa=\zzero$とする.
+  \Cref{thm:innerprod:is:innerprod}より, $\Braket{\aaa,\aaa}=0$である.
+  よって, $\|\aaa\|=\sqrt{\Braket{\aaa,\aaa}}=\sqrt0=0$である.
+\end{proofof*}
+
+\begin{lemma}[コーシー--シュワルツの不等式.]
+  \label{lem:csi}
+  $\aaa$, $\bbb$を$n$項実ベクトルとする.
+  このとき, $|\Braket{\aaa,\bbb}|\leq \|\aaa\|\|\bbb\|$である.
+\end{lemma}
+
+\begin{proof}
+  $\|\aaa\|\|\bbb\|\leq 0$であるので,
+  $\Braket{\aaa,\bbb}^2\leq \|\aaa\|^2\|\bbb\|^2$
+  を示す.
+  
+  $t$を実数とし,
+  $\vv=\aaa+t\bbb$とおくと,
+  \begin{align*}
+    &\|\vv\|^2\\
+    &=\|\aaa+t\bbb\|^2\\
+    &=\Braket{\aaa+t\bbb,\aaa+t\bbb}\\
+    &=\Braket{\aaa,\aaa+t\bbb}+\Braket{t\bbb,\aaa+t\bbb}\\
+    &=\Braket{\aaa,\aaa+t\bbb}+t\Braket{\bbb,\aaa+t\bbb}\\
+    &=\Braket{\aaa,\aaa}+\Braket{\aaa,t\bbb}+t\Braket{\bbb,\aaa}+t\Braket{\bbb,t\bbb}\\
+    &=\Braket{\aaa,\aaa}+t\Braket{\aaa,\bbb}+t\Braket{\aaa,\bbb}+t^2\Braket{\bbb,\bbb}\\
+    &=\Braket{\aaa,\aaa}+2t\Braket{\aaa,\bbb}+t^2\Braket{\bbb,\bbb}
+  \end{align*}
+  である.
+  $a=\Braket{\bbb,\bbb}$,
+  $b=\Braket{\aaa,\bbb}$, 
+  $c=\Braket{\aaa,\aaa}$とおくと,
+  $\|\vv\|^2=at^2+bt+c$であるが,
+  $\|\vv\|^2\leq 0$であるので,
+  全ての$t$で
+  \begin{align*}
+    at^2+bt+c \geq 0
+  \end{align*}
+  が成り立っている.
+  したがって, 判別式を考えるとその値は$0$以下である.
+  よって,
+  \begin{align*}
+    0&\geq b^2-4ac\\
+    &\Braket{\aaa,\bbb}^2-\Braket{\bbb,\bbb}\Braket{\aaa,\aaa}
+  \end{align*}
+  である. したがって,
+  \begin{align*}
+    \Braket{\aaa,\aaa}\Braket{\bbb,\bbb}&\geq\Braket{\aaa,\bbb}^2\\
+    \|\aaa\|^2\|\bbb\|^2&\geq\Braket{\aaa,\bbb}^2
+  \end{align*}
+  である.
+\end{proof}
+
+\begin{proofof*}{norm:is:norm}{triangle}
+  $\|\aaa\|+\|\bbb\|\leq 0$であるので,
+  $\|\aaa+\bbb\|^2 \leq (\|\aaa\|+\|\bbb\|)^2$
+  を示す.
+  \begin{align*}
+    \|\aaa+\bbb\|^2
+    &=\Braket{\aaa+\bbb,\aaa+\bbb}\\
+    &=\Braket{\aaa,\aaa+\bbb}+\Braket{\bbb,\aaa+\bbb}\\
+    &=\Braket{\aaa,\aaa}+\Braket{\aaa,\bbb}+\Braket{\bbb,\aaa}+\Braket{\bbb,\bbb}\\
+    &=\Braket{\aaa,\aaa}+\Braket{\aaa,\bbb}+\Braket{\aaa,\bbb}+\Braket{\bbb,\bbb}\\
+    &=\Braket{\aaa,\aaa}+2\Braket{\aaa,\bbb}+\Braket{\bbb,\bbb}\\
+    &=\|\aaa\|^2+2\Braket{\aaa,\bbb}+\|\bbb\|^2\\
+    (\|\aaa\|+\|\bbb\|)^2
+    &=(\|\aaa\|^2+2\|\aaa\|\|\bbb\|+\|\bbb\|^2)\\
+  \end{align*}
+  である.
+  \Cref{lem:csi}より,
+  $\Braket{\aaa,\bbb}\leq \|\aaa\|\|\bbb\| $
+  であるので,
+  $\|\aaa+\bbb\|^2 \leq (\|\aaa\|+\|\bbb\|)^2$
+  である.
+\end{proofof*}
+
+
+\begin{proofof*}{norm:is:norm}{scalar}
+  \Cref{thm:innerprod:is:innerprod}より,
+  \begin{align*}
+    \Braket{r\aaa,r\aaa}=r\Braket{\aaa,r\aaa}=r\Braket{r\aaa,\aaa}=r^2\Braket{\aaa,\aaa}
+  \end{align*}
+  である. したがって, 
+  \begin{align*}
+    \|r\aaa\|=\sqrt{\Braket{r\aaa,r\aaa}}=\sqrt{r^2\Braket{\aaa,\aaa}}
+    =\sqrt{r^2}\sqrt{\Braket{\aaa,\aaa}}
+    =|r|\sqrt{\Braket{\aaa,\aaa}}
+    =|r|\|\aaa\|
+  \end{align*}
+  である.
+\end{proofof*}
+
+
+\begin{proofof}{kernel:inj}
+$f$が線形変換であるとする.
+\paragraph{\Cref{thm:kernel:ing:item:inj}$\implies$\Cref{thm:kernel:ing:item:ker}}
+対偶を示す.
+$\ker(f)\neq \Set{\zzero}$とする.
+\Cref{thm:linmap:zero}から, $f(\zzero)=\zzero$であるので
+$\zzero\in \Ker(f)$である.
+よって, $\zzero\neq \aaa$かつ$ \aaa\in\Ker(f)$
+となる$\aaa$が存在する.
+$\aaa\neq\zzero$かつ$f(\aaa)=f(\zzero)$であるので, $f$は単射ではない.
+
+\paragraph{\Cref{thm:kernel:ing:item:ker}$\implies$\Cref{thm:kernel:ing:item:inj}}
+対偶を示す.
+$f$が単射ではないとする.
+このとき,
+$\aaa\neq\bbb$かつ$f(\aaa)=f(\bbb)$
+を満たす$\aaa$, $\bbb$が存在する.
+この$\aaa$, $\bbb$に対して
+$\vv=\aaa-\bbb$とおくと,
+$f(\vv)=\zzero$であるので,
+$\vv\in \Ker(f)$である.
+$\vv\neq \zzero$であるので,
+$\ker(f)\neq \Set{\zzero}$である.
+
+\end{proofof}
+
+\section{固有値に関連する命題の証明}
+\begin{proofof}{thm:diagonizablity}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      a &b\\c&d
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  \paragraph{\Cref{thm:diagonizablity:item:diagonalizable}$\implies$\Cref{thm:diagonizablity:item:eigen}}
+  正則行列$P$で,
+  \begin{align*}
+    P^{-1}AP=
+    \begin{pmatrix}
+      \lambda&0\\0&\mu
+    \end{pmatrix}
+  \end{align*}
+  とできるとする.
+  このとき,
+  \begin{align*}
+    AP=
+    P\begin{pmatrix}
+      \lambda&0\\0&\mu
+    \end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    P&=
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}\\
+    \aaa&=
+    \begin{pmatrix}
+      p\\p'
+    \end{pmatrix}\\
+    \bbb&=
+    \begin{pmatrix}
+      q\\q'
+    \end{pmatrix}
+  \end{align*}
+  とすると
+  \begin{align*}
+    P
+    \begin{pmatrix}
+      \lambda &0\\0&\mu
+    \end{pmatrix}=
+    \begin{pmatrix}
+      \lambda p&\mu q\\ \lambda p'&\mu q'
+    \end{pmatrix}
+  \end{align*}
+  である.
+  また,
+  \begin{align*}
+    AP&=
+    \begin{pmatrix}
+      a &b\\c&d
+    \end{pmatrix}
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}=
+    \begin{pmatrix}
+      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p&\mu q\\ \lambda p'&\mu q'
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+    A\aaa&=
+        \begin{pmatrix}
+      ap+bp' \\cp+dp'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p\\ \lambda p'
+    \end{pmatrix}
+    =
+    \lambda \aaa\\
+    A\bbb&=
+    \begin{pmatrix}
+      aq+bq'\\cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \mu q\\\mu q'
+    \end{pmatrix}
+    =
+    \mu \bbb
+  \end{align*}
+  である.
+  $P$が正則であるので\cref{thm:det:reg}より$(\aaa,\bbb)$は一次独立であり,
+  $\aaa$は固有値$\lambda$に属する固有ベクトル,
+  $\bbb$は固有値$\mu$に属する固有ベクトル,
+  である.
+  
+  \paragraph{\Cref{thm:diagonizablity:item:eigen}$\implies$\Cref{thm:diagonizablity:item:diagonalizable}}
+  $\aaa$は固有値$\lambda$に属する固有ベクトル,
+  $\bbb$は固有値$\mu$に属する固有ベクトルとし,
+  $(\aaa,\bbb)$は一次独立とする.
+  \begin{align*}
+    \aaa&=
+    \begin{pmatrix}
+      p\\p'
+    \end{pmatrix}\\
+    \bbb&=
+    \begin{pmatrix}
+      q\\q'
+    \end{pmatrix}\\
+    P&=
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}
+  \end{align*}
+  とすると
+  \cref{thm:det:reg}より,
+  $P$は正則である.
+
+  また,
+  \begin{align*}
+    A\aaa&=
+        \begin{pmatrix}
+      ap+bp' \\cp+dp'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p\\ \lambda p'
+    \end{pmatrix}
+    =
+    \lambda \aaa\\
+    A\bbb&=
+    \begin{pmatrix}
+      aq+bq'\\cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \mu q\\\mu q'
+    \end{pmatrix}
+    =
+    \mu \bbb
+  \end{align*}
+  であるので,
+  \begin{align*}
+    AP&=
+    \begin{pmatrix}
+      a &b\\c&d
+    \end{pmatrix}
+    \begin{pmatrix}
+      p&q\\p'&q'
+    \end{pmatrix}=
+    \begin{pmatrix}
+      ap+bp' &aq+bq'\\cp+dp'&cq+dq'
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \lambda p &\mu q\\\lambda p'&\mu q'
+    \end{pmatrix}
+    =
+    P
+    \begin{pmatrix}
+      \lambda  &0\\0&\mu 
+    \end{pmatrix}.
+  \end{align*}
+  $P$は正則なので, $P^{-1}$を左からかけると,
+  \begin{align*}
+    AP&=
+    P
+    \begin{pmatrix}
+      \lambda  &0\\0&\mu 
+    \end{pmatrix}\\
+    P^{-1}AP&=
+    \begin{pmatrix}
+      \lambda  &0\\0&\mu 
+    \end{pmatrix}
+  \end{align*}
+  である.
+\end{proofof}
+
+\begin{proofof}{thm:diferenteigen:linindep}
+  $A$を$2$次正方行列とする.
+  $\vv$は固有値$\lambda$に属する$A$の固有ベクトル,
+  $\ww$は固有値$\mu$に属する$A$の固有ベクトルとする.
+  \begin{align*}
+    \vv&=
+    \begin{pmatrix}
+      v\\v' 
+    \end{pmatrix}\\
+    \ww&=
+    \begin{pmatrix}
+      w\\w' 
+    \end{pmatrix}
+  \end{align*}
+  とおく.
+  $x\vv+y\ww=\zzero$とする.
+  このとき, $x=y=0$を示す.
+
+  $x\vv+y\ww=\zzero$であるので,
+  \begin{align*}
+    x\vv+y\ww&=\zzero\\
+    A(x\vv+y\ww)&=A\zzero\\
+    xA\vv+yA\ww&=\zzero\\
+    x\lambda \vv+y\mu \ww&=\zzero
+  \end{align*}
+  である.
+  $x\vv+y\ww=\zzero$, $x\lambda \vv+y\mu \ww=\zzero$
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      xv&yw\\xv'&yw' 
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      xv+yw&\lambda xv+\mu yw\\xv'+xv'&\lambda xv'+\mu yw' 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  となる.
+  \begin{align*}
+    \det(
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix})
+    =\mu-\lambda\neq 0
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}
+  \end{align*}
+  は正則である.
+  \begin{align*}
+    \begin{pmatrix}
+      xv&yw\\xv'&yw' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+      xv&yw\\xv'&yw' 
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}^{-1}
+    =
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&\lambda\\1&\mu 
+    \end{pmatrix}^{-1}
+    =
+    \begin{pmatrix}
+      0&0\\0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  よって,
+  \begin{align*}
+    x\vv&=
+    \begin{pmatrix}
+      xv\\xv' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+    =\zzero\\
+    y\ww&=
+    \begin{pmatrix}
+      yw\\yw' 
+    \end{pmatrix}=
+    \begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+    =\zzero
+  \end{align*}
+  である. $\vv\neq\zzero$であるから, $x=0$である.
+  また, $\ww\neq\zzero$であるから, $y=0$である.
 \end{proofof}
