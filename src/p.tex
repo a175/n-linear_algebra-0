@@ -3286,9 +3286,9 @@ $2$個の未知数に関する方程式を考える.
 より一般には次が成り立つ:
 \begin{theorem}
   \label{thm:solution:syslineq}
-$A$を$(m,n)$-行列とする.
-$n$個の未知数$\xx$に関する
-$A\xx=\bbb$という方程式について考える.
+  $A$を$(m,n)$-行列とする.
+  $n$個の未知数$\xx$に関する
+  $A\xx=\bbb$という方程式について考える.
   $C$を$A$と$\bbb$を並べて得られる$(m,n+1)$-行列,
   つまり拡大係数行列とする.
   このとき次が成り立つ:
@@ -3471,8 +3471,9 @@ $A\xx=\zzero$という方程式について考える.
 
 
 
-階数について, 次の性質が知られている
+階数について, 次の性質が知られている.
 \begin{theorem}
+  \label{thm:rank:prop}
   $A$を$(m,n)$-行列とする.
   $B$を$(n,k)$-行列とする.
   このとき次が成り立つ:
@@ -3490,13 +3491,17 @@ $A\xx=\zzero$という方程式について考える.
 
 正方行列$A$が正則であるかを$\rank(A)$を使って判定をすることもできる.
 \begin{theorem}
+  \provelater{thm:rank:regular}
   \label{thm:rank:regular}
   $A$が$n$次正方行列であるとする.
   このとき, 次は同値:
   \begin{enumerate}
-  \item $A$が正則
-  \item $\rank(A)=n$
-  \item $A$に行基本変形を行って単位行列に変形できる.
+  \item\label{thm:rank:regular:reg}
+    $A$が正則
+  \item\label{thm:rank:regular:rank}
+    $\rank(A)=n$
+  \item\label{thm:rank:regular:step}
+    $A$に行基本変形を行って単位行列に変形できる.
   \end{enumerate}
 \end{theorem}
 
@@ -4241,6 +4246,7 @@ $\beta\bbb$を$\xx$の$\aaa$からの反射影もしくは垂直成分とよぶ.
 \end{definition}
 
 \begin{prop}
+  \provelater{thm:ortho:char}
   \begin{align*}
     A&=
     \begin{pmatrix}
@@ -4260,10 +4266,14 @@ $\beta\bbb$を$\xx$の$\aaa$からの反射影もしくは垂直成分とよぶ.
   \end{align*}
   とする.  このとき次は同値:
   \begin{enumerate}
-  \item $A$は直交行列である.
-  \item $A^{-1}=\transposed{A}$.
-  \item $\Braket{\aaa,\bbb}$が$\RR^2$の正規直交基底である.
-  \item $\xx,\yy\in \RR^2\implies \braket{\xx,\yy}=\braket{A\xx,A\yy}$.
+  \item\label{thm:ortho:char:item:ortho}
+    $A$は直交行列である.
+  \item\label{thm:ortho:char:item:transposeisinverse}
+    $A$は正則であり, $A^{-1}=\transposed{A}$.
+  \item\label{thm:ortho:char:item:orthonormalbasis}
+    $(\aaa,\bbb)$が$\RR^2$の正規直交基底である.
+  \item\label{thm:ortho:char:item:preserve}
+    $\xx,\yy\in \RR^2\implies \braket{\xx,\yy}=\braket{A\xx,A\yy}$.
   \end{enumerate}
 \end{prop}
 

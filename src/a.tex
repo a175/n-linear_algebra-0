@@ -24,7 +24,7 @@
 
 \begin{lemma}
   $a$を実数とすると以下が成り立つ:
-  \label{lem:numbers:field}
+  \label{lem:numbers:abs}
   \begin{enumerate}
   \item $a^2\leq 0$.
   \item $\sqrt{a^2}=|a|$.
@@ -961,6 +961,103 @@
   $A(\vv+\ww)=A\vv+A\ww=\zzero+\zzero=\zzero$である.
 \end{proofof*}
 
+\begin{lemma}
+  \label{lem:fundamental}
+  $A$を$(m,n)$-行列とする.
+  $E_{i,j}$を$(i,j)$-成分のみ$1$で他は$0$の$n$次正方行列とする.
+  \begin{enumerate}
+  \item\label{lem:fundamental:item:sc}
+    $F(i;c)=E_n-E_{i,i}+cE_{i,i}$とする.
+    このとき, $F(i;c)A$は$A$の$i$行目を$c$倍した行列である.
+    $c$が逆数を持つとき, $F(i;c)$は正則で, $F(i;c)^{-1}=F(i;\frac{1}{c})$である.
+  \item\label{lem:fundamental:item:sum}
+    $i\neq j$とする. $G(i,j;c)=E_n+cE_{i,j}$とする.
+    このとき, $G(i,j;c)A$は$A$の$i$行目に$j$行目の$c$倍を加えた行列である.
+    $G(i,j;c)$は正則で, $G(i,j;c)^{-1}=G(i,j;-c)$である.
+  \item\label{lem:fundamental:item:trans}
+    $H(i,j)=E_n-E_{i,i}-E_{j,j}+E_{i,j}+E_{j,i}$とする.
+    このとき, $H(i,j)A$は$A$の$i$行目と$j$行目を入れ替えた行列である.
+    $H(i,j)$は正則で, $H(i,j)^{-1}=H(i,j)$である.
+  \end{enumerate}
+\end{lemma}
+\begin{proof}
+  定義から
+  \begin{align*}
+    E_{i,j}E_{k,l}=
+    \begin{cases}
+      E_{i,l}&(j=k)\\
+      O_{n,m}&(j\neq k)
+    \end{cases}
+  \end{align*}
+  であることが計算できる.
+  また,
+  $E_{i,j}A$は, $i$行目が$A$の$j$行目と等しく, それ以外の成分は$0$であることも
+  計算できる.
+  \paragraph{\Cref{lem:fundamental:item:sc}}
+  $F(i;c)$は$(i,i)$-成分のみ$c$で
+  他の対角成分は$c$である対角行列である.
+
+ 
+  $F(i;c)A=(E_n-E_{i,i}+cE_{i,i})A=A+(c-1)E_{i,i}A$である.
+  したがって, $F(i;c)A$の$i$行目は$A$の$i$行目に$A$の$i$行目の$c-1$倍を加えたものであるので,
+  $A$の$i$行目の$c$倍である.
+  また$i$行目以外は$F(i;c)A$と$A$は等しい.
+  つまり,
+  $F(i;c)A$は$A$の$i$行目を$c$倍した行列である.
+
+  また, $F(i;c)F(i;\frac{1}{c})$は$F(i;\frac{1}{c}$の$i$行目を$c$倍したものであるので,
+  $E_n$である.
+  $F(i;\frac{1}{c})F(i;c)$は$F(i;c$の$i$行目を$\frac{1}{c}$倍したものであるので,
+  $E_n$である.
+  よって$F(i;c)^{-1}=F(i;\frac{1}{c})$である.
+
+  \paragraph{\Cref{lem:fundamental:item:sum}}
+  $i\neq j$とする. $G(i,j;c)=E_n+cE_{i,j}$とする.
+  $G(i,j;c)$は, 対角成分は全て$1$, $(i,j)$-成分は$c$, 他の成分は全て$0$である.
+
+  $G(i,j;c)A=(E_n+cE_{i,j})A=A+cE_{i,j}A$である.
+  したがって, $G(i,j;c)A$の$i$行目は$A$の$i$行目に$A$の$j$行目の$c$倍を加えたものである.
+  また$i$行目以外は$G(i,j;c)A$と$A$は等しい.
+  つまり, $G(i,j;c)A$は$A$の$i$行目に$j$行目の$c$倍を加えた行列である.
+
+  また, $G(i,j;c)G(i,j;-c)$は, $G(i,j;-c)$の$i$行めに$G(i,j;-c)$の$j$行目の$c$倍を加えたものであるが, $G(i,j;-c)$の$j$行目は$(j,j)$成分が$1$で他は$0$であるので,
+  $(i,j)$成分に$c$が加えられることになる.
+  したがって, $G(i,j;c)G(i,j;-c)=E_n$である.
+  一方$G(i,j;-c)G(i,j;c)$は, $G(i,j;c)$の$i$行めに$G(i,j;c)$の$j$行目の$-c$倍を加えたものであるが, $G(i,j;c)$の$j$行目は$(j,j)$成分が$1$で他は$0$であるので,
+  $(i,j)$成分に$-c$が加えられることになる.
+  したがって, $G(i,j;-c)G(i,j;c)=E_n$である.
+  よって, $G(i,j;c)^{-1}=G(i,j;-c)$である.
+  
+  \paragraph{\Cref{lem:fundamental:item:trans}}
+  $H(i,j)$は$(i,i)$-成分と$(j,j)$-成分は$0$, それ以外の対角成分は$1$,
+  $(i,j)$-成分と$(j,i)$-成分は$1$, それ以外の成分は$0$である.
+
+  $H(i,j)A=(E_n-E_{i,i}-E_{j,j}+E_{i,j}+E_{i,j})A=A-E_{i,i}A+E_{i,j}A-E_{j,j}A+E_{j,i}A$
+  である.
+  したがって,
+  $H(i,j)A$の$i$行目は,
+  $A$の$i$行めに$A$の$i$行目の$-1$倍と$A$の$j$行目の$1$倍を加えたものであるので,
+  $A$の$j$行目である.
+  同様に, $H(i,j)A$の$j$行目は,
+  $A$の$j$行めに$A$の$j$行目の$-1$倍と$A$の$i$行目の$1$倍を加えたものであるので,
+  $A$の$i$行目である.
+  また$i$行目と$j$行目以外は$H(i,j)A$と$A$は等しい.
+  つまり$H(i,j)A$は$A$の$i$行目と$j$行目を入れ替えた行列である.
+  
+  また, $H(i,j)H(i,j)$は$H(i,j)$の$i$行目と$j$行目を入れ替えたものであるので$E_n$である.
+  したがって, $H(i,j)^{-1}=H(i,j)$である.
+\end{proof}
+
+\begin{remark}
+  \Cref{lem:fundamental}の$F(i;c)$, $G(i,j;c)$, $H(i,j)$
+  を基本行列と呼ぶ.
+  \Cref{lem:fundamental}から,
+  $A$に行基本変形を行うことは,
+  $A$に基本行列を左からかけることであり,
+  逆に
+  $A$に基本行列を左からかけることは,
+  $A$に行基本変形を行うことであることがわかる.
+\end{remark}
 \begin{proofof*}{thm:ker:vec}{scalar}
   $\vv$を$A\xx=\zzero$の解とする.
   このとき$A\vv=\zzero$, $A\ww=\zzero$が成り立つ.
@@ -970,6 +1067,34 @@
 \end{proofof*}
 \section{平面に関する命題の証明}
 ここでは, \Cref{chap:lintrans}に現れる命題の証明を行う.
+
+\begin{proofof}{thm:rank:regular}
+  $A$を$n$次正方行列であるとする.
+  \paragraph{\Cref{thm:rank:regular:reg}$\implies$\Cref{thm:rank:regular:rank}}
+  $A$を正則とする.
+  \Cref{thm:rank:prop}
+  より, 正則行列を左からかけても階数は変わらないので,
+  $\rank(AE_n)=\rank(E_n)$.
+  $E_n$は階数$n$の被約階段であるので,
+  $\rank(A)=n$である.
+  \paragraph{\Cref{thm:rank:regular:rank}$\implies$\Cref{thm:rank:regular:step}}
+  $\rank(A)=n$とする.
+  階数の定義から
+  $A$に行基本変形を行って階数$n$の被約階段に変形できる.
+  $A$が$n$次正方行列であるので得られる被約階段も$n$次正方行列である.
+  $n$次正方行列で被約階段であるものは$E_n$のみであるから,
+  得られる被約階段は$E_n$である.
+  \paragraph{\Cref{thm:rank:regular:step}$\implies$\Cref{thm:rank:regular:reg}}
+  $A$に行基本変形を行って$E_n$に変形できる.
+  \Cref{lem:fundamental}
+  より, 基本変形は基本行列を左からかけることに相当するので,
+  $F_kF_{k-1}\cdots F_1 A=E_n$を満たす
+  基本行列$F_i$がとれる.  $F_i$は正則であるから,
+  $P=F_kF_{k-1}\cdots F_1$
+  とおくと$P$も正則である.
+  $PA=E_n$であるので, $A=P^{-1}$であり, $AP=E_n$である.
+  $PA=E_n$かつ$AP=E_n$であるので, $A$は正則である.
+\end{proofof}
 
 \begin{proofof}{linindep:det}
   \begin{align*}
@@ -1034,19 +1159,6 @@
   $a_i$は実数であるから$a_i^2\geq 0$であるので,
   \begin{align*}
         \Braket{\aaa,\aaa}=\sum_{i=1}^2 a_i^2\geq 0
-  \end{align*}
-  となる. 
-\end{proofof*}
-
-\begin{proofof*}{thm:innerprod:is:innerprod}{positive}
-  $n=2$とする.
-  \begin{align*}
-        \aaa=\begin{pmatrix}a_1\\a_2\end{pmatrix}
-  \end{align*}
-  とし,   $a_i$は実数とする.
-  $a_i$は実数であるから$a_i^2\geq 0$であるので,
-  \begin{align*}
-        \Braket{\aaa,\aaa}=\sum_{i=1}^n a_i^2\geq 0
   \end{align*}
   となる. 
 \end{proofof*}
@@ -1232,6 +1344,135 @@
   \end{align*}
   である.
 \end{proofof*}
+
+\begin{lemma}
+  \label{lem:ortho:det}
+  $A$を実数を成分とする2次正方行列であるとする.
+  $A$が直交行列なら, $\det(A)\in \Set{1,-1}$である.
+\end{lemma}
+\begin{proof}
+  $\transposed{A}A=E_n$であるとする.
+  このとき, $\det(\transposed{A}A)=\det(E_n)=1$である.
+  一方,  $\det(\transposed{A}A)=\det(\transposed{A})\det(A)=\det(A)\det(A)=\det(A)^2$である. よって$\det(A)\in\Set{1,-1}$である.
+\end{proof}
+
+\begin{proofof}{thm:ortho:char}
+  $A$は実数を成分とする$2$次正方行列であるとし,
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      a&b\\
+      a'&b'
+    \end{pmatrix}\\
+    \aaa&=
+    \begin{pmatrix}
+      a\\
+      a'
+    \end{pmatrix}\\
+    \bbb&=
+    \begin{pmatrix}
+      b\\
+      b'
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  また, $n=2$とする.
+
+  このとき,
+  \begin{align*}
+    \transposed{A}A&=
+    \begin{pmatrix}
+      a&a'\\
+      b&b'
+    \end{pmatrix}
+    \begin{pmatrix}
+      a&b\\
+      a'&b'
+    \end{pmatrix}\\
+    &=
+    \begin{pmatrix}
+      a^2+(a')^2&ab+a'b'\\
+      ba+b'a'&b^2+(b')^2
+    \end{pmatrix}\\
+    &=
+    \begin{pmatrix}
+      \Braket{\aaa,\aaa}&\Braket{\aaa,\bbb}\\
+      \Braket{\bbb,\aaa}&\Braket{\bbb,\bbb}
+    \end{pmatrix}
+  \end{align*}
+  である.
+  
+  \paragraph{\Cref{thm:ortho:char:item:transposeisinverse}$\implies$\Cref{thm:ortho:char:item:ortho}}
+  $A$が正則であり,
+  $A^{-1}=\transposed{A}$とする.
+  このとき,
+  $\transposed{A}A=A^{-1}A=E_n$
+
+  \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:transposeisinverse}}
+  $\transposed{A}A=E_n$とする.
+  このとき, \cref{lem:ortho:det}より,
+  $\det(A)\neq 0$である.
+  したがって, $A$は正則である.
+  $\transposed{A}A=E_n$の
+  両辺に右から$A^{-1}$をかけることで
+  $\transposed{A}=A^{-1}$が得られる.
+
+  \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:orthonormalbasis}}
+  $\transposed{A}A=E_n$とする.
+  \begin{align*}
+    \begin{pmatrix}
+      \Braket{\aaa,\aaa}&\Braket{\aaa,\bbb}\\
+      \Braket{\bbb,\aaa}&\Braket{\bbb,\bbb}
+    \end{pmatrix}=
+    \begin{pmatrix}
+      1&0\\
+      0&1
+    \end{pmatrix}
+  \end{align*}
+  であるので, 
+  $\Braket{\aaa,\bbb}=0$, $\|\aaa\|=\sqrt{\Braket{\aaa,\aaa}}=\sqrt{1}=1$,
+  $\|\bbb\|=\sqrt{\Braket{\bbb,\bbb}}=\sqrt{1}=1$である.
+  \paragraph{\Cref{thm:ortho:char:item:orthonormalbasis}$\implies$\Cref{thm:ortho:char:item:ortho}}
+  $(\aaa,\bbb)$が正規直交基底であるとする.
+  このとき,
+  $\Braket{\aaa,\bbb}=0$,
+  $\Braket{\aaa,\aaa}=\|\aaa\|^2=1^2=1$,
+  $\Braket{\bbb,\bbb}=\|\bbb\|^2=1^2=1$
+  である.
+  
+
+
+  \paragraph{\Cref{thm:ortho:char:item:preserve}$\implies$\Cref{thm:ortho:char:item:ortho}}
+  $\ee_i$を基本ベクトルとする.
+  $S$を正方行列に対し,
+  $\transposed{\ee_{i}}S\ee_{j}$は,
+  $(1,1)$-行列でその成分は
+  $S$の$(i,j)$である.
+  また, $\xx,\yy\in\RR^n$に対し,
+  $\transposed{\xx}\yy$は, $(1,1)$-行列でその成分は
+  $\Braket{\xx,\yy}$である.
+
+  仮定から,
+  $\transposed{\xx}\yy=\transposed{(A\xx)}(A\xx)=\transposed{\xx}\transposed{A}A\xx$
+  である.
+  $\xx=\ee_i$, $\yy=\ee_j$とすると,
+  \begin{align*}
+    \transposed{\ee_i}\transposed{A}A\ee_j=\transposed{\ee_i}\ee_j
+  \end{align*}
+  である. $\Braket{\ee_i,\ee_j}$は, $i=j$のとき$1$, $i\neq j$のとき$0$であるから,
+  $\transposed{A}A$の$(i,j)$-成分も, $i=j$のとき$1$, $i\neq j$のとき$0$である.
+  したがって,
+  
+  \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:preserve}}
+
+  $\transposed{A}A=E_n$とする.
+  $\xx,\yy\in\RR^n$とする.
+  \begin{align*}
+    \transposed{(A\xx)}(A\yy)=\transposed{\xx}\transposed{A}A\yy=\transposed{\xx}E_n\yy=\transposed{\xx}\yy
+  \end{align*}
+  であるので,
+  $\braket{\xx,\yy}=\braket{A\xx,A\yy}$である.
+\end{proofof}
 
 
 \begin{proofof}{kernel:inj}
