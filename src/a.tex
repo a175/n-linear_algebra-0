@@ -4,6 +4,8 @@
 
 \chapter{命題の証明}
 \section{証明に必要となる基本的な事実}
+数の四則演算に関して以下の計算規則が成り立つ.
+これらの計算規則は既知であるとする.
 \begin{lemma}
   $a,b,c$を数とすると以下が成り立つ:
   \label{lem:numbers:field}
@@ -22,6 +24,8 @@
 %  また, 次も成り立つ: $0a=0$
 \end{lemma}
 
+また, 実数に対して次の事実が成り立つ.
+これも既知とする.
 \begin{lemma}
   $a$を実数とすると以下が成り立つ:
   \label{lem:numbers:abs}
@@ -32,8 +36,26 @@
 %  また, 次も成り立つ: $0a=0$
 \end{lemma}
 
+実二次関数に関する次の事実も既知とする.
+\begin{lemma}
+  \label{lem:numbers:quad}
+  $a,b,c$を実数とし, $a\neq 0$とする.
+  $t$に関する二次関数$f(t)=at^{2}+bt+c$を考える.
+  このとき次が同値:
+  \begin{enumerate}
+  \item
+    全ての$t\in \RR$において, $f(t)\geq 0$.
+  \item
+    $b^2-4ac \leq 0$
+  \end{enumerate}
+\end{lemma}
+
 \section{行列の演算に関する命題の証明}
 ここでは, \Cref{chap:mat}に現れる命題の証明を行う.
+一般の$(m,n)$-行列の場合について証明をしているので,
+煩雑になっている部分がある.
+$(2,2)$-行列の場合のみについて証明をするのであれば,
+直接計算をすることで示すほうが手っ取り早いものが多い.
 
 \begin{proofof*}{transpose}{involutive}
   $A$を$(m,n)$-行列とし, 
@@ -583,6 +605,15 @@
 
 \section{行列の演算に関する命題の証明}
 ここでは, \Cref{chap:inverse}に現れる命題の証明を行う.
+逆行列や正則行列に関する命題については,
+一般の正方行列の場合について証明をしているので,
+煩雑になっている部分がある.
+$2$-次正方行列の場合のみについて証明をするのであれば,
+直接計算をすることで示すほうが手っ取り早いものが多い.
+行列式に関する命題は,
+行列式を$2$次正方行列にしかここでは定義していないこともあり,
+$2$-次正方行列の場合のみについて証明をしている.
+
 
 
 \begin{proofof*}{inverse}{inverse}
@@ -954,6 +985,7 @@
 \section{階数に関する命題の証明}
 ここでは, \Cref{chap:systemoflineq}に現れる命題の証明を行う.
 
+
 \begin{proofof*}{thm:ker:vec}{sum}
   $\vv,\ww$を$A\xx=\zzero$の解とする.
   このとき$A\vv=\zzero$, $A\ww=\zzero$が成り立つ.
@@ -1065,8 +1097,6 @@
   このとき,
   $A(\alpha\vv)=\alpha A\vv=\alpha\zzero=\zzero$である.
 \end{proofof*}
-\section{平面に関する命題の証明}
-ここでは, \Cref{chap:lintrans}に現れる命題の証明を行う.
 
 \begin{proofof}{thm:rank:regular}
   $A$を$n$次正方行列であるとする.
@@ -1095,6 +1125,9 @@
   $PA=E_n$であるので, $A=P^{-1}$であり, $AP=E_n$である.
   $PA=E_n$かつ$AP=E_n$であるので, $A$は正則である.
 \end{proofof}
+
+\section{平面に関する命題の証明}
+ここでは, \Cref{chap:lintrans}に現れる命題の証明を行う.
 
 \begin{proofof}{linindep:det}
   \begin{align*}
@@ -1268,7 +1301,10 @@
   $\|\aaa\|\|\bbb\|\leq 0$であるので,
   $\Braket{\aaa,\bbb}^2\leq \|\aaa\|^2\|\bbb\|^2$
   を示す.
-  
+
+  $\bbb=\zzero$であれば,  $\Braket{\aaa,\bbb}^2=0=\|\aaa\|^2\|\bbb\|^2$である.
+
+  $\bbb\neq \zzero$とする.
   $t$を実数とし,
   $\vv=\aaa+t\bbb$とおくと,
   \begin{align*}
@@ -1292,7 +1328,9 @@
     at^2+bt+c \geq 0
   \end{align*}
   が成り立っている.
-  したがって, 判別式を考えるとその値は$0$以下である.
+  $\bbb\neq\zzero$より$a\neq 0$であるので,
+  \cref{lem:numbers:quad}より,
+  判別式を考えるとその値は$0$以下である.
   よって,
   \begin{align*}
     0&\geq b^2-4ac\\
