@@ -638,7 +638,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   である.
 \end{proofof*}
 
-\begin{proofof*}{inverse}{transpose}
+\begin{proofof*}{inverse}{trans}
   $X$を$n$次正則行列とする.
   $A=\transposed{X}$とし,
   $B=\transposed{X^{-1}}$とする.
@@ -993,6 +993,14 @@ $2$-次正方行列の場合のみについて証明をしている.
   $A(\vv+\ww)=A\vv+A\ww=\zzero+\zzero=\zzero$である.
 \end{proofof*}
 
+\begin{proofof*}{thm:ker:vec}{scalar}
+  $\vv$を$A\xx=\zzero$の解とする.
+  このとき$A\vv=\zzero$, $A\ww=\zzero$が成り立つ.
+  $\alpha$を数とする.
+  このとき,
+  $A(\alpha\vv)=\alpha A\vv=\alpha\zzero=\zzero$である.
+\end{proofof*}
+
 \begin{lemma}
   \label{lem:fundamental}
   $A$を$(m,n)$-行列とする.
@@ -1081,6 +1089,7 @@ $2$-次正方行列の場合のみについて証明をしている.
 \end{proof}
 
 \begin{remark}
+  \label{lem:fund:is:invertible}
   \Cref{lem:fundamental}の$F(i;c)$, $G(i,j;c)$, $H(i,j)$
   を基本行列と呼ぶ.
   \Cref{lem:fundamental}から,
@@ -1089,13 +1098,195 @@ $2$-次正方行列の場合のみについて証明をしている.
   逆に
   $A$に基本行列を左からかけることは,
   $A$に行基本変形を行うことであることがわかる.
+
+  また, 基本行列は正則行列であり, その逆行列もまた基本行列である.
+  このことは, $A$に行基本変形を行って$B$が得られたときには,
+  $B$行基本変形を行って$A$にすることもできるということを意味する.
 \end{remark}
-\begin{proofof*}{thm:ker:vec}{scalar}
-  $\vv$を$A\xx=\zzero$の解とする.
-  このとき$A\vv=\zzero$, $A\ww=\zzero$が成り立つ.
-  $\alpha$を数とする.
+
+\begin{proofof*}{thm:rank:prop}{fund}
+  $A$に行基本変形を行って被約階段行列$S$が得られたとする.
+  また, $A$に行基本変形を行って$A'$が得られたとする.
   このとき,
-  $A(\alpha\vv)=\alpha A\vv=\alpha\zzero=\zzero$である.
+  \cref{lem:fund:is:invertible}から, 
+  $A'$行基本変形を行って$A$にできる.
+  したがって更に行基本変形を行って$S$にすることもできる.
+  つまり
+  $A'$に対し行基本変形を行って得られる被約階段行列も$S$である.
+  したがって, $\rank(A)=\rank(S)=\rank(A')$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:rank:prop}{row}
+  被約階段行列$S$の階数は$0$以外の成分もある行の総数であるから$S$の行数を超えることはない.
+  また行列$A$の階数は$A$から行基本変形で得られる被約階段行列$A'$の階数である.
+  $A$の行数と$A'$の行数は等しいので, $A$の階数は$A$の行数を超えることはない.
+\end{proofof*}
+\begin{proofof*}{thm:rank:prop}{col}
+  被約階段行列$S$の階数はpivotの総数であるが,
+  pivotは各列に高々1つであるので, 階数は$S$の列数を超えることはない.
+  また行列$A$の階数は$A$から行基本変形で得られる被約階段行列$A'$の階数である.
+  $A$の列数と$A'$の列数は等しいので, $A$の階数は$A$の列数を超えることはない.
+\end{proofof*}
+
+\begin{lemma}
+  \label{lem:rank:rnonzerorows}
+  $(m,n)$-行列$A$の$r+1$行目から$m$行目までの成分がすべて$0$であるなら,
+  $\rank(A)\leq r$である.
+\end{lemma}
+\begin{proof}
+  $A'$を$(r,n)$-行列とし,
+  $A'$と$O_{m-r,n}$を縦に並べてできる$(m,n)$行列を$A$とする.
+  このとき, $A'$に行基本変形をして被約階段行列$S'$が得られたとすると,
+  $A$に対し同じ手順で行基本変形をすることで,
+  $S'$と$O_{m-r,n}$を縦に並べてできる$(m,n)$行列$S$が得られる.
+  $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
+  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:row}
+  より, $\rank(S')\leq r$である.
+  したがって, $\rank(A)=\rank(S)=\rank(S')\leq r$である.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:rank:rnonzerocols}
+  $(m,n)$-行列$A$の$c+1$列目から$n$列目までの成分がすべて$0$であるなら,
+  $\rank(A)\leq c$
+\end{lemma}
+\begin{proof}
+  $A'$を$(m,c)$-行列とし,
+  $A'$と$O_{m,n-c}$を横に並べてできる$(m,n)$行列を$A$とする.
+  このとき, $A'$に行基本変形をして被約階段行列$S'$が得られたとすると,
+  $A$に対し同じ手順で行基本変形をすることで,
+  $S'$と$O_{m,n-c}$を横に並べてできる$(m,n)$行列$S$が得られる.
+  $S$は被約階段行列であり, $\rank(S)=\rank(S')$である.
+  また\Cref{thm:rank:prop}の\Cref{thm:rank:prop:col}
+  より, $\rank(S')\leq c$である.
+  したがって, $\rank(A)=\rank(S)=\rank(S')\leq c$である.
+\end{proof}
+
+
+\begin{proofof*}{thm:rank:prop}{left}
+  $(m,n)$-行列$A$から行基本変形を用いて階数$r$の被約階段行列$S$が得られるとする.
+  このとき,
+  \cref{lem:fundamental}
+  から,
+  $P_kP_{k-1}\cdots P_1A=S$をみたす
+  基本行列$P_1,\ldots, P_k$が存在する.
+  $P_kP_{k-1}\cdots P_1A=S$であるので
+  $P_kP_{k-1}\cdots P_1AB=SB$であるので
+  つまり$AB$に行基本変形を用いて$SB$に変形できることがわかる.
+  したがって,
+  \Cref{thm:rank:prop}の\cref{thm:rank:prop:fund}
+  より, $\rank(AB)=\rank(SB)$である.
+  
+  一方$S$は階数が$r$の被約階段行列であるので,
+  $r+1$行目から$n$行目までの成分はすべて$0$である.
+  したがって,
+  $SB$を計算すると,
+  $SB$の$r+1$行目から$n$行目までの成分もすべて$0$であることがわかる.
+  したがって, \cref{lem:rank:rnonzerorows}より,
+  $\rank(SB)\leq r$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:rank:prop}{regularright}
+   $\rank(A)=\rank(AQ)$
+  を示すために,
+   $\rank(A)\leq\rank(AQ)$
+  と
+   $\rank(A)\geq\rank(AQ)$
+  を示す.
+  
+  \Cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  より, $\rank(AQ)\leq \rank(A)$である.
+  
+  一方, 
+  $X=AQ$, $Y=Q^{-1}$とすると,
+  \cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  より, $\rank(XY)\leq \rank(X)$である.
+  $XY=AQQ^{-1}=A$であるので,
+  $\rank(A)\leq\rank(AQ)$である.
+\end{proofof*}
+
+\begin{lemma}
+  \label{lem:ineq:transrank}
+  $X$を$(m,n)$-行列とする.
+  このとき, $\rank(X)\leq \rank(\transposed{X})$.
+\end{lemma}
+\begin{proof}
+  $X$に対し行基本変形をして階数$r$の被約階段行列$S$が得られたとする.
+  このとき, $\rank(X)=r$である.
+  $\rank(X)\leq r$を示す.
+
+  $X$に対し行基本変形をして階数$r$の被約階段行列$S$が得られたので,
+  \cref{lem:fundamental}
+  から,
+  $PA=S$をみたす
+  正則行列$P$が存在する.
+  $\transposed{A}\transposed{P}=\transposed{(PA)}=\transposed{S}$
+  である.
+  $\transposed{P}$は正則であるので,
+  \Cref{thm:rank:prop}の\cref{thm:rank:prop:regularright}より,
+  $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})$である.
+  一方
+  $S$は階数$r$の被約階段行列であるので,
+  $r+1$行目から$m$行目までの成分は$0$である.
+  したがって,
+  $\transposed{S}$の
+  $r+1$列目から$m$列目までの成分は$0$である.
+  したがって,
+  \Cref{lem:rank:rnonzerocols}より,
+  $\transposed{S}\leq r$である.
+  まとめると,
+  $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})=\rank(\transposed{S})\leq r$である.
+\end{proof}
+\begin{proofof*}{thm:rank:prop}{trans}
+  $A$を$(m,n)$-行列とする.
+  $\rank(A)=\rank(\transposed{A})$を示すために,
+  $\rank(A)\leq\rank(\transposed{A})$.
+  と
+  $\rank(\transposed{A})\leq \rank(A)$.
+  を示す.
+  
+  $X=A$として
+  \Cref{lem:ineq:transrank}を使うと,
+  $\rank(A)\leq\rank(\transposed{A})$.
+  である.
+
+  一方,
+  $X=\transposed{A}$として
+  \Cref{lem:ineq:transrank}を使うと,
+  $\transposed{X}=A$であるので,
+  $\rank(\transposed{A})\leq \rank(A)$.
+  である.
+  
+\end{proofof*}
+\begin{proofof*}{thm:rank:prop}{right}
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(AB)=\rank(\transposed{(AB)})$
+  であるが, $\transposed{(AB)}=\transposed{B}\transposed{A}$であるので,
+  $\rank(AB)=\rank(\transposed{B}\transposed{A})$
+  である.
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:left}
+  より$\rank(\transposed{B}\transposed{A})\leq\rank(\transposed{B})$であるので,
+  $\rank(AB)\leq\rank(\transposed{B})$.
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(\transposed{B})=\rank(B)$であるので,
+  $\rank(AB)\leq \rank(B)$である.
+\end{proofof*}
+
+\begin{proofof*}{thm:rank:prop}{regularright}
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(PA)=\rank(\transposed{(PA)})$
+  であるが, $\transposed{(PA)}=\transposed{A}\transposed{P}$であるので,
+  $\rank(PA)=\rank(\transposed{A}\transposed{P})$
+  である.
+  $P$は正則であるので$\transposed{P}$も正則である.
+  よって, \Cref{thm:rank:prop}の\Cref{thm:rank:prop:regularright}より
+  $\rank(\transposed{A}\transposed{P})=\rank(\transposed{A})$
+  であるので,
+  $\rank(PA)=\rank(\transposed{A})$
+  である.
+  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
+  $\rank(\transposed{A})=\rank(A)$であるので,
+  $\rank(PA)= \rank(A)$である.
 \end{proofof*}
 
 \begin{proofof}{thm:rank:regular}
@@ -1129,6 +1320,21 @@ $2$-次正方行列の場合のみについて証明をしている.
 \section{平面に関する命題の証明}
 ここでは, \Cref{chap:lintrans}に現れる命題の証明を行う.
 
+\begin{proofof}{thm:linindep:coef}
+  $\aaa$, $\bbb$を$2$項実ベクトルとし,
+  $(\aaa,\bbb)$は一次独立であるとする.
+  $c\aaa + d\bbb = c'\aaa+d'\bbb$とする.
+  このとき,
+  \begin{align*}
+    c\aaa + d\bbb = c'\aaa+d'\bbb\\
+    c\aaa + d\bbb -c'\aaa-d'\bbb=\zzero \\
+    (c-c')\aaa + (d -d')\bbb=\zzero 
+  \end{align*}
+  となるが, 
+  $(\aaa,\bbb)$は一次独立であるので,
+  $c-c'=$, $d-d'=0$である.
+  したがって, $c=c'$, $d=d'$である.
+\end{proofof}
 \begin{proofof}{linindep:det}
   \begin{align*}
     \aaa&=\begin{pmatrix}a\\a'\end{pmatrix}\\
