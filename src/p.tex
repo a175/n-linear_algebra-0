@@ -20,6 +20,25 @@ $3$次正方行列などは, 本講義の範囲外である.
 このメモは,
 更新しない予定である.
 
+
+
+ほとんどの命題はその証明が\cref{chap:proof}にある.
+正しさを担保するために証明は書いたが,
+定義から明らかなものも多く,
+線形代数の基本的な技術を学ぶという観点ではこれらを読む必要はない.
+また,
+\Cref{thm:unique:reducedecheron,thm:solution:syslineq}
+は証明をしていない.
+\Cref{thm:unique:reducedecheron}
+は論理の組み立てからは重要な命題ではあるが,
+その証明にはそれなりの準備が必要となり,
+この原稿が目的としているものから離れてしまうためである.
+\Cref{thm:solution:syslineq}
+は難しくはないが, 証明を与えていない.
+一般のサイズでの議論であるので記号が煩雑になり混乱を与える可能性があること,
+この原稿が目的としている$2$次正方行列の場合にはすでに列挙により証明が済んでいること
+がその理由である.
+
 \section{Webworkについて}
 \url{https://webwork.sci.hokudai.ac.jp/webwork2/2023_Hokudai1_Intro_LA_1/}
 の各ホームワークのキーワードは以下の通り:
@@ -1698,7 +1717,7 @@ $A\neq O_{2,2}$なので$\tilde A \neq O_{2,2}$である.
   \begin{enumerate}
   \item\provelater*{inverse}
     $X^{-1}$も正則. $(X^{-1})^{-1}=X$.
-  \item\provelater*{transpose}
+  \item\provelater*{trans}
     $(\transposed X)^{-1}$も正則. $(\transposed X)^{-1}=\transposed {(X^{-1})}$.
   \item\provelater*{scalar}
     $rX$も正則. $(rX)^{-1}=\frac{1}{r}X^{-1}$.
@@ -3060,6 +3079,7 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
 \end{example}
 
 \begin{theorem}
+  \label{thm:unique:reducedecheron}
   $A$を行列とする.
   $A$に行基本変形を(複数回)行って
   被約階段行列にすることができる.
@@ -3267,7 +3287,7 @@ pivotの列では, pivot以外の成分は0, pivotのみ1, という条件をみ
 いずれの場合も解は無数に存在する.
 また, その解は一つの変数を使って書き表すことができる.
 \begin{example}
-      \label{eg:eq:reduced:4}
+  \label{eg:eq:reduced:4}
   $a,p$が与えられているとする.
   拡大係数行列が,
   \begin{align*}
@@ -3756,16 +3776,18 @@ $A\xx=\zzero$という方程式について考える.
     $\rank(AB)\leq\rank(A)$.
   \item
     \label{thm:rank:prop:right}
+    \provelater*{right}
     $\rank(AB)\leq\rank(B)$.
   \item
     \label{thm:rank:prop:row}
     \provelater*{row}
     $\rank(A)\leq m$.
   \item
+    \label{thm:rank:prop:col}
     \provelater*{col}
     $\rank(A)\leq n$.
   \item
-    \provelater*{regularright}
+    \provelater*{regularleft}
     $P$が$m$次正則行列なら$\rank(PA)=\rank(A)$.
   \item
     \label{thm:rank:prop:regularright}
@@ -4379,7 +4401,7 @@ $\aaa$と$\bbb$を通る直線は
   \end{align*}
   とおくと
   $(\aaa,\bbb)$は$\RR^2$の生成系である.
-  この$(\aaa,\bbb)$は\cref{ex:linindep2}のものと同じである.
+  この$(\aaa,\bbb)$は\cref{ex:linindep:2}のものと同じである.
   \begin{align*}
     x\aaa+y\bbb=
     \begin{pmatrix}
