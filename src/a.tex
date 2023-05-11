@@ -1745,6 +1745,39 @@ $\ker(f)\neq \Set{\zzero}$である.
 
 \end{proofof}
 
+
+\begin{proofof}{thm:repmat:inverse}
+  線形変換$f$は行列$A$を用いて
+  $f(\xx)=A\xx$と表せているとする.
+  線形変換$g$は行列$B$を用いて
+  $f(\xx)=B\xx$と表せているとする.
+  このとき
+  $g\circ f(\xx)=BA\xx$,
+  $f\circ g(\xx)=AB\xx$
+  である.
+
+  \paragraph{$f$が全単射$\implies$ $A$は正則.}
+  $f$が全単射であるとする.
+  $g=f^{-1}$とし, $g(\xx)=B\xx$とする.
+  このとき,
+  $g\circ f=\id_{\RR^2}$であるので,
+  $BA=E_2$である.
+  また,
+  $f\circ g=\id_{\RR^2}$であるので,
+  $AB=E_2$である.
+  したがって$B$は$A$の逆行列である.
+  
+  \paragraph{$A$は正則$\implies$ $f$が全単射.}
+  $A$が正則であるとする.
+  $B=A^{-1}$とし, $g(\xx)=B\xx$とする.
+  このとき,
+  $BA=E_2$であるので$g\circ f=\id_{\RR^2}$である.
+  また,
+  $AB=E_2$であるので
+  $f\circ g=\id_{\RR^2}$である.
+  したがって$g$は$f$の逆変換である.
+  
+\end{proofof}
 \section{固有値に関連する命題の証明}
 \begin{proofof}{thm:diagonizablity}
   \begin{align*}
