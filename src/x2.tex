@@ -64,16 +64,23 @@
 \newtheorem{numberedproof}[thm]{Proof}
 \newtheorem{numberedanswer}[thm]{略解}
 
-\renewcommand{\callbackToAnnounceProveLater}[1]{%
+\newcommand{\announceProveLater}[1]{%
   \marginpar{証明は\cref{#1}.}%
 }
-
-\renewcommand{\callbackToAnnounceProveEachItemLater}[1]{%
+\newcommand{\announceProveEachItemLater}[1]{%
   \marginpar{\Cref{#1}.}%
 }
+\newprovelater{\provelater}{\announceProveLater}{\announceProveEachItemLater}{\announceProveLater}
+\newcommand{\announceSolveLater}[1]{%
+  \marginpar{略解は\cref{#1}.}%
+}
+\newcommand{\announceSolveEachItemLater}[1]{%
+  \marginpar{\Cref{#1}.}%
+}
+\newprovelater{\solvelater}{\announceSolveLater}{\announceSolveEachItemLater}{\announceSolveLater}
 
-\newnumberedproof{proofof}{numberedproof}
-\newnumberedproof{answerof}{numberedanswer}
+\newnumberedproof{proofof}{numberedproof}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
+\newnumberedproof{answerof}{numberedanswer}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
 % Cref
 \crefname{section}{Section}{Sections}
 

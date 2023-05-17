@@ -14,12 +14,13 @@
 %    in your preamble.
 %
 % Usuage of b.
-% 1. Use the pakcage cleveref, as
-%     \usepackage{cleveref}
-%    in your preamble.
-% 2. Define your numbered proof environment:
-% 3. Define your refered proof environment:
-%     \newnumberedproof{name of referered proof}{name of numbered proof}
+% 1. Define your numbered proof environment.
+% 2. Define your refered proof environment.
+%     \newnumberedproof{name of referered proof}{name of numbered proof}{callback for 0*}{callback for *}.
+%  where callbacks  commands with 1 var for label of proof.
+% 3. Define your labelcommand to refere from proof environment.
+%    \newprovelater{\provelater}{\callbackToAnnounceProveLater}{\callbackToAnnounceProveEachItemLater}{\callbackToAnnounceProveLater}
+%
 % 4. Put the following soon after begining some theore menvironment: 
 %     \provelater{somelabel}
 %    Also write its proof with the following:
@@ -27,28 +28,11 @@
 % 4'. If you have items in your theorem and
 %        you want to give proof for each item, then
 %     put the following soon after begining some theore menvironment: 
-%        \provelater*{somelabelT}
-%     put the following soon after begining some theore menvironment: 
 %        \provelater**{somelabelT}
 %     Also put the following soon in some item: 
 %        \provelater*{somelabelI}
 %     Write its proof with the following:
 %        \begin{name of referered proof*}{somelabelT}{somelabelI}
-% 5. If you want to change the message used in each theorem, then
-%    overwrite the command \callbackToAnnounceProveLater, as 
-%    \renewcommand{\callbackToAnnounceProveLater}[1]{%
-%     \marginpar{Proof is \cref{#1}.}%
-%    }
-% 6. If you want to change the message used in each item, then
-%    overwrite the command \callbackToAnnounceProveEachItemLater, as 
-%    \renewcommand{\callbackToAnnounceProveEachItemLater}[1]{%
-%     \marginpar{Proof is \Cref{#1}.}%
-%    }
-% 6'. If you donot want to show any in each item, then
-%    overwrite the command \callbackToAnnounceProveEachItemLater, as 
-%    \renewcommand{\callbackToAnnounceProveEachItemLater}[1]{}
-%
-%
 %
 %
 
@@ -81,49 +65,54 @@
   \def\nu@list@prooflabel@oldlist{\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname}\let\nu@list@prooflabel@temp\nu@list@prooflabel@oldlist\global\expandafter\edef\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname{\nu@list@prooflabel@temp,#2}}
 \newcommand{\nu@numberedproof@prooflabellist}[1]{\csname \nu@numberedproof@varname@prooflabellist{#1}\endcsname}
 
-\newcommand{\nu@numberedproof@label@S}[1]{%
+\newcommand{\nu@numberedproof@label@S}[2]{%
   \makebox{}%
-  \label{nu@statement@#1}%
-  \def\nu@numberedproof@statementlabel{#1}%
-  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#1}}{}{\callbackToAnnounceProveLater{\nu@numberedproof@prooflabellist{#1}}}
+  \label{nu@statement@#2}%
+  \def\nu@numberedproof@statementlabel{#2}%
+  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#2}}{}{#1{\nu@numberedproof@prooflabellist{#2}}}
 %   \immediate\write\@auxout{\string\nu@numberedproof@create@new@prooflabellist{#1}}%
 }
-\newcommand{\nu@numberedproof@prove@this@later}[1]{\makebox{}%
-  \nu@numberedproof@label@S{#1}
-  \immediate\write\@auxout{\string\nu@numberedproof@append@prooflabellist{#1}{nu@proof@#1}}%
+\newcommand{\nu@numberedproof@prove@this@later}[2]{\makebox{}%
+  \nu@numberedproof@label@S{#1}{#2}
+  \immediate\write\@auxout{\string\nu@numberedproof@append@prooflabellist{#2}{nu@proof@#2}}%
 }
-\newcommand{\nu@numberedproof@prove@item@later}[1]{%\makebox{}%
-  \label{nu@statement@\nu@numberedproof@statementlabel:item@#1}%
-  \immediate\write\@auxout{\string\nu@numberedproof@append@prooflabellist{\nu@numberedproof@statementlabel}{nu@proof@\nu@numberedproof@statementlabel:item@#1}}%
-\callbackToAnnounceProveEachItemLater{nu@proof@\nu@numberedproof@statementlabel:item@#1}%  
+\newcommand{\nu@numberedproof@prove@item@later}[2]{%\makebox{}%
+  \label{nu@statement@\nu@numberedproof@statementlabel:item@#2}%
+  \immediate\write\@auxout{\string\nu@numberedproof@append@prooflabellist{\nu@numberedproof@statementlabel}{nu@proof@\nu@numberedproof@statementlabel:item@#2}}%
+#1{nu@proof@\nu@numberedproof@statementlabel:item@#2}%
 }
-\newcommand{\nu@numberedproof@prove@each@later}{\@ifstar{\nu@numberedproof@label@S}{\nu@numberedproof@prove@item@later}}
+\newcommand{\nu@numberedproof@prove@each@later}[2]{\@ifstar{\nu@numberedproof@label@S{#1}}{\nu@numberedproof@prove@item@later{#2}}}
 
-\newcommand{\provelater}{\@ifstar{\nu@numberedproof@prove@each@later}{\nu@numberedproof@prove@this@later}}
+\newcommand{\nu@numberedproof@provelater@original}[3]{\@ifstar{\nu@numberedproof@prove@each@later{#3}{#2}}{\nu@numberedproof@prove@this@later{#1}}}
 
-\newcommand{\newnumberedproof}[2]{%
+
+\newcommand{\newnumberedproof}[4]{%
   \newenvironment{#1}[1]{%
-    \begin{#2}[\callbackToAnnounceTheoremProvedHere{nu@statement@##1}]%
+    \begin{#2}[#3{nu@statement@##1}]%
       \label{nu@proof@##1}%
   }{\end{#2}}
   \newenvironment{#1*}[2]{%
-    \begin{#2}[\callbackToAnnounceTheoremItemProvedHere{nu@statement@##1}{nu@statement@##1:item@##2}]%
+    \begin{#2}[#4{nu@statement@##1}{nu@statement@##1:item@##2}]%
       \label{nu@proof@##1:item@##2}%
   }{\end{#2}}
 }
 
-%\newcommand{\provelater}{\nu@numberedproof@provelater@original}
+\newcommand{\newprovelater}[4]{\newcommand{#1}{\nu@numberedproof@provelater@original{#2}{#3}{#4}}}
 
-\newcommand{\callbackToAnnounceTheoremProvedHere}[1]{%
-  \Cref{#1}%
-}
-\newcommand{\callbackToAnnounceTheoremItemProvedHere}[2]{%
-  \Cref{#1} -- \Cref{#2}%
-}
-\newcommand{\callbackToAnnounceProveLater}[1]{%
-  \marginpar{We will show this later in \cref{#1}.}%
-}
 
-\newcommand{\callbackToAnnounceProveEachItemLater}[1]{%
-  \marginpar{We will show this later in \cref{#1}.}%
-}
+  
+\newcommand{\callbackToAnnounceTheoremProvedHere}[1]{\ref{#1}}
+\newcommand{\callbackToAnnounceTheoremItemProvedHere}[2]{\ref{#1} -- \ref{#2}}
+\newcommand{\callbackToAnnounceProveLater}[1]{\marginpar{We will show this later in \pageref{#1}.}}
+\newcommand{\callbackToAnnounceProveEachItemLater}[1]{\marginpar{We will show this later in \pageref{#1}.}}
+\newcommand{\callbackDoNothingI}[1]{}
+\newcommand{\callbackDoNothingII}[2]{}
+
+
+% Min usage:
+%\theoremstyle{numberedproof}
+%\newtheorem{numberedproof}[thm]{Proof}
+%\newnumberedproof{proofof}{numberedproof}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
+%\newprovelater{\provelater}{\callbackToAnnounceProveLater}{\callbackToAnnounceProveEachItemLater}{\callbackToAnnounceProveLater}
+
+% use \provelater and \begin{proofof}
