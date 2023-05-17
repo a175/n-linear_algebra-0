@@ -4,13 +4,15 @@ LATEX=platex
 BIBTEX=pbibtex
 DVI2PDF=dvipdfmx
 TEXFILE=x2
-MAINTEXFILES=p.tex a.tex numberedproof.sty
+MAINTEXFILES=p.tex a.tex numberedproof.sty b.tex
+MENDEX=mendex
+DICFILE=terms.dic
 
 all: pdf
 dvi: ${TEXFILE}.dvi
 pdf: ${TEXFILE}.pdf
 
-${TEXFILE}.dvi: ${TEXFILE}.tex ${MAINTEXFILES} ${TEXFILE}.bbl
+${TEXFILE}.dvi: ${TEXFILE}.tex ${MAINTEXFILES} ${TEXFILE}.bbl ${TEXFILE}.ind
 	${LATEX} ${TEXFILE} && ${LATEX} ${TEXFILE}
 
 ${TEXFILE}.pdf: ${TEXFILE}.dvi
@@ -22,6 +24,9 @@ ${TEXFILE}.bbl:
 	${LATEX} ${TEXFILE} && ${BIBTEX} ${TEXFILE}
 bbl:
 	${LATEX} ${TEXFILE} && ${BIBTEX} ${TEXFILE}
+
+ind:
+	${LATEX} ${TEXFILE} && ${MENDEX} -U -d ${DICFILE} ${TEXFILE}
 
 view:
 	evince ${TEXFILE}.pdf &
