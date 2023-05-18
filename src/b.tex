@@ -36,3 +36,790 @@
     \begin{align*}A=\begin{pmatrix}0&0\\1&0\end{pmatrix}.\end{align*}
   \end{enumerate}
 \end{answerof}
+\begin{answerof}{prob:1:3}
+  \begin{align*}A&=
+    \begin{pmatrix}
+      a+1& 3\\
+      4+c &5d-10
+    \end{pmatrix}\\
+    B&=
+    \begin{pmatrix}
+      7& 2b+5\\
+      6 &-4d+8
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  行列が等しいということは, 対応する各成分が等しいということなので,
+  $A=B$とすると
+  \begin{align*}
+    \begin{cases}
+      a+1=7\\
+      3=2b+5\\
+      4+c=6\\
+      5d-10=-4d+8
+    \end{cases}
+  \end{align*}
+  となる.
+  したがって,
+  \begin{align*}
+    \begin{cases}
+      a=6\\
+      b=-1\\
+      c=2\\
+      d=2
+    \end{cases}
+  \end{align*}
+  を得る.
+  実際, $(a,b,c,d)=(6,-1,2,2)$とすると,
+  \begin{align*}A&=
+    \begin{pmatrix}
+      a+1& 3\\
+      4+c &5d-10
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      6+1& 3\\
+      4+2 &5\cdot 2-10
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      7& 3\\
+      6&0
+    \end{pmatrix}
+    \\
+    B&=
+    \begin{pmatrix}
+      7& 2b+5\\
+      6 &-4d+8
+    \end{pmatrix}
+=    \begin{pmatrix}
+      7& 2(-1)+5\\
+      6 &-4\cdot 2+8
+    \end{pmatrix}
+=    \begin{pmatrix}
+      7& 3\\
+      6 &0
+    \end{pmatrix}
+  \end{align*}
+  である.
+\end{answerof}
+
+\begin{answerof}{prob:1:4}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1& 3\\
+      4+a &5
+    \end{pmatrix}
+  \end{align*}
+  とする.  $A$が対称行列であるということは, $A=\transposed{A}$ということである.
+  \begin{align*}
+    \transposed{A}=
+    \begin{pmatrix}
+      1& 4+a\\
+      3 &5
+    \end{pmatrix}
+  \end{align*}
+  であるので, $A=\transposed{A}$とすると,
+  \begin{align*}
+    \begin{pmatrix}
+      1& 3\\
+      4+a &5
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      1& 4+a\\
+      3 &5
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって, 
+  \begin{align*}
+    \begin{cases}
+      1=1\\
+      3=4+a\\
+      4+a=3\\
+      5=5
+    \end{cases}
+  \end{align*}
+  となり, $a=-1$を得る.
+  実際$a=-1$のとき,
+  \begin{align*}
+    A&=
+    \begin{pmatrix}
+      1& 3\\
+      4+a &5
+    \end{pmatrix}=
+    \begin{pmatrix}
+      1& 3\\
+      3 &5
+    \end{pmatrix}\\
+    \transposed{A}&=
+    \begin{pmatrix}
+      1& 3\\
+      3 &5
+    \end{pmatrix}
+  \end{align*}
+  であるので対称行列である.
+\end{answerof}
+
+
+\begin{answerof}{prob:1:5}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1-a& 3+b\\
+      4  &0
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  $A$が交代行列であるということは, $-A=\transposed{A}$ということである.
+  \begin{align*}
+    -A&=
+    -\begin{pmatrix}
+      1-a& 3+b\\
+      4  &0
+    \end{pmatrix}
+=    \begin{pmatrix}
+      -1+a& -3-b\\
+      -4  &0
+    \end{pmatrix}\\    
+    \transposed{A}&=
+    \begin{pmatrix}
+      1-a& 4\\
+      3+b &0
+    \end{pmatrix}
+  \end{align*}
+  であるので, $-A=\transposed{A}$とすると,
+  \begin{align*}
+    \begin{pmatrix}
+      -1+a& -3-b\\
+      -4  &0
+    \end{pmatrix}&=
+    \begin{pmatrix}
+      1-a& 4\\
+      3+b &0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって, 
+  \begin{align*}
+    \begin{cases}
+      -1+a=1-a\\
+      -3-b=4\\
+      -4=3+b\\
+      0=0
+    \end{cases}
+  \end{align*}
+  となり, $a=1$, $b=-7$を得る.
+  実際$(a,b)=(1,-7)$のとき,
+  \begin{align*}
+    -A&=
+    \begin{pmatrix}
+      -1+a& -3-b\\
+      -4  &0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -1+1& -3-(-7)\\
+      -4  &0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0& 4\\
+      -4  &0
+    \end{pmatrix}\\    
+    \transposed{A}&=
+    \begin{pmatrix}
+      1-a& 4\\
+      3+b &0
+    \end{pmatrix}
+    =
+      \begin{pmatrix}
+      1-1& 4\\
+      3+-7 &0
+    \end{pmatrix}
+    =
+      \begin{pmatrix}
+      0& 4\\
+      -4 &0
+    \end{pmatrix}
+\end{align*}
+となり$A$は交代行列である.  
+\end{answerof}
+
+\begin{answerof}{prob:1:6}
+  \begin{align*}
+    \begin{pmatrix}
+      10\\4
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+      -2\\-3
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+      -3\\6
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      10-2-3\\4-3+6
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      5\\7
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      6&0\\0&4
+    \end{pmatrix}+
+    \begin{pmatrix}
+      0&3\\-7&0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      6+0&0+3\\0-7&4+0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      6&3\\-7&4
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      -9&2\\3&7
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&0\\-5&4
+    \end{pmatrix}=
+    \begin{pmatrix}
+     -9\cdot 1+2\cdot (-5)&-9\cdot 0+2\cdot 4\\3\cdot 1+7\cdot (-5)&3\cdot 0 +7\cdot 4
+    \end{pmatrix}=
+    \begin{pmatrix}
+     -19&8\\-32&28
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      -9&2\\3&7
+    \end{pmatrix}
+    \begin{pmatrix}
+      1\\-5
+    \end{pmatrix}=
+    \begin{pmatrix}
+     -9\cdot 1+2\cdot (-5)\\3\cdot 1+7\cdot (-5)
+    \end{pmatrix}=
+    \begin{pmatrix}
+     -19\\-32
+    \end{pmatrix}.
+  \end{align*}
+
+
+  
+  \begin{align*}
+    \begin{pmatrix}
+      -9&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      1\\-5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      (-9)\cdot 1 + 2\cdot (-5)
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -19
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      1\\-5
+    \end{pmatrix}
+    \begin{pmatrix}
+      -9&2
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1\cdot (-9)& 1\cdot 2\\-5\cdot 1&-5\cdot 2
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -9& 2\\-5&-10
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}^2
+    =
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1\cdot 1+(-3)\cdot 2&1\cdot(-3)+(-3)\cdot 5\\2\cdot1 +5\cdot2&2\cdot(-3) +5\cdot5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -5&-18\\12&19
+    \end{pmatrix}.
+  \end{align*}
+  この結果は次の様に検算をすることができる:
+    \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}
+  \end{align*}
+    とおくと,
+  \cref{thm:cht:2dim}から,
+  \begin{align*}
+    A^2-(1+5)A+(1\cdot 5-(-3)\cdot2)E_2&=O_{2,2}\\
+    A^2-6A+11E_2&=O_{2,2}\\
+    A^2&=6A-11E_2.
+  \end{align*}
+  となる.
+  したがって,
+  \begin{align*}
+    A^2&=6A-11E_2=
+   6\begin{pmatrix}
+      1&-3\\2&5
+   \end{pmatrix}
+   -11
+  \begin{pmatrix}
+      1&0\\0&1
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+      6-11&-18\\12&30-11
+   \end{pmatrix}
+  =
+  \begin{pmatrix}
+      -5&-18\\12&19
+   \end{pmatrix}.
+  \end{align*}
+\end{answerof}
+
+\begin{answerof}{prob:1:7}
+  \begin{align*}
+    A=\begin{pmatrix}
+      9&0\\0&5
+    \end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+    \begin{pmatrix}
+      a_n&b_n\\c_n&d_n
+    \end{pmatrix}
+    =A^n
+  \end{align*}
+  とする.
+  このとき,
+  \begin{align*}
+    \begin{pmatrix}
+      a_{n+1}&b_{n+1}\\c_{n+1}&d_{n+1}
+    \end{pmatrix}
+    =A^{n+1}
+    =AA^{n}
+    =
+    \begin{pmatrix}
+      9&0\\0&5
+    \end{pmatrix}
+    \begin{pmatrix}
+      a_n&b_n\\c_n&d_n
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      9a_n+0c_n&9b_n+0d_n\\0a_n+5c_n&0b_n+5d_n
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      9a_n&9b_n\\5c_n&5d_n
+    \end{pmatrix}
+  \end{align*}
+  となるので,
+  \begin{align*}
+    \begin{pmatrix}
+      a_{n+1}&b_{n+1}\\c_{n+1}&d_{n+1}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      9a_n&9b_n\\5c_n&5d_n
+    \end{pmatrix}.
+  \end{align*}
+  よって,
+  \begin{align*}
+    a_n&=
+    \begin{cases}
+      9a_{n-1} &(n>1)\\
+      9&(n=1)
+    \end{cases}\\
+    b_n&=
+    \begin{cases}
+      9b_{n-1}&(n>1)\\
+      0&(n=1)
+    \end{cases}\\
+    c_n&=
+    \begin{cases}
+      5c_{n-1}&(n>1)\\
+      0&(n=1)
+    \end{cases}\\
+    d_n&=
+    \begin{cases}
+      5d_{n-1}&(n>1)\\
+      5&(n=1)
+    \end{cases}
+  \end{align*}
+  となるので,
+  \begin{align*}
+    a_n&=9^{n-1}\cdot 9=9^n,\\
+    b_n&=9^{n-1}\cdot 0=0,\\
+    c_n&=5^{n-1}\cdot 0=0,\\
+    d_n&=5^{n-1}\cdot 5=5^n.
+  \end{align*}
+  したがって,
+  \begin{align*}
+    A^n=\begin{pmatrix}9^n&0\\0&5^n\end{pmatrix}.
+  \end{align*}
+
+  この結果は次のように検算できる:
+  $n=1$のとき
+\begin{align*}
+  A&=\begin{pmatrix}9&0\\0&5\end{pmatrix}\\
+  \begin{pmatrix}9^n&0\\0&5^n\end{pmatrix}&=\begin{pmatrix}9&0\\0&5\end{pmatrix}.
+\end{align*}
+となり正しい.
+  $n=2$のとき
+\begin{align*}
+  A^2&=\begin{pmatrix}9&0\\0&5\end{pmatrix}\begin{pmatrix}9&0\\0&5\end{pmatrix}
+    =\begin{pmatrix}9\cdot 9+0\cdot 0&9\cdot 0+0\cdot5 \\0\cdot 9+5\cdot 0&0\cdot 0+5\cdot 5\end{pmatrix}
+    =\begin{pmatrix}81&0\\0&25\end{pmatrix}
+  \\
+  \begin{pmatrix}9^2&0\\0&5^2\end{pmatrix}&=\begin{pmatrix}81&0\\0&25\end{pmatrix}.
+\end{align*}
+となり正しい.  
+\end{answerof}
+
+
+\begin{answerof}{prob:1:8}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&2\\0&3
+    \end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+    \begin{pmatrix}
+      a_n&b_n\\c_n&d_n
+    \end{pmatrix}
+    =A^n
+  \end{align*}
+  とする.
+  このとき,
+  \begin{align*}
+    \begin{pmatrix}
+      a_{n+1}&b_{n+1}\\c_{n+1}&d_{n+1}
+    \end{pmatrix}
+    =A^{n+1}
+    =AA^{n}
+    =
+    \begin{pmatrix}
+      1&2\\0&3
+    \end{pmatrix}
+    \begin{pmatrix}
+      a_n&b_n\\c_n&d_n
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1a_n+2c_n&1b_n+2d_n\\0a_n+3c_n&0b_n+3d_n
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      a_n+2c_n&b_n+2d_n\\3c_n&3d_n
+    \end{pmatrix}
+  \end{align*}
+  となるので,
+  \begin{align*}
+    \begin{pmatrix}
+      a_{n+1}&b_{n+1}\\c_{n+1}&d_{n+1}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      a_n+2c_n&b_n+2d_n\\3c_n&3d_n
+    \end{pmatrix}.
+  \end{align*}
+  よって,
+  \begin{align*}
+    a_n&=
+    \begin{cases}
+      a_{n-1}+2c_{n-1} &(n>1)\\
+      1&(n=1)
+    \end{cases}\\
+    b_n&=
+    \begin{cases}
+      b_{n-1}+2d_{n-1}&(n>1)\\
+      2&(n=1)
+    \end{cases}\\
+    c_n&=
+    \begin{cases}
+      3c_{n-1}&(n>1)\\
+      0&(n=1)
+    \end{cases}\\
+    d_n&=
+    \begin{cases}
+      3d_{n-1}&(n>1)\\
+      3&(n=1)
+    \end{cases}
+  \end{align*}
+  となる. したがって,
+  \begin{align*}
+    c_n&=3^{n-1}\cdot 0\\
+    d_n&=3^{n-1}\cdot 3=3^n
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+    a_n&=
+    \begin{cases}
+      a_{n-1}+2c_{n-1} &(n>1)\\
+      1&(n=1)
+    \end{cases}\\
+    &=
+    \begin{cases}
+      a_{n-1} &(n>1)\\
+      1&(n=1)
+    \end{cases}\\
+    b_n&=
+    \begin{cases}
+      b_{n-1}+2d_{n-1}&(n>1)\\
+      2&(n=1)
+    \end{cases}\\
+  &=
+    \begin{cases}
+      b_{n-1}+2\cdot 3^{n-1}&(n>1)\\
+      2&(n=1)
+    \end{cases}
+  \end{align*}
+  となる.
+  したがって,
+  \begin{align*}
+    a_n&=1^{n-1}\cdot 1=1
+  \end{align*}
+  となる. また,
+  \begin{align*}
+    b_n
+    &=2\cdot 3^{n-1}+b_{n-1}\\
+    &=2\cdot 3^{n-1}+2\cdot 3^{n-2}+b_{n-2}\\
+    &=\cdots\\
+    &=2\cdot 3^{n-1}+2\cdot 3^{n-2}+b_{n-2}+\cdots +2\cdot 3^{2}+b_2\\
+    &=2\cdot 3^{n-1}+2\cdot 3^{n-2}+b_{n-2}+\cdots +2\cdot 3^{2}+2\cdot 3^1 +b_1\\
+    &=2\cdot 3^{n-1}+2\cdot 3^{n-2}+b_{n-2}+\cdots +2\cdot 3^{2}+2\cdot 3^1 +2\\
+    &=2(3^{n-1}+3^{n-2}+\cdots+3+1)\\
+    &=2\frac{3^{n}-1}{3-1}\\
+    &=2\frac{3^{n}-1}{2}\\
+    &=3^{n}-1.
+  \end{align*}
+  したがって,
+  \begin{align*}
+    A^n=\begin{pmatrix}1&3^{n}-1\\0&3^n\end{pmatrix}.
+  \end{align*}
+
+
+  この結果は次のように検算できる:
+  $n=1$のとき,
+  \begin{align*}
+    A^n=
+    \begin{pmatrix}
+      1&2\\0&3
+    \end{pmatrix}\\  
+    \begin{pmatrix}1&2\cdot 3^{n}-1\cdot 2^{n+1}\\0&3^n\end{pmatrix}
+      =
+      \begin{pmatrix}1&2\cdot 3^{1}-1\cdot 2^{2}\\0&3^1\end{pmatrix}
+        =
+    \begin{pmatrix}1&2\\0&3\end{pmatrix}      .
+  \end{align*}
+  となり正しい.
+  \begin{align*}
+    AA^n&=
+    \begin{pmatrix}
+      1&2\\0&3
+    \end{pmatrix}
+    \begin{pmatrix}1&3^{n}-1\\0&3^n\end{pmatrix}
+      =
+    \begin{pmatrix}1\cdot 1+2\cdot 0&1\cdot(3^{n}-1)+2\cdot 3^n\\0\cdot 1+3\cdot 0&0\cdot (3^{n}-1)+3\cdot 3^n\end{pmatrix}
+      =
+    \begin{pmatrix}1\cdot 1+2\cdot 0&1\cdot(3^{n}-1)+2\cdot 3^n\\0\cdot 1+3\cdot 0&0\cdot (3^{n}-1)+3\cdot 3^n\end{pmatrix}
+      =
+    \begin{pmatrix}1&3^{n}-1+ 2\cdot 3^n\\3^{n+1}\end{pmatrix}\\
+      =
+    \begin{pmatrix}1&3\cdot 3^{n}-1\\3^{n+1}\end{pmatrix}\\
+      =
+    \begin{pmatrix}1&3^{n+1}-1\\3^{n+1}\end{pmatrix}\\
+    AA^{n+1}&=\begin{pmatrix}1&3^{n+1}-1\\0&3^{n+1}\end{pmatrix}.
+  \end{align*}
+  となり等しい.
+\end{answerof}
+
+\begin{answerof}{prob:1:9}
+ \Cref{thm:cht:2dim}から,
+  \begin{align*}
+    A^2-(1+5)A+(1\cdot 5-(-3)\cdot2)E_2&=O_{2,2}\\
+    A^2-6A+11E_2&=O_{2,2}\\
+    A^2&=6A-11E_2.
+  \end{align*}
+  したがって
+  \begin{align*}
+    A^3=A(6A-11E_2)=6A^2-11A=6(6A-11E_2)-11A=25A-66E_2.
+  \end{align*}
+  よって
+  \begin{align*}
+    A^3+A^2+A=(25A-66E_2)+(6A-11E_2)+A=32A-77E_2
+    =32\begin{pmatrix}1&-3\\2&5\end{pmatrix}-77\begin{pmatrix}1&0\\0&1\end{pmatrix}\\
+    =\begin{pmatrix}32-77&32\cdot(-3)\\32\cdot 2&32\cdot 5-77\end{pmatrix}
+    =\begin{pmatrix}-45&-96\\64&83\end{pmatrix}
+  \end{align*}
+
+  また次のようにも計算できる:
+  \begin{align*}
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}^2
+    =
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1\cdot 1+(-3)\cdot 2&1\cdot(-3)+(-3)\cdot 5\\2\cdot1 +5\cdot2&2\cdot(-3) +5\cdot5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -5&-18\\12&19
+    \end{pmatrix}.
+  \end{align*}
+
+  \begin{align*}
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}^3
+    =
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}^2
+    =
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}
+    \begin{pmatrix}
+      -5&-18\\12&19
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1\cdot(-5)+(-3)\cdot 12&1\cdot(-18)+(-3)\cdot 19\\2\cdot(-5) +5\cdot12&2\cdot(-18) +5\cdot19
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -41&-75\\50&59
+    \end{pmatrix}.
+  \end{align*}
+  \begin{align*}
+    A^3+A^2+A=
+    \begin{pmatrix}
+      -41&-75\\50&59
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+      -5&-18\\12&19
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+      1&-3\\2&5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -41-5+1&-75-18-3\\50+12+2&59+19+5
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -45&-96\\64&83
+    \end{pmatrix}.    
+  \end{align*}
+\end{answerof}
+
+
+\begin{answerof}{prob:1:10}
+  \begin{align*}
+    a\begin{pmatrix}
+      1\\1
+    \end{pmatrix}
+    +b\begin{pmatrix}
+      -1\\0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      a-b\\a
+    \end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      -3\\1
+    \end{pmatrix}
+    =
+    a\begin{pmatrix}
+      1\\1
+    \end{pmatrix}
+    +b\begin{pmatrix}
+      -1\\0
+    \end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \begin{cases}
+      a-b=-3\\a=1
+    \end{cases}
+  \end{align*}
+  を得る.
+  したがって
+  $a=1$, $b=4$を得る.
+  実際,
+  $(a,b)=(1,4)$とすると,
+  \begin{align*}
+    a\begin{pmatrix}
+      1\\1
+    \end{pmatrix}
+    +b\begin{pmatrix}
+      -1\\0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1\\1
+    \end{pmatrix}
+    +4\begin{pmatrix}
+      -1\\0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -3\\1
+    \end{pmatrix}
+  \end{align*}
+  となる.
+\end{answerof}
+
