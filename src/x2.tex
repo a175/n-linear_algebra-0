@@ -83,6 +83,9 @@
 
 \newnumberedproof{proofof}{numberedproof}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
 \newnumberedproof{answerof}{numberedanswer}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
+
+\newcommand{\seealsoquiz}[1]{\marginpar{\Cref{#1}も関連する問題である.}}
+
 % Cref
 \crefname{section}{Section}{Sections}
 
@@ -128,8 +131,8 @@
 \Crefname{condition}{Condition}{Conditions}
 \crefname{numberedproof}{Proof}{Proofs}
 \Crefname{numberedproof}{Proof}{Proofs}
-\crefname{numberedanswer}{略解}{略解}
-\Crefname{numberedanswer}{略解}{略解}
+\crefname{numberedanswer}{解説}{解説}
+\Crefname{numberedanswer}{解説}{解説}
 
 % theorems 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -177,6 +180,7 @@
 \newcommand{\vv}{\boldsymbol{v}}
 \newcommand{\ww}{\boldsymbol{w}}
 \newcommand{\ee}{\boldsymbol{e}}
+\newcommand{\pp}{\boldsymbol{p}}
 \newcommand{\aaa}{\boldsymbol{a}}
 \newcommand{\bbb}{\boldsymbol{b}}
 \newcommand{\ccc}{\boldsymbol{c}}

@@ -834,34 +834,36 @@
 \begin{answerof}{quiz:2:1}
   \begin{align*}
     \det(\begin{pmatrix}
-      -3&-5\\1&2
-    \end{pmatrix})=-3\cdot 2 -(-5)\cdot 1=-6+5=-1
-  \end{align*}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7.
+\\
+    \det(\begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix})=(-5)\cdot(-1) -1\cdot 5=5-5=0.
+\end{align*}
 \end{answerof}
 
 
 \begin{answerof}{quiz:2:2}
   \begin{align*}
     \det(
-    \det(\begin{pmatrix}
-      -x&5\\1&2-x
-    \end{pmatrix})=-x(2-x)-5=x^2-2x-5
+    \begin{pmatrix}
+      -4-x&1\\5&-x
+    \end{pmatrix})=
+    (-4-x)\cdot (-x) -1\cdot 5=x^2+4x-5=(x+5)(x-1)
   \end{align*}
   であるので
   \begin{align*}
-    \det(
     \det(\begin{pmatrix}
-      -x&5\\1&2-x
+      -4-x&1\\5&-x
     \end{pmatrix})=0
   \end{align*}
   とすると,
   \begin{align*}
-    x^2-2x-5&=0\\
-    (x-1)^2-\sqrt{5}^2&=0\\
-    (x-1+\sqrt5)(x-1-\sqrt5)=0
+    (x+5)(x-1)&=0
   \end{align*}
   である.
-  よって, $x\in \Set{x-1+\sqrt5, x-1-\sqrt5}$.
+  よって, $x\in \Set{-5,1}$.
 \end{answerof}
 
 
@@ -1130,7 +1132,7 @@
   \begin{align*}
     \begin{pmatrix}-5&1&2\\5&-1&-2\end{pmatrix}
   \end{align*}
-  の2行目に1行目の-1倍を足すと,
+  の2行目に1行目の1倍を足すと,
   \begin{align*}
     \begin{pmatrix}-5&1&2\\0&0&0\end{pmatrix}
   \end{align*}
@@ -1223,20 +1225,20 @@
   \begin{align*}
     B=\begin{pmatrix}-5&1&a\\5&-1&b\end{pmatrix}
   \end{align*}
-  の2行目に1行目の-1倍を足すと,
+  の2行目に1行目の1倍を足すと,
   \begin{align*}
-    \begin{pmatrix}-5&1&a\\0&0&a-b\end{pmatrix}
+    \begin{pmatrix}-5&1&a\\0&0&a+b\end{pmatrix}
   \end{align*}
   となる. 1行目を$\frac{-1}{5}$倍すると
   \begin{align*}
-    C=\begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&a-b\end{pmatrix}
+    C=\begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&a+b\end{pmatrix}
   \end{align*}
   となる.
   係数行列$A$の階数は1であるが,
   拡大係数行列$B$の階数を求めるには,
-  $a-b$の値によって場合分けをする必要がある.
+  $a+b$の値によって場合分けをする必要がある.
 
-  $a-b=0$のとき,
+  $a+b=0$のとき,
   $C$は,
   \begin{align*}
     C=\begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&0\end{pmatrix}
@@ -1245,8 +1247,8 @@
   係数行列の階数と拡大係数行列の階数が等しいので,
   このとき, 考えている連立方程式は解をもつ.
 
-  $a-b\neq 0$のとき,
-    $C$の2行目を$\frac{1}{a-b}$倍すると,
+  $a+b\neq 0$のとき,
+    $C$の2行目を$\frac{1}{a+b}$倍すると,
   \begin{align*}
     \begin{pmatrix}1&\frac{-1}{5}&\frac{-a}{5}\\0&0&1\end{pmatrix}
   \end{align*}
@@ -1261,6 +1263,33 @@
   このときは解を持たない.
 \end{answerof}
 
+
+\begin{answerof}{quiz:3:4x}
+  係数行列は,
+  \begin{align*}
+    A=\begin{pmatrix}2&1\\5&6\end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    \det(A)=\det(\begin{pmatrix}2&1\\5&6\end{pmatrix})=2\cdot6-1\cdot 5=7\neq 0
+  \end{align*}
+  であるので, $A$は正則である.
+  したがって,
+  \begin{align*}
+      A^{-1}\begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  は連立一次方程式
+  \begin{align*}
+    \begin{pmatrix}2&1\\5&6\end{pmatrix}
+    \begin{pmatrix}x\\y\end{pmatrix}
+      =
+      \begin{pmatrix}a\\b\end{pmatrix}
+  \end{align*}
+  の階である.
+  したがって,
+  いつでも,
+  この連立方程式は解を持つ.
+\end{answerof}
 
  
 
@@ -1280,45 +1309,45 @@
   \begin{align*}
     B=\begin{pmatrix}-5&1&2\\5&a&b\end{pmatrix}
   \end{align*}
-  の2行目に1行目の-1倍を足すと,
+  の2行目に1行目の1倍を足すと,
   \begin{align*}
-    C=\begin{pmatrix}-5&1&2\\0&a-1&b-2\end{pmatrix}
+    C=\begin{pmatrix}-5&1&2\\0&a+1&b+2\end{pmatrix}
   \end{align*}
   となる.
-  $a-1$の値で場合分けをする必要がある.
+  $a+1$の値で場合分けをする必要がある.
 
-  $a-1\neq 0$のとき,
+  $a+1\neq 0$のとき,
   \begin{align*}
-    C=\begin{pmatrix}-5&1&2\\0&a-1&b-2\end{pmatrix}
+    C=\begin{pmatrix}-5&1&2\\0&a+1&b+2\end{pmatrix}
   \end{align*}
-  2行目に$\frac{1}{a-1}$をかけると,
+  2行目に$\frac{1}{a+1}$をかけると,
   \begin{align*}
-    \begin{pmatrix}-5&1&2\\0&1&\frac{b-2}{a-1}\end{pmatrix}
+    \begin{pmatrix}-5&1&2\\0&1&\frac{b+2}{a+1}\end{pmatrix}
   \end{align*}
   となる.
   1行目に2行目の$-1$倍を加えると
   \begin{align*}
-    \begin{pmatrix}-5&0&2-\frac{b-2}{a-1}\\0&1&\frac{b-2}{a-1}\end{pmatrix}
+    \begin{pmatrix}-5&0&2-\frac{b+2}{a+1}\\0&1&\frac{b+2}{a+1}\end{pmatrix}
   \end{align*}
   となる.
   したがって, この場合は$\rank(A)=\rank(B)$であるので,
   考えている方程式は解をもつ.
 
 
-  $a-1=0$のとき,
+  $a+1=0$のとき,
   \begin{align*}
-    C=\begin{pmatrix}-5&1&2\\0&0&b-2\end{pmatrix}
+    C=\begin{pmatrix}-5&1&2\\0&0&b+2\end{pmatrix}
   \end{align*}
   であるので, $\rank(A)=1$である.
-  $\rank(B)$を求めるには, $b-2$の値で更に場合分けをする必要がある.
-  $b-2=0$であれば,
+  $\rank(B)$を求めるには, $b+2$の値で更に場合分けをする必要がある.
+  $b+2=0$であれば,
   \begin{align*}
     C=\begin{pmatrix}-5&1&2\\0&0&0\end{pmatrix}
   \end{align*}
   であるので, $\rank(B)=1$であり, $\rank(A)=\rank(B)$であるから,
   考えている方程式は解をもつ.
-  $b-2\neq 0$であれば,
-  $C$の2行目を$\frac{1}{b-2}$倍することで,
+  $b+2\neq 0$であれば,
+  $C$の2行目を$\frac{1}{b+2}$倍することで,
   \begin{align*}
     \begin{pmatrix}-5&1&2\\0&0&1\end{pmatrix}
   \end{align*}
@@ -1333,8 +1362,9 @@
   考えている方程式は解を持たない.
 \end{answerof}
 
-
-\begin{answerof}{quiz:3:6} 
+\begin{answerof}{quiz:3:6}
+  \seealsoquiz{quiz:2:2}
+  
   係数行列は,
   \begin{align*}
     A=    \begin{pmatrix}-4-a&1\\5&-a\end{pmatrix}
@@ -1526,4 +1556,178 @@
     \begin{pmatrix}-1\\1\end{pmatrix}
   \end{align*}
   であり, これは第2成分が$0$ではないので, $\zzero$ではない.  
+\end{answerof}
+
+\section{}
+\begin{answerof}{prob:5:1}
+  \seealsoquiz{quiz:2:1}
+  2つの2項ベクトルの組が
+  一次独立かどうかは, 行列式を調べることでわかる.
+  
+ \begin{align*}
+     \det(\begin{pmatrix}-5&1\\5&-1\end{pmatrix})=-5\cdot(-1)-1\cdot(5)=0
+ \end{align*}
+ であるので
+ \begin{align*}
+   (\begin{pmatrix}-5\\5\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix})
+ \end{align*}
+ は一次独立ではない.
+
+ \begin{align*}
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
+ \end{align*}
+ であるので,
+ \begin{align*}
+   (\begin{pmatrix}2\\5\end{pmatrix},\begin{pmatrix}1\\6\end{pmatrix})
+ \end{align*}
+は一次独立である.
+\end{answerof}
+
+
+\begin{answerof}{quiz:5:3}  
+  2つの2項ベクトルの組が
+  一次独立かどうかは, 行列式を調べることでわかる.
+  \begin{align*}
+    \det(\begin{pmatrix}-5&1\\a&b\end{pmatrix})
+    =-5b-1a=-5b-a
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+    (\begin{pmatrix}-5\\a\end{pmatrix},
+    \begin{pmatrix}1\\b\end{pmatrix})
+  \end{align*}
+  は,
+  行列式が$0$でないとき,
+  つまり,
+  $a\neq -5b$であるとき
+  一次独立であり,
+  行列式が$0$のとき,
+  つまり,
+  $a= -5b$であるとき
+  一次独立ではない.
+\end{answerof}
+
+\begin{answerof}{prob:5:2}
+  \begin{align*}
+    A&=\begin{pmatrix}a&b\\a'&b'\end{pmatrix}\\
+    \aaa&=\begin{pmatrix}a\\a'\end{pmatrix}\\
+    \bbb&=\begin{pmatrix}b\\b'\end{pmatrix}
+  \end{align*}
+  とする.
+  $(\aaa,\bbb)$が$\RR^2$の生成系であるということは,
+  どの$\pp\in\RR^2$に対しても,
+  $x\aaa+y\bbb=\pp$を満たす$x,y\in\RR$が存在するということであった.
+  \begin{align*}
+    x\aaa+y\bbb=
+    x\begin{pmatrix}a\\a'\end{pmatrix}+y\begin{pmatrix}b\\b'\end{pmatrix}
+    =\begin{pmatrix}xa+yb\\xa'+yb'\end{pmatrix}
+    =\begin{pmatrix}a&b\\a'&b'\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
+    =A\begin{pmatrix}x\\y\end{pmatrix}
+  \end{align*}
+  と書き換えられるので,
+  $(\aaa,\bbb)$が$\RR^2$の生成系であるということは,
+  どの$\pp\in\RR^2$に対しても
+  $A\xx=\pp$が実数解を持つことと言い換えられる.
+  どの$\pp\in\RR^2$に対しても
+  $A\xx=\pp$が実数解を持つならば,
+  $(\aaa,\bbb)$が$\RR^2$の生成系である. 
+  $A\xx=\pp$が実数解を持たないような
+  $\pp\in\RR^2$が存在するなら,
+  $(\aaa,\bbb)$が$\RR^2$の生成系ではない.
+ 
+
+  \seealsoquiz{quiz:3:4x}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+  \end{align*}
+  とすると
+  \begin{align*}
+    \det(A)=
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
+ \end{align*}
+  であるので, $A$は正則である.
+  したがって, $\pp\in\RR^2$とすると,
+  $A^{-1}\pp$は$A\xx=\pp$の解である.
+  したがって,
+  \begin{align*}
+   (\begin{pmatrix}2\\5\end{pmatrix},\begin{pmatrix}1\\6\end{pmatrix})
+  \end{align*}
+  は$\RR^2$の生成系である.
+
+
+  \seealsoquiz{quiz:3:4}
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}=
+    \begin{pmatrix}
+      p\\q
+    \end{pmatrix}
+  \end{align*}
+  とする. この方程式の拡大係数行列は
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&p\\5&-1&q
+    \end{pmatrix}
+  \end{align*}
+  である.
+  2行目に1行目の$1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&p\\0&0&p+q
+    \end{pmatrix}
+  \end{align*}
+  1行目を$\frac{-1}{5}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&\frac{-1}{5}&\frac{-p}{5}\\0&0&p+q
+    \end{pmatrix}
+  \end{align*}
+  となる.
+  したがって考えている連立方程式は,
+  $p+q=0$なら解をもつ.
+  しかし
+  $p+q\neq 0$なら,
+  さらに2行目を$\frac{1}{p+q}$倍すると,
+  \begin{align*}
+    \begin{pmatrix}
+      1&\frac{-1}{5}&\frac{-p}{5}\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  となり,
+  さらに1行目に2行目の$\frac{p}{5}$倍を加えることで,
+  \begin{align*}
+    \begin{pmatrix}
+      1&\frac{-1}{5}&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  となるので,
+  考えている連立方程式は
+  解をもたない.
+  例えば,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}=
+    \begin{pmatrix}0\\1\end{pmatrix}
+  \end{align*}
+  は実数解を持たないので,
+  \begin{align*}
+    (\begin{pmatrix}-5\\5\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix})
+  \end{align*}
+  は$\RR^2$の生成系ではない.
 \end{answerof}
