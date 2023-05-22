@@ -84,7 +84,9 @@
 \newnumberedproof{proofof}{numberedproof}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
 \newnumberedproof{answerof}{numberedanswer}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
 
-\newcommand{\seealsoquiz}[1]{\marginpar{\Cref{#1}も関連する問題である.}}
+\newcommand{\seealsoquiz}[1]{\marginpar{\Cref{#1}は関連する問題である.}}
+\newcommand{\seealsoQuiz}[1]{\marginpar{\Cref{#1}$\gets$}}
+\newcommand{\Seealsoquiz}[1]{\marginpar{$\to$\Cref{#1}}}
 
 % Cref
 \crefname{section}{Section}{Sections}
