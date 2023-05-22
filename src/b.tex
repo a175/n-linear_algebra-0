@@ -896,52 +896,142 @@
   である.
 \end{answerof}
 
+
+\begin{answerof}{quiz:2:reg:1}
+  \begin{align*}
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+  \end{align*}
+  は正則である.
+
+  これについては, 次のように検算をできる:
+  正則であるので逆行列が存在する.
+  \begin{align*}
+     \begin{pmatrix}
+      2&1\\5&6
+     \end{pmatrix}^{-1}=
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+  \end{align*}
+  である.
+  したがって,
+  \begin{align*}
+     \begin{pmatrix}
+      2&1\\5&6
+     \end{pmatrix}^{-1}
+     \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+     =
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix}
+    =
+    \frac{1}{7}
+     \begin{pmatrix}
+       6\cdot 2+(-1)\cdot 5&6\cdot 1+(-1)\cdot 6\\
+       -5\cdot 2+2\cdot 5&-5\cdot 1+2\cdot 6
+    \end{pmatrix}
+    =
+    \frac{1}{7}
+     \begin{pmatrix}
+       7&0\\
+       0&7
+    \end{pmatrix}
+    =
+     \begin{pmatrix}
+       1&0\\
+       0&1
+    \end{pmatrix}.
+  \end{align*}
+  
+  \begin{align*}
+    \det(\begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix})=(-5)\cdot(-1) -1\cdot 5=5-5=0.
+  \end{align*}
+  であるので
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1\\5&-1
+    \end{pmatrix}
+  \end{align*}
+  は正則ではない.
+\end{answerof}
+
+
 \begin{answerof}{quiz:2:4}
   \begin{align*}
     A&=\begin{pmatrix}
-      1&3\\4&2
+      2&1\\5&6
     \end{pmatrix},&
     \bbb&=\begin{pmatrix}
-      8\\1
+      4\\8
     \end{pmatrix}.   
   \end{align*}
   とする.
 \begin{enumerate}
 \item
   \begin{align*}
-    A^{-1}&=\frac{1}{1\cdot 2 - 3\cdot 4}\begin{pmatrix}
-      2&-3\\-4&1
-    \end{pmatrix}
-    =
-    \frac{1}{-10}\begin{pmatrix}
-      2&-3\\-4&1
-    \end{pmatrix}.
+    \det(A)=
+    \det(\begin{pmatrix}
+      2&1\\5&6
+    \end{pmatrix})=2\cdot 6 -1\cdot 5=12-5=7\neq 0.
   \end{align*}
+  であるので,
+  $A$は正則であり,
+  \begin{align*}
+     A^{-1}=
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
+    \end{pmatrix}
+  \end{align*}
+  である.
+
   
   これは次のように検算できる.
-  求めた行列ともとの行列をかけると
+  もとの行列と求めた行列をかけると
   \begin{align*}
-    \frac{1}{-10}\begin{pmatrix}
-      2&-3\\-4&1
+    A^{-1}A
+     =
+     \frac{1}{7}
+     \begin{pmatrix}
+      6&-1\\-5&2
     \end{pmatrix}
     \begin{pmatrix}
-      1&3\\4&2
+      2&1\\5&6
     \end{pmatrix}
     =
-    \frac{1}{-10}\begin{pmatrix}
-      2\cdot 1-3\cdot 4&2\cdot 3-3\cdot 2\\
-      -4\cdot 1+1\cdot 4&-4\cdot 3+1\cdot2
+    \frac{1}{7}
+     \begin{pmatrix}
+       6\cdot 2+(-1)\cdot 5&6\cdot 1+(-1)\cdot 6\\
+       -5\cdot 2+2\cdot 5&-5\cdot 1+2\cdot 6
     \end{pmatrix}
     =
-    \frac{1}{-10}\begin{pmatrix}
-      -10&0\\
-      0&-10
+    \frac{1}{7}
+     \begin{pmatrix}
+       7&0\\
+       0&7
     \end{pmatrix}
     =
-    \begin{pmatrix}
-      1&0\\
-      0&1
-    \end{pmatrix}
+     \begin{pmatrix}
+       1&0\\
+       0&1
+    \end{pmatrix}.
   \end{align*}
   となり, $E_2$となる.
 
@@ -949,24 +1039,24 @@
   $A$が正則なので解は$A^{-1}\bbb$である.
   したがって,
   \begin{align*}
-    \frac{1}{-10}\begin{pmatrix}
-      2&-3\\-4&1
+    \frac{1}{7}\begin{pmatrix}
+      6&-1\\-5&2
     \end{pmatrix}
     \begin{pmatrix}
-      8\\1
+      4\\8
     \end{pmatrix}
     =
-    \frac{1}{-10}\begin{pmatrix}
-      2\cdot 8 -3\cdot 1\\
-      -4\cdot 8 +1\cdot 1\\
+    \frac{1}{7}\begin{pmatrix}
+      6\cdot 4 -1\cdot 8\\
+      -5\cdot 4 +2\cdot 8\\
     \end{pmatrix}
     =
-    \frac{1}{-10}\begin{pmatrix}
-      13\\-31
+    \frac{1}{7}\begin{pmatrix}
+      16\\-4
     \end{pmatrix}
     =
     \begin{pmatrix}
-      \frac{-13}{10}\\\frac{31}{10}
+      \frac{16}{7}\\-\frac{4}{7}
     \end{pmatrix}
   \end{align*}
 
@@ -974,22 +1064,22 @@
   \begin{align*}
     A\xx=
     \begin{pmatrix}
-      1&3\\4&2
+      2&1\\5&6
     \end{pmatrix}
     \begin{pmatrix}
-      \frac{-13}{10}\\\frac{31}{10}
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \frac{-13}{10}+3\frac{31}{10}\\4\frac{-13}{10}+2\frac{31}{10}
+      \frac{16}{7}\\-\frac{4}{7}
     \end{pmatrix}
     =
     \begin{pmatrix}
-      \frac{-13}{10}+\frac{93}{10}\\\frac{-52}{10}+2\frac{62}{10}
+      2\frac{16}{7}+1\frac{-4}{7}\\5\frac{16}{7}+6\frac{-4}{10}
     \end{pmatrix}
     =
     \begin{pmatrix}
-      8\\1
+      \frac{28}{7}\\\frac{56}{7}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      4\\8
     \end{pmatrix}
   \end{align*}
   となり$\bbb$となる.
@@ -999,7 +1089,6 @@
 \section{}
 \begin{answerof}{quiz:3:1}
   \begin{align*}
-    A=
     \begin{pmatrix}
       1&3&1\\2&6&5
     \end{pmatrix}
@@ -1023,7 +1112,134 @@
     \end{pmatrix}
   \end{align*}
   となる.  これは, 階数$2$の被約階段行列である.
-  したがって, $A$の階数は$2$である.
+  したがって, 
+  \begin{align*}
+    \rank(
+    \begin{pmatrix}
+      1&3&1\\2&6&5
+    \end{pmatrix}
+    )=2
+  \end{align*}
+  である.
+
+
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\5&-1&-2
+    \end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$1$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  である. さらに$1$行目を$-\frac{1}{5}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&-\frac{1}{5}&-\frac{2}{5}\\0&0&0
+    \end{pmatrix}
+  \end{align*}
+  である.
+  これは, 階数$1$の被約階段行列である.
+  よって
+  \begin{align*}
+    \rank(
+    \begin{pmatrix}
+      -5&1&2\\5&-1&-2
+    \end{pmatrix}
+    )=1
+  \end{align*}
+  である.
+
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\5&-1&2
+    \end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$1$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\0&0&4
+    \end{pmatrix}
+  \end{align*}
+  である. さらに, 
+  2行目を$\frac{1}{4}$倍すると,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&2\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  1行目に2行目の$-2$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      -5&1&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  1行目を$-\frac{1}{5}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&-\frac{1}{5}&0\\0&0&1
+    \end{pmatrix}
+  \end{align*}
+  である.
+  これは, 階数$2$の被約階段行列である.
+  よって
+  \begin{align*}
+    \rank(
+    \begin{pmatrix}
+      -5&1&2\\5&-1&2
+    \end{pmatrix}
+    )=2
+  \end{align*}
+  である.
+
+
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\5&6&8
+    \end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$-\frac{5}{2}$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\0&\frac{7}{2}&-2
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  2行目を$\frac{7}{2}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\0&1&\&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  1行目に2行目の$-1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}
+      2&0&\frac{32}{7}\\0&1&\&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  2行目を$\frac{1}{2}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&0&\frac{16}{7}\\0&1&\&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である.
+  これは, 階数$2$の被約階段行列である.
+  よって
+  \begin{align*}
+    \rank(
+    \begin{pmatrix}
+      2&1&4\\5&6&8
+    \end{pmatrix}
+    )=2
+  \end{align*}
+  である.
 \end{answerof}
 
 
@@ -1094,14 +1310,67 @@
     \frac{1}{7}
     \begin{pmatrix}
       16\\-4
-    \end{pmatrix}.
+    \end{pmatrix}
     =
     \begin{pmatrix}
       \frac{16}{7}\\-\frac{4}{7}
     \end{pmatrix}.
   \end{align*}
 
-  これは次のように検算できる.
+
+  またこの連立方程式は次の方法でも解ける:
+  この連立方程式の拡大係数行列
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\5&6&8
+    \end{pmatrix}
+  \end{align*}
+  の$2$行目に$1$行目の$-\frac{5}{2}$倍を加えると,
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\0&\frac{7}{2}&-2
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  2行目を$\frac{7}{2}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      2&1&4\\0&1&\&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  1行目に2行目の$-1$倍を加えると
+  \begin{align*}
+    \begin{pmatrix}
+      2&0&\frac{32}{7}\\0&1&\&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である. さらに,
+  2行目を$\frac{1}{2}$倍すると
+  \begin{align*}
+    \begin{pmatrix}
+      1&0&\frac{16}{7}\\0&1&\&-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  である.
+  これを拡大係数行列にもつ連立方程式は,
+  \begin{align*}
+    \begin{cases}
+      x=\frac{16}{7}\\
+      y=-\frac{4}{7}
+    \end{cases}
+  \end{align*}
+  である. したがって,
+  解は
+  \begin{align*}
+        \begin{pmatrix}
+      \frac{16}{7}\\-\frac{4}{7}
+    \end{pmatrix}
+  \end{align*}
+  のみである.
+
+  いずれの方法で求めたにせよ,
+  解は, 次のように検算できる.
   \begin{align*}
     \begin{pmatrix}
       2&1\\5&6
