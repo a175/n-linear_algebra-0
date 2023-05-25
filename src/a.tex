@@ -1653,6 +1653,12 @@ $2$-次正方行列の場合のみについて証明をしている.
   このとき,
   $\transposed{A}A=A^{-1}A=E_n$
 
+  \paragraph{\Cref{thm:ortho:char:item:transposeisinverse}$\implies$\Cref{thm:ortho:char:item:ortho2}}
+  $A$が正則であり,
+  $A^{-1}=\transposed{A}$とする.
+  このとき,
+  $A\transposed{A}=AA^{-1}=E_n$
+
   \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:transposeisinverse}}
   $\transposed{A}A=E_n$とする.
   このとき, \cref{lem:ortho:det}より,
@@ -1660,6 +1666,15 @@ $2$-次正方行列の場合のみについて証明をしている.
   したがって, $A$は正則である.
   $\transposed{A}A=E_n$の
   両辺に右から$A^{-1}$をかけることで
+  $\transposed{A}=A^{-1}$が得られる.
+
+  \paragraph{\Cref{thm:ortho:char:item:ortho2}$\implies$\Cref{thm:ortho:char:item:transposeisinverse}}
+  $A\transposed{A}=E_n$とする.
+  このとき, \cref{lem:ortho:det}より,
+  $\det(A)\neq 0$である.
+  したがって, $A$は正則である.
+  $A\transposed{A}=E_n$の
+  両辺に左から$A^{-1}$をかけることで
   $\transposed{A}=A^{-1}$が得られる.
 
   \paragraph{\Cref{thm:ortho:char:item:ortho}$\implies$\Cref{thm:ortho:char:item:orthonormalbasis}}
