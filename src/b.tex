@@ -2049,3 +2049,148 @@
   \end{align*}
   は$\RR^2$の生成系ではない.
 \end{answerof}
+
+\begin{answerof}{quiz:5:9}
+  \begin{align*}
+    \aaa=\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix},\\
+    \bbb=\begin{pmatrix}x\\y\end{pmatrix},
+  \end{align*}
+  とおく.
+  正規直交基底であるとすると,
+  \begin{align}
+    \|\aaa\|^2&=\left(\frac{3}{5}\right)^2+\left(\frac{4}{5}\right)^2=1\\
+    \|\bbb\|^2&=x^2+y^2=1     \label{orthonorm:eq1}\\
+    \Braket{\aaa,\bbb}&=\frac{3}{5}x+\frac{4}{5}y=0
+    \label{orthonorm:eq2}
+  \end{align}
+  である. したがって, \cref{orthonorm:eq2}から,
+  \begin{align*}
+    x=-\frac{4}{3}y
+  \end{align*}
+  がわかるので, \cref{orthonorm:eq1}に代入して,
+  \begin{align*}
+    \left(-\frac{4}{3}y\right)^2+y^2&=1\\
+    \frac{25}{9}y^2&=1\\
+    y^2&=\frac{9}{25}
+  \end{align*}
+  となるので, $y\in\Set{\frac{3}{5},-\frac{3}{5}}$である.
+
+  $y=\frac{3}{5}$のときには,
+  $x=-\frac{4}{5}$で,
+  \begin{align*}
+    (\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix},
+    \frac{1}{5}\begin{pmatrix}-4\\3\end{pmatrix})
+  \end{align*}
+  という正規直交基底が得られる.
+
+  $y=-\frac{3}{5}$のときには,
+  $x=\frac{4}{5}$で,
+  \begin{align*}
+    (\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix},
+    \frac{1}{5}\begin{pmatrix}4\\-3\end{pmatrix})
+  \end{align*}
+  という正規直交基底が得られる.
+\end{answerof}
+
+\begin{answerof}{quiz:5:10}
+  \begin{align*}
+    A=\frac{1}{5}\begin{pmatrix}3&x\\4&y\end{pmatrix}
+  \end{align*}
+  とする.
+  $A$が直交行列であるとすると,
+  \begin{align*}
+    \transposed{A}A=E_2
+  \end{align*}
+  である.
+  \begin{align*}
+    \transposed{A}A
+    &=\frac{1}{25}\begin{pmatrix}3&4\\x&y\end{pmatrix}\begin{pmatrix}3&x\\4&y\end{pmatrix}\\
+    &=\frac{1}{25}\begin{pmatrix}3^2+4^2&3x+4y\\3x+4y&x^2+\end{pmatrix}\\
+    &=\begin{pmatrix}25&3x+4y\\3x+4y&x^2+y^2\end{pmatrix}
+  \end{align*}
+  であるので
+  \begin{align}
+    \frac{x^2+y^2}{25}&=1\label{orthomat:eq1}\\
+    \frac{3}{25}x+\frac{4}{25}y&=0
+    \label{orthomat:eq2}
+  \end{align}
+  である.
+  \Cref{orthomat:eq2}より, 
+  \begin{align*}
+    y=-\frac{3}{4}x
+  \end{align*}
+  であるので, \cref{orthomat:eq1}に代入すると,
+  \begin{align*}
+    \frac{x^2+\left(-\frac{3}{4}x\right)^2}{25}&=1\\
+    x^2+\left(-\frac{3}{4}x\right)^2&=25\\
+    16x^2+9x^2&=400\\
+    25x^2&=400\\
+    x^2&=16
+  \end{align*}
+  であるので, $x\in\Set{4,-4}$である.
+
+  $x=4$のときには,
+  $y=-3$で,
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}
+  \end{align*}
+  という直交行列が得られる.
+
+  $x=-4$のときには,
+  $y=3$で,
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&4\\4&-3\end{pmatrix}
+  \end{align*}
+  という直交行列が得られる.
+
+
+  また, $A$が直交行列であることと, $A\transposed{A}=E_2$を満たすことは同値であったので, 次のように解くこともできる.
+  \begin{align*}
+    A\transposed{A}
+    &=\frac{1}{25}\begin{pmatrix}3&x\\4&y\end{pmatrix}\begin{pmatrix}3&4\\x&y\end{pmatrix}\\
+    &=\frac{1}{25}\begin{pmatrix}3^2+x^2&3x+xy\\4\cdot 3+xy&4^2+y^2\end{pmatrix}
+  \end{align*}
+  であるので
+  \begin{align}
+    \frac{1}{25}(3^2+x^2)&=1\label{orthomat:eq4}\\
+    \frac{1}{25}(3\cdot 4+xy)&=0\label{orthomat:eq5}\\
+    \frac{1}{25}(4^2+y^2)&=1\label{orthomat:eq6}
+  \end{align}
+  である.
+  \Cref{orthomat:eq4}より, 
+  \begin{align*}
+    9+x^2&=25\\
+    x^2&=16
+  \end{align*}
+  であるので, $x\in\Set{4,-4}$.
+    \Cref{orthomat:eq6}より, 
+  \begin{align*}
+    16+y^2&=25\\
+    y^2&=9
+  \end{align*}
+  であるので, $y\in\Set{3,-3}$.
+
+  $x=4$, $y=3$のとき,
+  $\frac{1}{25}(12+xy)=\frac{24}{25}\neq 0$
+  であり,
+  \Cref{orthomat:eq5} を満たさない.
+
+  $x=4$,
+  $y=-3$のときには,
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}
+  \end{align*}
+  という直交行列が得られる.
+
+  $x=-4$,
+  $y=3$のときには,
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&4\\4&-3\end{pmatrix}
+  \end{align*}
+  という直交行列が得られる.
+  
+  $x=-4$, $y=-3$のとき,
+  $\frac{1}{25}(12+xy)=\frac{24}{25}\neq 0$
+  であり,
+  \Cref{orthomat:eq5} を満たさない.
+\end{answerof}

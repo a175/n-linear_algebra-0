@@ -4335,7 +4335,53 @@ $\aaa$と$\bbb$を通る直線は
   \end{align*}
   となる. 
   したがって, 
-  $(\ee_1,\ee_2)$ は一次独立である.
+  $(\aaa,\bbb)$ は一次独立である.
+\end{example}
+
+
+\begin{example}
+  \label{ex:linindep:3}
+  \begin{align*}
+    \aaa=\begin{pmatrix}1\\1\end{pmatrix}
+    \bbb=\begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  とおくと
+  $(\aaa,\bbb)$は一次独立である.
+  そのことを確かめる.
+  \begin{align*}
+    x\aaa+y\bbb=
+    \begin{pmatrix}
+      x-y\\x+y
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+  \end{align*}
+  である.
+  \begin{align*}
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}
+=1\cdot 1-(-1)\cdot 1=2\neq0
+  \end{align*}
+  であり正則であるので,
+  $x\ee_1+y\ee_2=\zzero$とすると,
+  \begin{align*}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}^{-1}\zzero=\zzero
+  \end{align*}
+  となる. 
+  したがって, 
+  $(\aaa,\bbb)$ は一次独立である.
 \end{example}
 
 \begin{example}
@@ -4611,6 +4657,83 @@ $\aaa$と$\bbb$を通る直線は
   $(\aaa,\bbb)$ は$\RR^2$の生成系である.
 \end{example}
 
+
+\begin{example}
+  \label{ex:gens:3}
+  \begin{align*}
+    \aaa=\begin{pmatrix}1\\1\end{pmatrix}
+    \bbb=\begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  とおくと
+  $(\aaa,\bbb)$は$\RR^2$の生成系である.
+  この$(\aaa,\bbb)$は\cref{ex:linindep:3}のものと同じである.
+  \begin{align*}
+    x\aaa+y\bbb=
+    \begin{pmatrix}
+      x-y\\x+y
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+  \end{align*}
+  であり,
+  \begin{align*}
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}
+  \end{align*}
+  は正則で逆行列は,
+  \begin{align*}
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}^{-1}
+=    \frac{1}{2}
+    \begin{pmatrix}
+      1&1\\-1&1
+    \end{pmatrix}
+  \end{align*}
+  であった.
+  \begin{align*}
+    \xx=
+   \begin{pmatrix}
+      x\\y
+    \end{pmatrix}\in\RR^2
+  \end{align*}
+  とする.
+  このとき, $a,b$を
+  \begin{align*}
+    \begin{pmatrix}
+      \alpha\\\beta
+    \end{pmatrix}
+=
+    \begin{pmatrix}
+      1&-1\\1&1
+    \end{pmatrix}^{-1}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+= \frac{1}{2}
+    \begin{pmatrix}
+      1&1\\-1&1
+    \end{pmatrix}
+    \begin{pmatrix}
+      x\\y
+    \end{pmatrix}
+=\frac{1}{2}
+    \begin{pmatrix}
+      x+y\\-x+y
+    \end{pmatrix}
+  \end{align*}
+  で定義すると,
+  $\xx=\alpha\aaa+\beta\bbb$と書ける.
+  したがって,
+  $(\aaa,\bbb)$ は$\RR^2$の生成系である.
+\end{example}
+
 \begin{example}
   \begin{align*}
     \aaa&=\begin{pmatrix}1\\0\end{pmatrix}\\
@@ -4762,6 +4885,7 @@ $\aaa$と$\bbb$を通る直線は
 
 
 \begin{example}
+  \label{ex:stdbasis}
   \Cref{ex:linindep:std,ex:gens:std}から,
   $(\ee_1,\ee_2)$は一次独立であり$\RR^2$の生成系でもあった.
   したがって,
@@ -4771,12 +4895,26 @@ $\aaa$と$\bbb$を通る直線は
 
 
 \begin{example}
+  \label{ex:basis:2}
   \begin{align*}
     \aaa=\begin{pmatrix}3\\5\end{pmatrix}
     \bbb=\begin{pmatrix}1\\2\end{pmatrix}
   \end{align*}
   とおくと
   \Cref{ex:linindep:2,ex:gens:2}から,
+  $(\aaa,\bbb)$は一次独立であり$\RR^2$の生成系でもあった.
+  したがって,
+  $(\aaa,\bbb)$ は$\RR^2$の基底である.
+\end{example}
+
+\begin{example}
+  \label{ex:basis:3}
+  \begin{align*}
+    \aaa=\begin{pmatrix}1\\1\end{pmatrix}
+    \bbb=\begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  とおくと
+  \Cref{ex:linindep:3,ex:gens:3}から,
   $(\aaa,\bbb)$は一次独立であり$\RR^2$の生成系でもあった.
   したがって,
   $(\aaa,\bbb)$ は$\RR^2$の基底である.
@@ -4828,8 +4966,57 @@ $\aaa$, $\bbb$を2項実ベクトルとし,
   \end{align*}
   である.
   $\aaa$を平面上の点と思うと,
-  $\|\aaa\|$は原点から$\aaa$までの距離に相当する.
+  $\|\aaa\|$は原点$\zzero$から$\aaa$までの距離に相当する.
 \end{remark}
+
+
+\begin{prop}
+  \provelater**{thm:innerprod:is:innerprod}
+  \label{thm:innerprod:is:innerprod}
+  $r$を実数とする, $\aaa,\bbb,\ccc$を二項実ベクトルとする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item\provelater*{positive}
+    $\Braket{\aaa,\aaa}\geq 0$.
+  \item\provelater*{nondeg}
+    $\Braket{\aaa,\aaa}=0\iff \aaa=\zzero$.
+  \item\provelater*{symmetric}
+    \label{item:inner:c}
+    $\Braket{\aaa,\bbb}=\Braket{\bbb,\aaa}$.
+  \item\provelater*{additive}
+    \label{item:inner:a}
+    $\Braket{\aaa+\bbb,\ccc}=\Braket{\aaa,\ccc}+\Braket{\bbb,\ccc}$.
+  \item\provelater*{mult}
+    \label{item:inner:m}
+    $\Braket{r\aaa,\bbb}=r\Braket{\aaa,\bbb}$.
+  \end{enumerate}
+\end{prop}
+\begin{remark}
+  \Cref{item:inner:c,item:inner:a}から,
+    $\Braket{\ccc,\aaa+\bbb}=\Braket{\ccc,\aaa}+\Braket{\ccc,\bbb}$
+    が得られる.
+
+    \Cref{item:inner:c,item:inner:m}から,
+    $\Braket{\aaa,r\bbb}=r\Braket{\aaa,\bbb}$
+    が得られる.
+\end{remark}
+\begin{prop}
+  \provelater**{norm:is:norm}
+  $r$を実数とする, $\aaa,\bbb$を二項実ベクトルとする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item\provelater*{positive}
+    $\|\aaa\|\geq 0$.
+  \item\provelater*{nondeg}
+    $\|\aaa\|=0\iff \aaa=\zzero$.
+  \item\provelater*{triangle}
+    $\|\aaa+\bbb\|\leq \|\aaa\|+\|\bbb\|$.
+  \item\provelater*{scalar}
+    $\|r\aaa\|=|r| \|\aaa\|$.
+  \end{enumerate}
+\end{prop}
+
+
 $\aaa$を2項実ベクトルとし,
 $\aaa\neq \zzero$とする.
 このとき,
@@ -4885,52 +5072,65 @@ $\theta$を\defit{$\aaa$の偏角}と呼ぶ.
     \aaa\perp\bbb
   \end{align*}
 \end{definition}
+\begin{example}
+  \label{ex:std:orthoeachother}
+  \begin{align*}
+    \Braket{\ee_1,\ee_2}&=\Braket{\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix}}=1\cdot 0+0\cdot 1=0
+  \end{align*}
+  であるので, $\ee_1$と$\ee_2$は直交している.
+\end{example}
+\begin{example}
+  \label{ex:nonstd:orth}
+  \begin{align*}
+    \aaa=
+    \begin{pmatrix}
+      1\\1
+    \end{pmatrix},
+    \bbb=
+    \begin{pmatrix}
+      -1\\1
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  このとき,
+  \begin{align*}
+    \Braket{\aaa,\bbb}&=\Braket{\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}-1\\1\end{pmatrix}}=1\cdot(-1)+1\cdot 1=0
+  \end{align*}
+  であるこので, $\aaa$と$\bbb$は直交している.
+\end{example}
+\begin{example}
+  \label{ex:vecs:nonortho}
+  \begin{align*}
+    \aaa=\begin{pmatrix}3\\5\end{pmatrix}
+    \bbb=\begin{pmatrix}1\\2\end{pmatrix}
+  \end{align*}
+  とおく.
+  このとき,
+  \begin{align*}
+    \Braket{\aaa,\bbb}=\Braket{\begin{pmatrix}3\\5\end{pmatrix},\begin{pmatrix}1\\2\end{pmatrix}}
+    =3\cdot1+5\cdot 2=13\neq 0
+  \end{align*}
+  であるので,
+  $\aaa$と$\bbb$は直交しない.
 
-\begin{prop}
-  \provelater**{thm:innerprod:is:innerprod}
-  \label{thm:innerprod:is:innerprod}
-  $r$を実数とする, $\aaa,\bbb,\ccc$を二項実ベクトルとする.
-  このとき次が成り立つ:
-  \begin{enumerate}
-  \item\provelater*{positive}
-    $\Braket{\aaa,\aaa}\geq 0$.
-  \item\provelater*{nondeg}
-    $\Braket{\aaa,\aaa}=0\iff \aaa=\zzero$.
-  \item\provelater*{symmetric}
-    \label{item:inner:c}
-    $\Braket{\aaa,\bbb}=\Braket{\bbb,\aaa}$.
-  \item\provelater*{additive}
-    \label{item:inner:a}
-    $\Braket{\aaa+\bbb,\ccc}=\Braket{\aaa,\ccc}+\Braket{\bbb,\ccc}$.
-  \item\provelater*{mult}
-    \label{item:inner:m}
-    $\Braket{r\aaa,\bbb}=r\Braket{\aaa,\bbb}$.
-  \end{enumerate}
-\end{prop}
-\begin{remark}
-  \Cref{item:inner:c,item:inner:a}から,
-    $\Braket{\ccc,\aaa+\bbb}=\Braket{\ccc,\aaa}+\Braket{\ccc,\bbb}$
-    が得られる.
+  $\Braket{\aaa,\bbb}=13$,
+  $\|\aaa\|=\sqrt{34}$であるので,
+  \begin{align*}
+    \bbb'=\bbb-\frac{13}{\sqrt{34}}\aaa
+  \end{align*}
+  とおく.  このとき,
+  \begin{align*}
+    \Braket{\aaa,\bbb'}
+    =\Braket{\aaa,\bbb-\frac{13}{\sqrt{34}}\aaa}
+    =\Braket{\aaa,\bbb}-\frac{13}{\sqrt{34}}\Braket{\aaa,\aaa}
+    =13-\frac{13}{\sqrt{34}}\sqrt{34}
+    =0
+  \end{align*}
+  となり,
+  $\aaa$と$\bbb'$は直交する.
+  このように, 直交しないベクトルの組から, 直交するベクトルの組を作ることができる.
+\end{example}
 
-    \Cref{item:inner:c,item:inner:m}から,
-    $\Braket{\aaa,r\bbb}=r\Braket{\aaa,\bbb}$
-    が得られる.
-\end{remark}
-\begin{prop}
-  \provelater**{norm:is:norm}
-  $r$を実数とする, $\aaa,\bbb$を二項実ベクトルとする.
-  このとき次が成り立つ:
-  \begin{enumerate}
-  \item\provelater*{positive}
-    $\|\aaa\|\geq 0$.
-  \item\provelater*{nondeg}
-    $\|\aaa\|=0\iff \aaa=\zzero$.
-  \item\provelater*{triangle}
-    $\|\aaa+\bbb\|\leq \|\aaa\|+\|\bbb\|$.
-  \item\provelater*{scalar}
-    $\|r\aaa\|=|r| \|\aaa\|$.
-  \end{enumerate}
-\end{prop}
 \begin{definition}
   \label{def:orthonormal}
   次の条件を満たすとき,
@@ -4941,9 +5141,101 @@ $\theta$を\defit{$\aaa$の偏角}と呼ぶ.
   \item $\|\aaa\|=\|\bbb\|=1$.
   \end{enumerate}
 \end{definition}
+\begin{example}
+  \Cref{ex:stdbasis}で
+  $(\ee_1,\ee_2)$が基底であることは見た.
+  また, \Cref{ex:std:orthoeachother}で見たように,
+  内積の定義に従い直接計算することで,
+  $\Braket{\ee_1,\ee_2}=0$つまり
+  $\ee_1$と$\ee_2$が直交していることがわかる.
+  ノルムの定義に従い直接計算することで,
+  \begin{align*}
+    \|\ee_1\|&=0\\
+    \|\ee_2\|&=0
+  \end{align*}
+  がわかる.
+  よって, 
+  $(\ee_1,\ee_2)$は正規直交基底である.
+\end{example}
+\begin{example}
+  \begin{align*}
+    \aaa=\begin{pmatrix}3\\5\end{pmatrix}
+    \bbb=\begin{pmatrix}1\\2\end{pmatrix}
+  \end{align*}
+  とおくと,
+  $(\aaa,\bbb)$ は$\RR^2$の基底であることは,
+  \Cref{ex:basis:2}で見た.
+  しかし,
+  \Cref{ex:vecs:nonortho}で見たように,
+  \begin{align*}
+    \Braket{\aaa,\bbb}=13\neq 0
+  \end{align*}
+  であるので,
+  $\aaa$と$\bbb$は直交しない.
+  したがって, $(\aaa,\bbb)$は正規直交基底ではない.
+\end{example}
+
+\begin{example}
+  \label{ex:orth:nonnormal:basis}
+  \begin{align*}
+    \aaa=
+    \begin{pmatrix}
+      1\\1
+    \end{pmatrix},
+    \bbb=
+    \begin{pmatrix}
+      -1\\1
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  このとき,
+  \Cref{ex:basis:3,ex:nonstd:orth}で見たように,
+  $(\aaa,\bbb)$は基底であり,
+  $\Braket{\aaa,\bbb}=0$である.
+  しかし,
+  \begin{align*}
+    \|\aaa\|&=\sqrt{2}\\
+    \|\bbb\|&=\sqrt{2}
+  \end{align*}
+  であるこので, $(\aaa,\bbb)$は正規直交基底ではない.
+
+  $\|\aaa\|=\|\bbb\|=\sqrt{2}$
+  であるので,  
+  \begin{align*}
+    \overline\aaa&=\frac{1}{\sqrt{2}}\aaa,
+    \overline\bbb&=\frac{1}{\sqrt{2}}\bbb
+  \end{align*}
+  とおく.
+  このとき,
+  \begin{align*}
+    \Braket{\overline\aaa,\overline\bbb}&=
+    \Braket{\frac{1}{\sqrt{2}}\aaa,\frac{1}{\sqrt{2}}\bbb}
+    =\frac{1}{\sqrt{2}}\cdot \frac{1}{\sqrt{2}}\Braket{\aaa,\bbb}
+    =\frac{1}{\sqrt{2}}\cdot \frac{1}{\sqrt{2}}0=0
+  \end{align*}
+  であるので$\overline\aaa$と$\overline\bbb$は直交する.
+  さらに,
+  \begin{align*}
+    \|\overline\aaa\|&=
+    \|\frac{1}{\sqrt{2}}\aaa\|
+    =\left|\frac{1}{\sqrt{2}}\right|\|\aaa\|
+    =\frac{1}{\sqrt{2}}\cdot \sqrt{2}=1\\
+    \|\overline\bbb\|&=
+    \|\frac{1}{\sqrt{2}}\bbb\|
+    =\left|\frac{1}{\sqrt{2}}\right|\|\bbb\|
+    =\frac{1}{\sqrt{2}}\cdot \sqrt{2}=1
+  \end{align*}
+  であるので, $(\overline{\aaa},\overline{\bbb})$は正規直交基底である.
+  このように, 直交するベクトルの組があれば, 正規直交基底を作ることができる.
+\end{example}
 
 \begin{remark}
   \label{thm:gramschmidt}
+  \Cref{ex:vecs:nonortho,}で見た方法と,
+  \cref{ex:orth:nonnormal:basis}で見た方法を組み合わせることで,
+  一次独立なベクトルの組から正規直交基底を作ることができる.
+  この方法を\defit{グラム--シュミットの直交化法}と呼ぶ.
+  
   $\aaa$, $\bbb$を二項実ベクトルとする.
   $\aaa,\bbb$が一次独立であるとする.
   このとき,
@@ -4983,93 +5275,211 @@ $\theta$を\defit{$\aaa$の偏角}と呼ぶ.
   \end{align*}
   となる.
   $(\bar\aaa,\bar\bbb)$は$\RR^2$の正規直交基底である.
-
-  いま, $\aaa,\bbb$から, 
-  $(\bar\aaa,\bar\bbb)$は$\RR^2$という正規直交基底を構成したが,
-  この方法を\defit{グラム--シュミットの直交化法}と呼ぶ.
 \end{remark}
+
+\begin{remark}
+  $(\aaa,\bbb)$を正規直交基底とする.
+  $(\aaa,\bbb)$は基底であるので,
+  $2$項実ベクトル
+  $\xx,\yy\in\RR^2$が与えられると,
+  \begin{align*}
+    \xx=x\aaa+x'\bbb\\
+    \yy=y\aaa+y'\bbb
+  \end{align*}
+  を満たす実数$x,x',y,y'$がとれる.
+  $\xx$と$\yy$の内積は, 
+  $x,x',y,y'$を使って,
+  \begin{align*}
+    \Braket{\xx,\yy}
+    &=\Braket{x\aaa+x'\bbb,y\aaa+y'\bbb}\\
+    &=\Braket{x\aaa,y\aaa+y'\bbb}+\Braket{x'\bbb,y\aaa+y'\bbb}\\
+    &=\Braket{x\aaa,y\aaa}+\Braket{x\aaa,y'\bbb}+\Braket{x'\bbb,y\aaa}+\Braket{x'\bbb,y'\bbb}\\
+    &=xy\Braket{\aaa,\aaa}+xy'\Braket{\aaa,\bbb}+x'y\Braket{\bbb,\aaa}+x'y'\Braket{\bbb,\bbb}\\
+    &=xy\|\aaa\|^2+(xy'+x'y)\Braket{\bbb,\aaa}+x'y'\|\bbb\|^2
+  \end{align*}
+  と書ける.
+  $(\aaa,\bbb)$を正規直交基底であるので,
+  $\Braket{\aaa,\bbb}=0$, $\|\aaa\|=\|\bbb\|=1$であるので,
+  \begin{align*}
+    \Braket{\xx,\yy}
+    &=xy+x'y'
+  \end{align*}
+  と, 対応する係数の積の和として, 書くことができる.
+
+  また, 同様に, 一般には,  $\xx$のノルムは, $x,x'$を使って,
+  \begin{align*}
+    \|\xx\|^2
+    &=\Braket{\xx,\xx}\\
+    &=\Braket{x\aaa+x'\bbb,x\aaa+x'\bbb}\\
+    &=x^2\|\aaa\|^2+2xx'\Braket{\bbb,\aaa}+(x')^2\|\bbb\|^2\\
+    \|\xx\|
+    &=\sqrt{x^2\|\aaa\|^2+2xx'\Braket{\bbb,\aaa}+(x')^2\|\bbb\|^2}
+  \end{align*}
+  と書くことができる.
+  $(\aaa,\bbb)$を正規直交基底であるので,
+  $\Braket{\aaa,\bbb}=0$, $\|\aaa\|=\|\bbb\|=1$を使うと,
+  \begin{align*}
+    \|\xx\|
+    &=\sqrt{x^2+(x')^2}
+  \end{align*}
+  と書くことができる.  
+\end{remark}
+
+
+\begin{definition}
+  \label{prop:distance:point:line}
+  $L$を直線とする.
+点$\xx$に対し,
+$\xx$を通り$L$と垂直に交わる直線はただ$1$つに定まる.
+この直線を\defit{$\xx$から$L$へ下ろした垂線}と呼ぶ.
+$\xx$から$L$へ下ろした垂線と直線$L$の交点を$\yy$とする.
+このとき, $\yy$を\defit{$\xx$から$L$へ下ろした垂線の足}と呼ぶ.
+$\xx$と$\yy$を結ぶ線分の長さ,
+つまり, $\|\yy-\xx\|$を,
+\defit{$\xx$から$L$へ下ろした垂線の長さ}と呼ぶこともある.
+直線$L$上の点$\aaa$と$\xx$の距離を考えると,
+$\aaa=\yy$であるときに最小値をとる.
+つまり,
+\begin{align*}
+  \|\yy-\xx\|=\min\Set{\|\aaa-\xx\| \ |\ \aaa\in L }
+\end{align*}
+である.
+$\|\yy-\xx\|$を
+\defit{点$\xx$と直線$L$の距離}と呼ぶこともある.
+\end{definition}
 
 \begin{definition}
   \label{def:projection}
-$\aaa$を二項実ベクトルとする.
-$\aaa\neq\zzero$とする.
-$\aaa\perp\bbb$となる$\bbb$を一つ選ぶ.
-このとき, 二項実ベクトル$\xx$に対し,
-\begin{align*}
-  \xx=\alpha \aaa+\beta\bbb
-\end{align*}
-となる実数$\alpha,\beta$がとれる.
-このとき,
-$\alpha\aaa$を\defit{$\xx$の$\aaa$への直交射影}とよぶ.
-$\beta\bbb$を\defit{$\xx$の$\aaa$からの反射影もしくは垂直成分}とよぶ.
+直線$L$を固定して考える.
+点$\xx$に対し,
+$\xx$から$L$へ下ろした垂線の足はただ一つ定まる.
+点$\xx$に対し,
+$\xx$から$L$へ下ろした垂線の足を対応させる対応のことを,
+\text{直線$L$への直交射影}と呼ぶ.
+$\xx$から$L$へ下ろした垂線の足$\yy$を,
+\text{点$\xx$の直線$L$への直交射影}と呼ぶ.
+また, ベクトル$\xx-\yy$, つまり垂線の足$\yy$から点$\xx$へ向かうベクトル,
+を
+\text{点$\xx$の直線$L$への直交射影の垂直成分}とか
+\text{反射影}
+と呼ぶ.
+定義から,
+点$\xx$の直線$L$への直交射影の垂直成分のノルムが,
+点$\xx$と直線$L$の距離である.
 \end{definition}
+
+$\aaa\neq \zzero$とし,
+$L$を$\aaa$と
+原点を通る直線とする.
+このとき
 \begin{align*}
-  \bar\bbb=\frac{1}{\|\bbb\|}\bbb
+  L=\Set{t\aaa|t\in \RR}
 \end{align*}
-とおくと,
-垂直成分は,
-\begin{align*}
- \Braket{\xx,\bar\bbb}\bar\bbb
-\end{align*}
-と書ける.
-したがって, 直交射影は,
-\begin{align*}
- \xx-\Braket{\xx,\bar\bbb}\bar\bbb
-\end{align*}
-と書ける.
-また,
+と書くことができる.
+$\xx\in\RR^2$とし,
+$\xx$の$L$への直交射影や垂直成分について考える.
+\begin{figure}
+  \centering
+  \begin{picture}(100,100)
+    \put(20,0){\vector(0,1){100}}
+    \put(0,20){\vector(1,0){100}}
+    \put(70,75){\makebox(0,0){$\bullet$}}
+    \put(60,30){\makebox(0,0){$\bullet$}}
+    \put(70,80){\makebox(0,0)[b]{\small$\xx$}}
+    \put(60,33){\makebox(0,0)[b]{\small$\aaa$}}
+    \put(35,30){\makebox(0,0){\small$\theta$}}
+    \qbezier[30](20,20)(30,60)(70,75)
+    \put(30,60){\makebox(0,0)[b]{\small$\|\xx\|$}}
+    \qbezier[25](80,35)(90,60)(70,75)
+    \put(85,60){\makebox(0,0)[l]{\small$\|\xx\|\sin(\theta)$}}
+    \qbezier[25](20,20)(70,10)(80,35)
+    \put(70,15){\makebox(0,0)[t]{\small$\|\xx\|\cos(\theta)$}}
+    \thicklines
+    \put(20,20){\line(4,1){75}}
+    \put(20,20){\line(-4,-1){15}}
+    \qbezier[35](20,20)(45,47.5)(70,75)
+    \qbezier[25](70,75)(75,55)(80,35)
+    %\qbezier[30](60,18)(60,54)(60,90)
+  \end{picture}
+  \caption{原点を通る直線への射影}
+  \label{fig:vector:proj:origin}
+\end{figure}
+\Cref{fig:vector:proj:origin}にあるように,
+$\aaa$と$\xx$のなす角を$\theta$とすると,
+$\xx$の$L$への直交射影は, ノルムが$\|\xx\|\cos(\theta)$である$L$上の点である.
+したがって, $\aaa$をスカラー倍しノルムが$\|\xx\|\cos(\theta)$となるように調整することで直交射影を得ることができる.
+ノルムを調整する必要があるので,
+議論を簡単にするため,
+$L$上の点でノルムが1の点$\bar\aaa$を用意する.
 \begin{align*}
   \bar\aaa=\frac{1}{\|\aaa\|}\aaa
 \end{align*}
-とおけば, 直交射影は
+とおくと, $\|\bar\aaa\|=1$となる.
+このとき,
+$\xx$と$\bar\aaa$の内積は,
+$\xx$と$\aaa$のなす角$\theta$を使って
+次のように書ける:
+\begin{align*}
+  \Braket{\xx,\bar\aaa}=\|\xx\|\|\bar\aaa\|\cos(\theta)=\|\xx\|\cos(\theta).
+\end{align*}
+したがって,
 \begin{align*}
  \Braket{\xx,\bar\aaa}\bar\aaa
 \end{align*}
+が
+$\xx$の$L$への直交射影である.
+$\bar\aaa$ではなく$\aaa$を使えば,
+\begin{align*}
+  \Braket{\xx,\bar\aaa}\bar\aaa=
+  \left\langle\xx,\frac{1}{\|\aaa\|}\aaa\right\rangle\frac{1}{\|\aaa\|}\aaa=
+  \frac{\Braket{\xx,\aaa}}{\|\aaa\|^2}\aaa
+\end{align*}
+と書くこともできる.
+
+$\xx$の$L$への直交射影がわかったので,
+今度は垂直成分について考える.
+垂直成分は$\xx$と垂直成分の差であるので,
+\begin{align*}
+\xx-\Braket{\xx,\bar\aaa}\bar\aaa
+\end{align*}
+である.
+これは,
+\begin{align*}
+\xx-\frac{\Braket{\xx,\aaa}}{\|\aaa\|^2}\aaa
+\end{align*}
+とも書ける.
+したがって, $\xx$と$L$の距離は,
+\begin{align*}
+\|\xx-\Braket{\xx,\bar\aaa}\bar\aaa\|
+\end{align*}
+と表すことができる.
+$\bar\aaa$ではなく$\aaa$を使えば,
+\begin{align*}
+\left\|\xx-\frac{\Braket{\xx,\aaa}}{\|\aaa\|^2}\aaa\right\|
+\end{align*}
 とも書ける.
 
-\begin{definition}
-  点$\xx$と直線$L$が与えられたとき,
-  直線上の点$\aaa$と$\xx$の距離$\|\aaa-\xx\|$の最小値を
-  \defit{点$\xx$と直線$L$の距離}とよぶ.
-  つまり,
-  \begin{align*}
-    \min\Set{\|\aaa-\xx\| \ |\ \aaa\in L }
-  \end{align*}
-  が$\xx$と$L$の距離である.
-\end{definition}
-\begin{remark}
-  \label{prop:distance:point:line}
-  $\aaa$と
-  原点を通る直線
-  \begin{align*}
-    L=\Set{t\aaa|t\in \RR}
-  \end{align*}
-  と,
-  $\xx$の距離について考える.
-  $\xx$から$L$への垂線を$N$とする.
-  $N$と$L$の交点を
-  $\xx$から$L$への下ろした垂線の足と呼ぶ.
-  直線$L$上の点は,
-  $\xx$から$L$への下ろした垂線の足で最も$\xx$に近づくので,
-  垂線の足と$\xx$の距離を求めればよい.
-  垂線の足は $\xx$の$\aaa$への直交射影を求めれば求まり,
-  垂線の足と$\xx$の距離は垂直成分を計算すればよい.
 
-  
+
+  原点を通らない直線$L$と点$\xx$の距離について考える.
   $\aaa$, $\bbb$を通る直線
   \begin{align*}
     L=\Set{t\aaa+(1-t)\bbb|t\in \RR}
   \end{align*}
-  と点$\xx$の距離を求めるのであれば,
-  両方とも$-bbb$だけ平行移動して考えればよい.
+  と点$\xx$について考える.
+  このときは, $L$と$\xx$の距離を考えるのであれば,
+  両方とも$-\bbb$だけ平行移動して考えればよい.
   つまり
   \begin{align*}
     L'&=\Set{t\aaa+(1-t)\bbb-\bbb|t\in \RR}\\
     &=\Set{t(\aaa-\bbb)|t\in \RR}
   \end{align*}
-  と, $\xx-\bbb$の距離を求めれば良い.
-  $L'$は原点を通るので, 直交射影や垂直成分を計算することで距離がわかる.
-\end{remark}
+  と, $\xx-\bbb$
+  の距離を求めれば良い.
+  $L'$は原点を通るので,
+  内積を使って求めることができる.
+  
+
 \begin{definition}
   \label{def:orthogonalmat}
   $A$を実数を成分とする2次正方行列であるとする.
@@ -5664,11 +6074,11 @@ $\|\bbb\|=3$,
 
 \begin{quiz}
   \begin{align*}
-    \aaa=\begin{pmatrix}-1,-1\end{pmatrix},
-    \bbb=\begin{pmatrix}2,-1\end{pmatrix}
+    \aaa=\begin{pmatrix}-1\\-1\end{pmatrix},
+    \bbb=\begin{pmatrix}2\\-1\end{pmatrix}
   \end{align*}
   であるとき,
-  $\Braket{\aaa,\bbb}=0$を求めよ.
+  $\Braket{\aaa,\bbb}$を求めよ.
   $\aaa$と$\bbb$のなす角を$\theta$とするとき, $\cos(\theta)$を求めよ.
 \end{quiz}
 
@@ -5677,17 +6087,26 @@ $\|\bbb\|=3$,
   $\|\bbb\|=3$,
   $\|\aaa-\bbb\|=\sqrt{19}$,
   であるとき,
-  $\Braket{\aaa,\bbb}=0$を求めよ.
+  $\Braket{\aaa,\bbb}$を求めよ.
   $\aaa$と$\bbb$のなす角を$\theta$とするとき, $\cos(\theta)$を求めよ.
 \end{quiz}
 
 
 \begin{quiz}
+  \solvelater{quiz:5:9}  
   \begin{align*}
-    \aaa=\begin{pmatrix}2,3\end{pmatrix},
+    \aaa=\frac{1}{5}\begin{pmatrix}3\\4\end{pmatrix},
   \end{align*}
   であるとき,
   $(\aaa,\bbb)$が$\RR^2$の正規直交基底となるような$\bbb$をすべて求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \solvelater{quiz:5:10}  
+  \begin{align*}
+    \frac{1}{5}\begin{pmatrix}3&x\\4&y\end{pmatrix},
+  \end{align*}
+  が直交行列となる$x,y$を求めよ.
 \end{quiz}
 
 \begin{quiz}
