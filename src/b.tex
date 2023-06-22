@@ -3699,7 +3699,7 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
   $\|\vv\|=\sqrt{2^2+1^2}=\sqrt{5}$であるので,
   \begin{align*}
     \vv'=
-    \frac{1}{sqrt{5}}
+    \frac{1}{\sqrt{5}}
     \begin{pmatrix}
       2\\1
     \end{pmatrix}
@@ -3720,12 +3720,12 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
   $\|\ww\|=\sqrt{\frac{1}{2^2}+1^2}=\frac{\sqrt{5}}{2}$であるので,
   \begin{align*}
     \vv'=
-    \frac{2}{sqrt{5}}
+    \frac{2}{\sqrt{5}}
     \begin{pmatrix}
       -\frac{1}{2}\\1
     \end{pmatrix}
     =
-    \frac{1}{sqrt{5}}
+    \frac{1}{\sqrt{5}}
     \begin{pmatrix}
       -1\\2
     \end{pmatrix}
@@ -3787,12 +3787,51 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@
+\begin{answerof}{quiz:6:7}
+$a_{0}=0$として$0$項目を付け加えても, 漸化式をみたすので,
+問題ないから, $a_0$を付け加えて考える.
+
+\begin{align*}
+  \vv_n=\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}
+\end{align*}
+とおく.
+このとき,
+\begin{align*}
+  \vv_0=\begin{pmatrix}a_{1}\\a_0\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
+\end{align*}
+である.
+また,
+\begin{align*}
+  \vv_{n+1}
+  &=\begin{pmatrix}a_{n+2}\\a_{n+1}\end{pmatrix}\\
+  &=\begin{pmatrix}a_{n+1}+a_n\\a_{n+1}\end{pmatrix}\\
+  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}\\
+  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}\vv_n
+\end{align*}
+とできる.
 \begin{align*}
 A=\begin{pmatrix}1&1\\1&0\end{pmatrix}
 \end{align*}
-の場合で説明する.
+とおくと,
+\begin{align*}
+  \vv_{n+1}
+  &=A\vv_{n}
+\end{align*}
+となる.
+この等式は$n>0$であればどの$n$でも成り立つので,
+\begin{align*}
+  \vv_{n}
+  &=A\vv_{n-1}.
+\end{align*}
+と書き直しても良い.
+繰り返しこの等式を使うことで,
+\begin{align*}
+  \vv_{n}&=A\vv_{n-1}=A^2\vv_{n-2}
+  =\cdots=A^{n}\vv_0
+\end{align*}
+となることがわかる.
+
+$\vv_0$はもうすでにわかっているので$A^n$を計算する.
 
 まず$A$の固有値を求める.
 \begin{align*}
@@ -3817,36 +3856,53 @@ A=\begin{pmatrix}1&1\\1&0\end{pmatrix}
 \end{align*}
 は,
 \begin{align*}
-  \left(x-\frac{1-\sqrt{5}}{2}\right)\left(x-\frac{1+\sqrt{5}}{2}\right)&=0
+\lambda&=\frac{1-\sqrt{5}}{2}&
+\mu&=\frac{1+\sqrt{5}}{2}
+\end{align*}
+とおけば,
+\begin{align*}
+  \left(x-\lambda\right)\left(x-\mu\right)&=0
 \end{align*}
 と書けるので,
-解は,
-$\frac{1-\sqrt{5}}{2}$と
-$\frac{1+\sqrt{5}}{2}$
+解は, $\lambda$と$\mu$
 の$2$つである.
 したがって,
 $A$の固有値も,
-$\frac{1-\sqrt{5}}{2}$と
-$\frac{1+\sqrt{5}}{2}$
+$\lambda$と
+$\mu$
 の$2$つである.
 
 
+なお,
+$\lambda$と$\mu$は,
+$\lambda+\mu=1$,
+$\lambda\mu=-1$
+を満たしているので,
+\begin{align*}
+  1-\lambda&=\mu\\
+  1-\mu&=\lambda\\
+\frac{1}{\lambda}&=-\mu\\
+\frac{1}{\mu}&=-\lambda
+\end{align*}
+である.
+また,
+$\lambda-\mu=\frac{1-\sqrt{5}}{2}-\frac{1-\sqrt{5}}{2}=-\sqrt{5}$である.
+
+
+
 まず,
-固有値$\frac{1-\sqrt{5}}{2}$に属する固有ベクトルを求める.
-$\lambda=\frac{1-\sqrt{5}}{2}$とするとき
+固有値$\lambda$に属する固有ベクトルを求める.
 \begin{align*}
   A-\lambda E_2 \xx=\zzero 
 \end{align*}
 の$\zzero$以外の解を求めれば,
-それが$\frac{1-\sqrt{5}}{2}$に属する固有ベクトルである.
+それが$\lambda$に属する固有ベクトルである.
 \begin{align*}
   A-\lambda E_2
   & =
   \begin{pmatrix}1-\lambda&1\\1&-\lambda\end{pmatrix}  \\
   & =
-    \begin{pmatrix}1-\frac{1-\sqrt{5}}{2}&1\\1&-\frac{1-\sqrt{5}}{2}\end{pmatrix}\\
-    & =
-  \begin{pmatrix}\frac{1+\sqrt{5}}{2}&1\\1&\frac{-1+\sqrt{5}}{2}\end{pmatrix}
+    \begin{pmatrix}\mu&1\\1&-\lambda\end{pmatrix}
 \end{align*}
 である. したがって, $\xx$に関する方程式
 \begin{align*}
@@ -3855,36 +3911,27 @@ $\lambda=\frac{1-\sqrt{5}}{2}$とするとき
 の拡大係数行列は,
 \begin{align*}
   \begin{pmatrix}
-    \frac{1+\sqrt{5}}{2}&1&0\\
-    1&\frac{-1+\sqrt{5}}{2}&0
+   \mu&1&0\\
+   1&-\lambda&0
   \end{pmatrix}
 \end{align*}
-である. $1$行目を$\frac{2}{1+\sqrt{5}}$倍すると,
-\begin{align*}
-  \frac{2}{1+\sqrt{5}}
-  &=
-  \frac{2(1-\sqrt{5})}{(1+\sqrt{5})(1-\sqrt{5})}
-  &=
-  \frac{2(1-\sqrt{5})}{1-5}
-  &=
-  \frac{2(1-\sqrt{5})}{-4}
-  &=
-  \frac{(1-\sqrt{5})}{-2}
-  &=
-  \frac{-1+\sqrt{5}}{-2}
-\end{align*}
-であるので,
+である. $1$行目を$\frac{1}{\mu}$倍すると,
 \begin{align*}
   \begin{pmatrix}
-    1&\frac{-1+\sqrt{5}}{2}&0\\
-    1&\frac{-1+\sqrt{5}}{2}&0
+    1&\frac{1}{\mu}&0\\
+    1&-\lambda&0
+  \end{pmatrix}
+ =
+  \begin{pmatrix}
+    1&-\lambda&0\\
+    1&-\lambda&0
   \end{pmatrix}
 \end{align*}
 となる.
 $2$行目に$1$行目の$-1$倍を足すと,
 \begin{align*}
   \begin{pmatrix}
-    1&\frac{-1+\sqrt{5}}{2}&0\\
+    1&-\lambda&0\\
     0&0&0
   \end{pmatrix}
 \end{align*}
@@ -3895,32 +3942,29 @@ $2$行目に$1$行目の$-1$倍を足すと,
 \end{align*}
 の解の空間は,
 \begin{align*}
-\Set{t\begin{pmatrix}-\frac{-1+\sqrt{5}}{2}\\1\end{pmatrix}|t\text{は数}}
+\Set{t\begin{pmatrix}\lambda\\1\end{pmatrix}|t\text{は数}}
 \end{align*}
 と書ける.
 したがって, 例えば
 \begin{align*}
-  \begin{pmatrix}1-\sqrt{5}\\2\end{pmatrix}
+  \begin{pmatrix}\lambda\\1\end{pmatrix}
 \end{align*}
-は固有値$\frac{1-\sqrt{5}}{2}$に属する固有ベクトルである.
+は固有値$\lambda$に属する固有ベクトルである.
 
 
 次に,
-固有値$\frac{1+\sqrt{5}}{2}$に属する固有ベクトルを求める.
-$\lambda=\frac{1+\sqrt{5}}{2}$とするとき
+固有値$\mu$に属する固有ベクトルを求める.
 \begin{align*}
-  A-\lambda E_2 \xx=\zzero 
+  A-\mu E_2 \xx=\zzero 
 \end{align*}
 の$\zzero$以外の解を求めれば,
-それが$\frac{1+\sqrt{5}}{2}$に属する固有ベクトルである.
+それが$\mu$に属する固有ベクトルである.
 \begin{align*}
-  A-\lambda E_2
+  A-\mu E_2
   & =
-  \begin{pmatrix}1-\lambda&1\\1&-\lambda\end{pmatrix}  \\
+  \begin{pmatrix}1-\mu&1\\1&-\mu\end{pmatrix}  \\
   & =
-    \begin{pmatrix}1-\frac{1+\sqrt{5}}{2}&1\\1&-\frac{1+\sqrt{5}}{2}\end{pmatrix}\\
-    & =
-  \begin{pmatrix}\frac{1-\sqrt{5}}{2}&1\\1&\frac{-1-\sqrt{5}}{2}\end{pmatrix}
+    \begin{pmatrix}\lambda&1\\1&-\mu\end{pmatrix}
 \end{align*}
 である. したがって, $\xx$に関する方程式
 \begin{align*}
@@ -3929,61 +3973,52 @@ $\lambda=\frac{1+\sqrt{5}}{2}$とするとき
 の拡大係数行列は,
 \begin{align*}
   \begin{pmatrix}
-    \frac{1-\sqrt{5}}{2}&1&0\\
-    1&\frac{-1-\sqrt{5}}{2}&0
+    \lambda&1&0\\
+    1&-\mu&0
   \end{pmatrix}
 \end{align*}
-である. $1$行目を$\frac{2}{1-\sqrt{5}}$倍すると,
-\begin{align*}
-  \frac{2}{1-\sqrt{5}}
-  &=
-  \frac{2(1+\sqrt{5})}{(1-\sqrt{5})(1+\sqrt{5})}
-  &=
-  \frac{2(1+\sqrt{5})}{1-5}
-  &=
-  \frac{2(1+\sqrt{5})}{-4}
-  &=
-  \frac{(1+\sqrt{5})}{-2}
-  &=
-  \frac{-1-\sqrt{5}}{-2}
-\end{align*}
-であるので,
+である. $1$行目を$\frac{1}{\lambda}$倍すると,
 \begin{align*}
   \begin{pmatrix}
-    1&\frac{-1-\sqrt{5}}{2}&0\\
-    1&\frac{-1-\sqrt{5}}{2}&0
+    1&\frac{1}{\lambda}&0\\
+    1&-\mu&0
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    1&-\mu&0\\
+    1&-\mu&0
   \end{pmatrix}
 \end{align*}
 となる.
 $2$行目に$1$行目の$-1$倍を足すと,
 \begin{align*}
   \begin{pmatrix}
-    1&\frac{-1-\sqrt{5}}{2}&0\\
+    1&-\mu&0\\
     0&0&0
   \end{pmatrix}
 \end{align*}
 となる.
 したがって,
 \begin{align*}
-  A-\lambda E_2 \xx=\zzero 
+  A-\mu E_2 \xx=\zzero 
 \end{align*}
 の解の空間は,
 \begin{align*}
-\Set{t\begin{pmatrix}-\frac{-1-\sqrt{5}}{2}\\1\end{pmatrix}|t\text{は数}}
+\Set{t\begin{pmatrix}\mu\\1\end{pmatrix}|t\text{は数}}
 \end{align*}
 と書ける.
 例えば
 \begin{align*}
-  \begin{pmatrix}1+\sqrt{5}\\2\end{pmatrix}
+  \begin{pmatrix}\mu\\1\end{pmatrix}
 \end{align*}
-は固有値$\frac{1+\sqrt{5}}{2}$に属する固有ベクトルである.
+は固有値$\mu$に属する固有ベクトルである.
 
 
 固有ベクトルが求められたので対角化をする.
 \begin{align*}
   P=
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+    \lambda&\mu\\
     1&1    
   \end{pmatrix}
 \end{align*}
@@ -3992,28 +4027,30 @@ $2$行目に$1$行目の$-1$倍を足すと,
   \det(P)=
   \det(
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+    \lambda&\mu\\
     1&1    
   \end{pmatrix})
-  =(1+\sqrt{5})+(1-\sqrt{5})=2\neq 0
+  =\lambda-\mu=-\sqrt{5}\neq 0
 \end{align*}
 であるので$P$は正則であり,
 \begin{align*}
   P^{-1}=
-  \frac{1}{2}
+  \frac{1}{-\sqrt{5}}
   \begin{pmatrix}
-    1&-1+\sqrt{5}\\
-    -1&1+\sqrt{5}    
+    1&-\mu\\
+    -1&\lambda    
   \end{pmatrix}
 \end{align*}
 である.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 このとき,
 \begin{align*}
   P^{-1}AP=
   \begin{pmatrix}
-    \frac{1+\sqrt{5}}{2}&0\\
-    0&\frac{1+\sqrt{5}}{2}
+    \lambda&0\\
+    0&\mu
   \end{pmatrix}
 \end{align*}
 である.
@@ -4021,11 +4058,12 @@ $2$行目に$1$行目の$-1$倍を足すと,
 \begin{align*}
   (P^{-1}AP)^n=
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    \lambda^n&0\\
+    0&\mu^n
   \end{pmatrix}
 \end{align*}
-である. 一方, \cref{ex:diagonalizedpow}でみたように,
+である.
+一方, \cref{ex:diagonalizedpow}でみたように,
 \begin{align*}
   (P^{-1}AP)^n
   &=P^{-1}A^nP
@@ -4034,144 +4072,81 @@ $2$行目に$1$行目の$-1$倍を足すと,
 \begin{align*}
 P^{-1}A^nP&=
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    \lambda^n&0\\
+    0&\mu^n
   \end{pmatrix}
 \\
 A^n&=
 P
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    \lambda^n&0\\
+    0&\mu^n
   \end{pmatrix}
   P^{-1}
 \end{align*}
 とできる.
 したがって,
 \begin{align*}
-  &A^n\\
+  A^n
   &=
 P
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    \lambda^n&0\\
+    0&\mu^n
   \end{pmatrix}
   P^{-1}\\
 &=
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+    \lambda&\mu\\
     1&1    
   \end{pmatrix}
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    \lambda^n&0\\
+    0&\mu^n
   \end{pmatrix}
-(  \frac{1}{2}
+(  \frac{-1}{\sqrt{5}}
   \begin{pmatrix}
-    1&-1+\sqrt{5}\\
-    -1&1+\sqrt{5}    
+    1&-\mu\\
+    -1&\lambda    
   \end{pmatrix}
 )\\
-&=\frac{1}{2}
+&=\frac{-1}{\sqrt{5}}
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+    \lambda&\mu\\
     1&1    
   \end{pmatrix}
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    \lambda^n&0\\
+    0&\mu^n
   \end{pmatrix}
   \begin{pmatrix}
-    1&-1+\sqrt{5}\\
-    -1&1+\sqrt{5}    
+    1&-\mu\\
+    -1&\lambda    
   \end{pmatrix}
 \\
-&=\frac{1}{2}
+&=\frac{-1}{\sqrt{5}}
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+    \lambda&\mu\\
     1&1    
   \end{pmatrix}
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&
-    \left(\frac{1+\sqrt{5}}{2}\right)^n\left(-1+\sqrt{5}\right)\\
-    -\left(\frac{1-\sqrt{5}}{2}\right)^n
-    &\left(\frac{1-\sqrt{5}}{2}\right)^n\left(1+\sqrt{5}\right)
+    \lambda^n&-\lambda^n\mu\\
+    -\mu^n&\lambda\mu^n    
   \end{pmatrix}
 \\
-&=\frac{1}{2}
+&=\frac{-1}{\sqrt{5}}
   \begin{pmatrix}
-    (1+\sqrt{5})\left(\frac{1+\sqrt{5}}{2}\right)^n-(1-\sqrt{5})\left(\frac{1-\sqrt{5}}{2}\right)^n&
-    (1+\sqrt{5})\left(\frac{1+\sqrt{5}}{2}\right)^n\left(-1+\sqrt{5}\right)+(1-\sqrt{5})\left(\frac{1-\sqrt{5}}{2}\right)^n\left(1+\sqrt{5}\right)\\
-    \left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n&    \left(\frac{1+\sqrt{5}}{2}\right)^n\left(-1+\sqrt{5}\right)+
-    \left(\frac{1-\sqrt{5}}{2}\right)^n\left(1+\sqrt{5}\right)    
-  \end{pmatrix}
-\\
-&=
+    \lambda\lambda^n-\mu^n\mu&-\lambda^n\mu\lambda+\lambda\mu^n\mu\\
+    \lambda^n-\mu^n&-\lambda^n\mu+\lambda\mu^n        
+  \end{pmatrix}\\
+&=\frac{-1}{\sqrt{5}}
   \begin{pmatrix}
-    \frac{1+\sqrt{5}}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1-\sqrt{5}}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n&
-    \frac{(1+\sqrt{5})(-1+\sqrt{5})}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n+\frac{(1-\sqrt{5})(1+\sqrt{5})}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n\\
-    \frac{1}{2}\left( \left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n\right)&
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n-1}\frac{1+\sqrt{5}}{2}\frac{-1+\sqrt{5}}{2}+
-    \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\frac{1-\sqrt{5}}{2}\frac{1+\sqrt{5}}{2}    
+    \lambda^{n+1}-\mu^{n+1}&\lambda^n-\mu^n\\
+    \lambda^n-\mu^n&\lambda^{n-1}-\mu^{n-1}        
   \end{pmatrix}
-\\
-&=
-  \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n+1}
-    -\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}&
-    2\left(\frac{1+\sqrt{5}}{2}\right)^n-2\left(\frac{1-\sqrt{5}}{2}\right)^n\\
-    \frac{1}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n
-    -\frac{1}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n&
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n-1}-
-    \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}
-  \end{pmatrix}
-\end{align*}
-
-このような行列の冪の一つの応用として, 数列の一般項の計算について見てみる.
-\begin{example}
-\begin{align*}
-  \begin{cases}
-    a_{n+2}=a_{n+1}+a_n&(n=1,2,\ldots)\\
-    a_{2}=a_{1}=1
- \end{cases}
-\end{align*}
-で定義される数列はFibonacci列と呼ばれる.
-$a_{0}=0$として$0$項目を付け加えても, 漸化式をみたすので,
-問題ない.
-この数列の一般項を求める.
-\begin{align*}
-  \vv_n=\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}
-\end{align*}
-とおく.
-このとき,
-\begin{align*}
-  \vv_{n+1}
-  &=\begin{pmatrix}a_{n+2}\\a_{n+1}\end{pmatrix}\\
-  &=\begin{pmatrix}a_{n+1}+a_n\\a_{n+1}\end{pmatrix}\\
-  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}\\
-  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}\vv_n
-\end{align*}
-とできる.
-\begin{align*}
-A
-  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}
-\end{align*}
-であったから,
-\begin{align*}
-  \vv_{n+1}
-  &=A\vv_{n}
 \end{align*}
 となる.
-よって
-\begin{align*}
-  \vv_{n}
-  &=A\vv_{n-1}=A^2\vv_{n-2}=\cdots=A^{n}\vv_0
-\end{align*}
-である.
-\begin{align*}
-  \vv_0=\begin{pmatrix}a_1\\a_0\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
-\end{align*}
-であるので,
+
 \begin{align*}
   \begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}
     &=
@@ -4179,31 +4154,30 @@ A
     &=
     A^n\vv_0\\
     &=
-  \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n+1}
-    -\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}&
-    2\left(\frac{1+\sqrt{5}}{2}\right)^n-2\left(\frac{1-\sqrt{5}}{2}\right)^n\\
-    \frac{1}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n
-    -\frac{1}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n&
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n-1}-
-    \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}
-  \end{pmatrix}
+    \frac{-1}{\sqrt{5}}
+    \begin{pmatrix}
+      \lambda^{n+1}-\mu^{n+1}&\lambda^n-\mu^n\\
+      \lambda^n-\mu^n&\lambda^{n-1}-\mu^{n-1}        
+    \end{pmatrix}
     \begin{pmatrix}1\\0\end{pmatrix}\\
     &=
-  \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n+1}
-    -\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}
-\\
-    \frac{1}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n
-    -\frac{1}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n
-  \end{pmatrix}
+    \frac{-1}{\sqrt{5}}
+    \begin{pmatrix}
+      \lambda^{n+1}-\mu^{n+1}\\
+      \lambda^n-\mu^n
+    \end{pmatrix}
 \end{align*}
 である.
 したがって,
 \begin{align*}
-  a_n=
-      \frac{1}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n
-    -\frac{1}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n
+  a_n&=
+    \frac{-1}{\sqrt{5}}
+    (\lambda^n-\mu^n)\\
+    &=
+    \frac{\mu^n-\lambda^n}{\sqrt{5}}
+    \\
+    &=\frac{1}{\sqrt{5}}\left(\left(\frac{1+\sqrt{5}}{2}\right)^n
+    -\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n\right)
 \end{align*}
 である.
-\end{example}
+\end{answerof}

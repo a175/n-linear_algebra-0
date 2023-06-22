@@ -6670,8 +6670,8 @@ A=\begin{pmatrix}1&6\\1&0\end{pmatrix}
 であるので,
 \begin{align*}
   \det(A-xE_2)&=\det(\begin{pmatrix}1-x&6\\1&-x\end{pmatrix})\\
-    &=-(1-x)x-6\\
-    &=x^2-x-6
+    &=-(1-x)x-6
+    =x^2-x-6
     =(x-3)(x+2)
 \end{align*}
 である.
@@ -6685,32 +6685,32 @@ A=\begin{pmatrix}1&6\\1&0\end{pmatrix}
 \end{align*}
 と書けるので,
 解は,
-$\frac{1-\sqrt{5}}{2}$と
-$\frac{1+\sqrt{5}}{2}$
+$3$と
+$-2$
 の$2$つである.
 したがって,
 $A$の固有値も,
-$\frac{1-\sqrt{5}}{2}$と
-$\frac{1+\sqrt{5}}{2}$
+$3$と
+$-2$
 の$2$つである.
 
 
 まず,
-固有値$\frac{1-\sqrt{5}}{2}$に属する固有ベクトルを求める.
-$\lambda=\frac{1-\sqrt{5}}{2}$とするとき
+固有値$3$に属する固有ベクトルを求める.
+$\lambda=3$とするとき
 \begin{align*}
-  A-\lambda E_2 \xx=\zzero 
+  (A-\lambda E_2) \xx=\zzero 
 \end{align*}
 の$\zzero$以外の解を求めれば,
-それが$\frac{1-\sqrt{5}}{2}$に属する固有ベクトルである.
+それが$\lambda=3$に属する固有ベクトルである.
 \begin{align*}
   A-\lambda E_2
   & =
-  \begin{pmatrix}1-\lambda&1\\1&-\lambda\end{pmatrix}  \\
+  \begin{pmatrix}1-\lambda&6\\1&-\lambda\end{pmatrix}  \\
   & =
-    \begin{pmatrix}1-\frac{1-\sqrt{5}}{2}&1\\1&-\frac{1-\sqrt{5}}{2}\end{pmatrix}\\
+    \begin{pmatrix}1-3&6\\1&-3\end{pmatrix}\\
     & =
-  \begin{pmatrix}\frac{1+\sqrt{5}}{2}&1\\1&\frac{-1+\sqrt{5}}{2}\end{pmatrix}
+  \begin{pmatrix}-2&6\\1&-3\end{pmatrix}
 \end{align*}
 である. したがって, $\xx$に関する方程式
 \begin{align*}
@@ -6719,36 +6719,22 @@ $\lambda=\frac{1-\sqrt{5}}{2}$とするとき
 の拡大係数行列は,
 \begin{align*}
   \begin{pmatrix}
-    \frac{1+\sqrt{5}}{2}&1&0\\
-    1&\frac{-1+\sqrt{5}}{2}&0
+    -2&6&0\\
+    1&-3&0
   \end{pmatrix}
 \end{align*}
-である. $1$行目を$\frac{2}{1+\sqrt{5}}$倍すると,
-\begin{align*}
-  \frac{2}{1+\sqrt{5}}
-  &=
-  \frac{2(1-\sqrt{5})}{(1+\sqrt{5})(1-\sqrt{5})}
-  &=
-  \frac{2(1-\sqrt{5})}{1-5}
-  &=
-  \frac{2(1-\sqrt{5})}{-4}
-  &=
-  \frac{(1-\sqrt{5})}{-2}
-  &=
-  \frac{-1+\sqrt{5}}{-2}
-\end{align*}
-であるので,
+である. $1$行目を$\frac{1}{-2}$倍すると,
 \begin{align*}
   \begin{pmatrix}
-    1&\frac{-1+\sqrt{5}}{2}&0\\
-    1&\frac{-1+\sqrt{5}}{2}&0
+    1&-3&0\\
+    1&-3&0
   \end{pmatrix}
 \end{align*}
 となる.
 $2$行目に$1$行目の$-1$倍を足すと,
 \begin{align*}
   \begin{pmatrix}
-    1&\frac{-1+\sqrt{5}}{2}&0\\
+    1&-3&0\\
     0&0&0
   \end{pmatrix}
 \end{align*}
@@ -6759,32 +6745,32 @@ $2$行目に$1$行目の$-1$倍を足すと,
 \end{align*}
 の解の空間は,
 \begin{align*}
-\Set{t\begin{pmatrix}-\frac{-1+\sqrt{5}}{2}\\1\end{pmatrix}|t\text{は数}}
+\Set{t\begin{pmatrix}3\\1\end{pmatrix}|t\text{は数}}
 \end{align*}
 と書ける.
 したがって, 例えば
 \begin{align*}
-  \begin{pmatrix}1-\sqrt{5}\\2\end{pmatrix}
+  \begin{pmatrix}3\\1\end{pmatrix}
 \end{align*}
-は固有値$\frac{1-\sqrt{5}}{2}$に属する固有ベクトルである.
+は固有値$3$に属する固有ベクトルである.
 
 
 次に,
-固有値$\frac{1+\sqrt{5}}{2}$に属する固有ベクトルを求める.
-$\lambda=\frac{1+\sqrt{5}}{2}$とするとき
+固有値$-2$に属する固有ベクトルを求める.
+$\lambda=-2$とするとき
 \begin{align*}
   A-\lambda E_2 \xx=\zzero 
 \end{align*}
 の$\zzero$以外の解を求めれば,
-それが$\frac{1+\sqrt{5}}{2}$に属する固有ベクトルである.
+それが$\lambda=-2$に属する固有ベクトルである.
 \begin{align*}
   A-\lambda E_2
   & =
-  \begin{pmatrix}1-\lambda&1\\1&-\lambda\end{pmatrix}  \\
+  \begin{pmatrix}1-\lambda&1\\6&-\lambda\end{pmatrix}  \\
   & =
-    \begin{pmatrix}1-\frac{1+\sqrt{5}}{2}&1\\1&-\frac{1+\sqrt{5}}{2}\end{pmatrix}\\
+    \begin{pmatrix}1+2&6\\1&2\end{pmatrix}\\
     & =
-  \begin{pmatrix}\frac{1-\sqrt{5}}{2}&1\\1&\frac{-1-\sqrt{5}}{2}\end{pmatrix}
+  \begin{pmatrix}3&6\\1&2\end{pmatrix}
 \end{align*}
 である. したがって, $\xx$に関する方程式
 \begin{align*}
@@ -6793,36 +6779,22 @@ $\lambda=\frac{1+\sqrt{5}}{2}$とするとき
 の拡大係数行列は,
 \begin{align*}
   \begin{pmatrix}
-    \frac{1-\sqrt{5}}{2}&1&0\\
-    1&\frac{-1-\sqrt{5}}{2}&0
+    3&6&0\\
+    1&2&0
   \end{pmatrix}
 \end{align*}
-である. $1$行目を$\frac{2}{1-\sqrt{5}}$倍すると,
-\begin{align*}
-  \frac{2}{1-\sqrt{5}}
-  &=
-  \frac{2(1+\sqrt{5})}{(1-\sqrt{5})(1+\sqrt{5})}
-  &=
-  \frac{2(1+\sqrt{5})}{1-5}
-  &=
-  \frac{2(1+\sqrt{5})}{-4}
-  &=
-  \frac{(1+\sqrt{5})}{-2}
-  &=
-  \frac{-1-\sqrt{5}}{-2}
-\end{align*}
-であるので,
+である. $1$行目を$\frac{1}{3}$倍すると,
 \begin{align*}
   \begin{pmatrix}
-    1&\frac{-1-\sqrt{5}}{2}&0\\
-    1&\frac{-1-\sqrt{5}}{2}&0
+    1&2&0\\
+    1&2&0
   \end{pmatrix}
 \end{align*}
 となる.
 $2$行目に$1$行目の$-1$倍を足すと,
 \begin{align*}
   \begin{pmatrix}
-    1&\frac{-1-\sqrt{5}}{2}&0\\
+    1&2&0\\
     0&0&0
   \end{pmatrix}
 \end{align*}
@@ -6833,21 +6805,21 @@ $2$行目に$1$行目の$-1$倍を足すと,
 \end{align*}
 の解の空間は,
 \begin{align*}
-\Set{t\begin{pmatrix}-\frac{-1-\sqrt{5}}{2}\\1\end{pmatrix}|t\text{は数}}
+\Set{t\begin{pmatrix}-2\\1\end{pmatrix}|t\text{は数}}
 \end{align*}
 と書ける.
 例えば
 \begin{align*}
-  \begin{pmatrix}1+\sqrt{5}\\2\end{pmatrix}
+  \begin{pmatrix}-2\\1\end{pmatrix}
 \end{align*}
-は固有値$\frac{1+\sqrt{5}}{2}$に属する固有ベクトルである.
+は固有値$-2$に属する固有ベクトルである.
 
 
 固有ベクトルが求められたので対角化をする.
 \begin{align*}
   P=
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+    3&-2\\
     1&1    
   \end{pmatrix}
 \end{align*}
@@ -6856,18 +6828,18 @@ $2$行目に$1$行目の$-1$倍を足すと,
   \det(P)=
   \det(
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+    3&-2\\
     1&1    
   \end{pmatrix})
-  =(1+\sqrt{5})+(1-\sqrt{5})=2\neq 0
+  =3-(-2)=5\neq 0
 \end{align*}
 であるので$P$は正則であり,
 \begin{align*}
   P^{-1}=
-  \frac{1}{2}
+  \frac{1}{5}
   \begin{pmatrix}
-    1&-1+\sqrt{5}\\
-    -1&1+\sqrt{5}    
+    1&2\\
+    -1&3    
   \end{pmatrix}
 \end{align*}
 である.
@@ -6876,8 +6848,8 @@ $2$行目に$1$行目の$-1$倍を足すと,
 \begin{align*}
   P^{-1}AP=
   \begin{pmatrix}
-    \frac{1+\sqrt{5}}{2}&0\\
-    0&\frac{1+\sqrt{5}}{2}
+    3&0\\
+    0&-2
   \end{pmatrix}
 \end{align*}
 である.
@@ -6885,8 +6857,8 @@ $2$行目に$1$行目の$-1$倍を足すと,
 \begin{align*}
   (P^{-1}AP)^n=
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    3^n&0\\
+    0&(-2)^n
   \end{pmatrix}
 \end{align*}
 である. 一方, \cref{ex:diagonalizedpow}でみたように,
@@ -6898,96 +6870,75 @@ $2$行目に$1$行目の$-1$倍を足すと,
 \begin{align*}
 P^{-1}A^nP&=
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    3^n&0\\
+    0&(-2)^n
   \end{pmatrix}
 \\
 A^n&=
 P
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    3^n&0\\
+    0&(-2)^n
   \end{pmatrix}
   P^{-1}
 \end{align*}
 とできる.
 したがって,
 \begin{align*}
-  &A^n\\
+  A^n
   &=
 P
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    3^n&0\\
+    0&(-2)^n
   \end{pmatrix}
   P^{-1}\\
 &=
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+   3&-2\\
     1&1    
   \end{pmatrix}
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    3^n&0\\
+    0&(-2)^n
   \end{pmatrix}
-(  \frac{1}{2}
+(  \frac{1}{5}
   \begin{pmatrix}
-    1&-1+\sqrt{5}\\
-    -1&1+\sqrt{5}    
+    1&2\\
+    -1&3    
   \end{pmatrix}
 )\\
-&=\frac{1}{2}
+  &=
+  \frac{1}{5}
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+   3&-2\\
     1&1    
   \end{pmatrix}
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&0\\
-    0&\left(\frac{1-\sqrt{5}}{2}\right)^n
+    3^n&0\\
+    0&(-2)^n
   \end{pmatrix}
   \begin{pmatrix}
-    1&-1+\sqrt{5}\\
-    -1&1+\sqrt{5}    
+    1&2\\
+    -1&3    
   \end{pmatrix}
 \\
-&=\frac{1}{2}
+  &=
+  \frac{1}{5}
   \begin{pmatrix}
-    1+\sqrt{5}&1-\sqrt{5}\\
+   3&-2\\
     1&1    
   \end{pmatrix}
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^n&
-    \left(\frac{1+\sqrt{5}}{2}\right)^n\left(-1+\sqrt{5}\right)\\
-    -\left(\frac{1-\sqrt{5}}{2}\right)^n
-    &\left(\frac{1-\sqrt{5}}{2}\right)^n\left(1+\sqrt{5}\right)
+    3^n&3^n2\\
+    -(-2)^n&(-2)^n3
   \end{pmatrix}
 \\
-&=\frac{1}{2}
+  &=
+  \frac{1}{5}
   \begin{pmatrix}
-    (1+\sqrt{5})\left(\frac{1+\sqrt{5}}{2}\right)^n-(1-\sqrt{5})\left(\frac{1-\sqrt{5}}{2}\right)^n&
-    (1+\sqrt{5})\left(\frac{1+\sqrt{5}}{2}\right)^n\left(-1+\sqrt{5}\right)+(1-\sqrt{5})\left(\frac{1-\sqrt{5}}{2}\right)^n\left(1+\sqrt{5}\right)\\
-    \left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n&    \left(\frac{1+\sqrt{5}}{2}\right)^n\left(-1+\sqrt{5}\right)+
-    \left(\frac{1-\sqrt{5}}{2}\right)^n\left(1+\sqrt{5}\right)    
-  \end{pmatrix}
-\\
-&=
-  \begin{pmatrix}
-    \frac{1+\sqrt{5}}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1-\sqrt{5}}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n&
-    \frac{(1+\sqrt{5})(-1+\sqrt{5})}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n+\frac{(1-\sqrt{5})(1+\sqrt{5})}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n\\
-    \frac{1}{2}\left( \left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n\right)&
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n-1}\frac{1+\sqrt{5}}{2}\frac{-1+\sqrt{5}}{2}+
-    \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\frac{1-\sqrt{5}}{2}\frac{1+\sqrt{5}}{2}    
-  \end{pmatrix}
-\\
-&=
-  \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n+1}
-    -\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}&
-    2\left(\frac{1+\sqrt{5}}{2}\right)^n-2\left(\frac{1-\sqrt{5}}{2}\right)^n\\
-    \frac{1}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n
-    -\frac{1}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n&
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n-1}-
-    \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}
+   3^{n+1}-(-2)^{n+1}&3^{n+1}2+(-2)^{n+1}3\\
+    3^n-(-2)^n&3^n2+(-2)^n3    
   \end{pmatrix}
 \end{align*}
 
@@ -6995,79 +6946,93 @@ P
 \begin{example}
 \begin{align*}
   \begin{cases}
-    a_{n+2}=a_{n+1}+a_n&(n=1,2,\ldots)\\
-    a_{2}=a_{1}=1
+    a_{n+2}=a_{n+1}+6a_n&(n=0,1,2,\ldots)\\
+    a_{1}=1\\
+    a_{0}=0
  \end{cases}
 \end{align*}
-で定義される数列はFibonacci列と呼ばれる.
-$a_{0}=0$として$0$項目を付け加えても, 漸化式をみたすので,
-問題ない.
+で定義される数列を考え,
+その一般項を求める.
 この数列の一般項を求める.
 \begin{align*}
-  \vv_n=\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}
+  \vv_n=\begin{pmatrix}a_{n}\\a_{n-1}\end{pmatrix}
 \end{align*}
 とおく.
 このとき,
 \begin{align*}
-  \vv_{n+1}
+  \vv_{n+2}
   &=\begin{pmatrix}a_{n+2}\\a_{n+1}\end{pmatrix}\\
-  &=\begin{pmatrix}a_{n+1}+a_n\\a_{n+1}\end{pmatrix}\\
-  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}\\
-  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}\vv_n
+  &=\begin{pmatrix}a_{n+1}6+a_n\\a_{n+1}\end{pmatrix}\\
+  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}\begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}\\
+  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}\vv_{n+1}
 \end{align*}
 とできる.
 \begin{align*}
 A
-  &=\begin{pmatrix}1&1\\1&0\end{pmatrix}
+  &=\begin{pmatrix}1&6\\1&0\end{pmatrix}
 \end{align*}
 であったから,
 \begin{align*}
-  \vv_{n+1}
-  &=A\vv_{n}
+  \vv_{n+2}
+  &=A\vv_{n+1}
 \end{align*}
 となる.
-よって
+この式は$n\leq 0$であれば成り立つ. つまり,
 \begin{align*}
-  \vv_{n}
-  &=A\vv_{n-1}=A^2\vv_{n-2}=\cdots=A^{n}\vv_0
+  \vv_{k}
+  &=A\vv_{k-1} &(k=2,3,\ldots)
 \end{align*}
 である.
+よって
 \begin{align*}
-  \vv_0=\begin{pmatrix}a_1\\a_0\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
+  &\vv_{n}\\
+  &=A\vv_{n-1}\\
+  &=A(A\vv_{n-2})=A^2\vv_{n-2}\\
+  &=A^2(A\vv_{n-3})=A^3\vv_{n-3}\\
+  &=A^3(A\vv_{n-4})=A^4\vv_{n-4}\\
+  &=\cdots=A^{n-1}\vv_1
 \end{align*}
-であるので,
+である.
+先ほど求めた$A^n$の計算結果を使うと,
 \begin{align*}
-  \begin{pmatrix}a_{n+1}\\a_n\end{pmatrix}
+  A^{n-1}
+    &=
+  \frac{1}{5}
+  \begin{pmatrix}
+   3^{n}-(-2)^{n}&3^{n}2+(-2)^{n}3\\
+    3^{n-1}-(-2)^{n-1}&3^{n-1}2+(-2)^{n-1}3    
+  \end{pmatrix}
+\end{align*}
+であり,
+\begin{align*}
+  \vv_1=\begin{pmatrix}a_1\\a_0\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix}
+\end{align*}
+であるから,
+\begin{align*}
+  \begin{pmatrix}a_{n}\\a_{n-1}\end{pmatrix}
     &=
     \vv_n\\
     &=
-    A^n\vv_0\\
+    A^{n-1}\vv_0\\
     &=
+  \frac{1}{5}
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n+1}
-    -\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}&
-    2\left(\frac{1+\sqrt{5}}{2}\right)^n-2\left(\frac{1-\sqrt{5}}{2}\right)^n\\
-    \frac{1}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n
-    -\frac{1}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n&
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n-1}-
-    \left(\frac{1-\sqrt{5}}{2}\right)^{n-1}
+   3^{n}-(-2)^{n}&3^{n}2+(-2)^{n}3\\
+    3^{n-1}-(-2)^{n-1}&3^{n-1}2+(-2)^{n-1}3    
   \end{pmatrix}
-    \begin{pmatrix}1\\0\end{pmatrix}\\
+  \begin{pmatrix}1\\0\end{pmatrix}\\
     &=
+    \frac{1}{5}
   \begin{pmatrix}
-    \left(\frac{1+\sqrt{5}}{2}\right)^{n+1}
-    -\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}
-\\
-    \frac{1}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n
-    -\frac{1}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n
+   3^{n}-(-2)^{n}\\
+    3^{n-1}-(-2)^{n-1}
   \end{pmatrix}
 \end{align*}
 である.
 したがって,
 \begin{align*}
   a_n=
-      \frac{1}{2}\left(\frac{1+\sqrt{5}}{2}\right)^n
-    -\frac{1}{2}\left(\frac{1-\sqrt{5}}{2}\right)^n
+  \frac{3^{n}-(-2)^{n}}{5}
 \end{align*}
 である.
 \end{example}
@@ -7249,5 +7214,20 @@ $E_2$も直交行列である.
     \begin{pmatrix}
       2&2\\2&-1
     \end{pmatrix}.
+  \end{align*}
+\end{quiz}
+
+
+\begin{quiz}
+  \solvelater{quiz:6:7}
+  \label{quiz:6:7}
+  %\seealsoQuiz{quiz:6:5}
+  %\Seealsoquiz{}
+  次で定義される数列(Fibonacci数列)の一般項を求めよ:
+  \begin{align*}
+    \begin{cases}
+      a_{n+2}=a_{n+1}+a_n&(n=1,2,3,\ldots)\\
+      a_{2}=a_{1}=1
+    \end{cases}
   \end{align*}
 \end{quiz}
