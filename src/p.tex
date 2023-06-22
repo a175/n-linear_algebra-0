@@ -6658,25 +6658,21 @@ $A$を$2$次正方行列とする.
 以下では,
 その計算方法
 \begin{align*}
-A=\begin{pmatrix}1&1\\1&0\end{pmatrix}
+A=\begin{pmatrix}1&6\\1&0\end{pmatrix}
 \end{align*}
 の場合で説明する.
 
 まず$A$の固有値を求める.
 \begin{align*}
-  A-xE_2=\begin{pmatrix}1&1\\1&0\end{pmatrix}-\begin{pmatrix}x&0\\0&x\end{pmatrix}
-=\begin{pmatrix}1-x&1\\1&-x\end{pmatrix}
+  A-xE_2=\begin{pmatrix}1&6\\1&0\end{pmatrix}-\begin{pmatrix}x&0\\0&x\end{pmatrix}
+=\begin{pmatrix}1-x&6\\1&-x\end{pmatrix}
 \end{align*}
 であるので,
 \begin{align*}
-  \det(A-xE_2)&=\det(\begin{pmatrix}1-x&1\\1&-x\end{pmatrix})\\
-    &=-(1-x)x-1\\
-    &=x^2-x-1\\
-    &=\left(x-\frac{1}{2}\right)^2-\frac{1}{4}-1\\
-    &=\left(x-\frac{1}{2}\right)^2-\frac{5}{4}\\\
-    &=\left(x-\frac{1}{2}\right)^2-\left(\frac{\sqrt{5}}{2}\right)^2\\
-    &=\left(x-\frac{1}{2}+\frac{\sqrt{5}}{2}\right)\left(x-\frac{1}{2}-\frac{\sqrt{5}}{2}\right)\\
-    &=\left(x-\frac{1-\sqrt{5}}{2}\right)\left(x-\frac{1+\sqrt{5}}{2}\right)
+  \det(A-xE_2)&=\det(\begin{pmatrix}1-x&6\\1&-x\end{pmatrix})\\
+    &=-(1-x)x-6\\
+    &=x^2-x-6
+    =(x-3)(x+2)
 \end{align*}
 である.
 したがって, $x$に関する方程式
@@ -6685,7 +6681,7 @@ A=\begin{pmatrix}1&1\\1&0\end{pmatrix}
 \end{align*}
 は,
 \begin{align*}
-  \left(x-\frac{1-\sqrt{5}}{2}\right)\left(x-\frac{1+\sqrt{5}}{2}\right)&=0
+  (x-3)(x+2)=0
 \end{align*}
 と書けるので,
 解は,
