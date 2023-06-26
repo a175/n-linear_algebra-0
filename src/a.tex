@@ -76,12 +76,12 @@ $(2,2)$-行列の場合のみについて証明をするのであれば,
   $A$の$(i,j)$-成分を$a_{i,j}$とする.
   $A'$を$(m,n)$-行列とし, 
   $A'$の$(i,j)$-成分を$a'_{i,j}$とする.
-  このとき, $\transposed{A+A'}$の$(i,j)$-成分と
+  このとき, $\transposed{(A+A')}$の$(i,j)$-成分と
   $\transposed{A}+\transposed{A'}$の$(i,j)$-成分が等しいことを示す.
 
   $A+A'$の$(i,j)$-成分は, $a_{i,j}+a'_{i,j}$である.
   したがって,
-  $\transposed{A+A'}$の$(i,j)$-成分は, $a_{j,i}+a'_{j,i}$である.
+  $\transposed{(A+A')}$の$(i,j)$-成分は, $a_{j,i}+a'_{j,i}$である.
   一方,
   $\transposed{A}$の$(i,j)$-成分は$a_{j,i}$であり,
   $\transposed{A'}$の$(i,j)$-成分は$a'_{j,i}$である.
@@ -92,12 +92,12 @@ $(2,2)$-行列の場合のみについて証明をするのであれば,
   $A$を$(m,n)$-行列とし, 
   $A$の$(i,j)$-成分を$a_{i,j}$とする.
   $\alpha$を数とする.
-  このとき, $\transposed{\alpha A}$の$(i,j)$-成分と
+  このとき, $\transposed{(\alpha A)}$の$(i,j)$-成分と
   $\alpha\transposed{A}$の$(i,j)$-成分が等しいことを示す.
 
   $\alpha A$の$(i,j)$-成分は, $\alpha a_{i,j}$である.
   したがって,
-  $\transposed{\alpha A}$の$(i,j)$-成分は, $\alpha a_{j,i}$である.
+  $\transposed{(\alpha A)}$の$(i,j)$-成分は, $\alpha a_{j,i}$である.
   一方,
   $\transposed{A}$の$(i,j)$-成分は$a_{j,i}$である.
   したがって,
@@ -110,12 +110,12 @@ $(2,2)$-行列の場合のみについて証明をするのであれば,
   $B$を$(n,k)$-行列とし, 
   $B$の$(i,j)$-成分を$b_{i,j}$とする.
   $T=\transposed{A}$, $S=\transposed{B}$とする.
-  このとき, $\transposed{AB}$の$(i,j)$-成分と
+  このとき, $\transposed{(AB)}$の$(i,j)$-成分と
   $ST$の$(i,j)$-成分が等しいことを示す.
 
   $AB$の$(i,j)$-成分は, $\sum_{l=1}^{n} a_{i,l}b_{l,j}$である.
   したがって,
-  $\transposed{AB}$の$(i,j)$-成分は, $\sum_{l=1}^{n} a_{j,l}b_{l,i}$である.
+  $\transposed{(AB)}$の$(i,j)$-成分は, $\sum_{l=1}^{n} a_{j,l}b_{l,i}$である.
   一方,
   $S$の$(i,j)$-成分を$s_{i,j}$とすると,
   $S=\transposed{B}$であるので
@@ -128,7 +128,7 @@ $(2,2)$-行列の場合のみについて証明をするのであれば,
   $\sum_{l=1}^{n}s_{i,l}t_{l,j}$である.
   $\sum_{l=1}^{n}s_{i,l}t_{l,j}=\sum_{l=1}^{n}b_{l,i}a_{j,l}=\sum_{l=1}^{n}a_{j,l}b_{l,i}$
   であるので,
-  $ST$の$(i,j)$-成分は, $\transposed{AB}$の$(i,j)$-成分と等しい.
+  $ST$の$(i,j)$-成分は, $\transposed{(AB)}$の$(i,j)$-成分と等しい.
 \end{proofof*}
 
 
@@ -649,14 +649,14 @@ $2$-次正方行列の場合のみについて証明をしている.
   まず$AB=E_n$となることを示す.
   $X^{-1}$は$X$の逆行列であるので,
   \begin{align*}
-    AB=\transposed{X}\transposed{X^{-1}}=\transposed{X^{-1}X}=\transposed{E_n}=E_n
+    AB=\transposed{X}\transposed{X^{-1}}=\transposed{(X^{-1}X)}=\transposed{E_n}=E_n
   \end{align*}
   である.
 
   次に$BA=E_n$となることを示す.
   $X^{-1}$は$X$の逆行列であるので,
   \begin{align*}
-    BA=\transposed{X^{-1}}\transposed{X}=\transposed{XX^{-1}}=\transposed{E_n}=E_n
+    BA=\transposed{X^{-1}}\transposed{X}=\transposed{(XX^{-1})}=\transposed{E_n}=E_n
   \end{align*}
   である.
 \end{proofof*}

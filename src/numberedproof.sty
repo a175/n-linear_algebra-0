@@ -69,11 +69,11 @@
   \makebox{}%
   \label{nu@statement@#2}%
   \def\nu@numberedproof@statementlabel{#2}%
-  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#2}}{}{#1{\nu@numberedproof@prooflabellist{#2}}}
+  \@ifundefined{\nu@numberedproof@varname@prooflabellist{#2}}{}{#1{\nu@numberedproof@prooflabellist{#2}}}%
 %   \immediate\write\@auxout{\string\nu@numberedproof@create@new@prooflabellist{#1}}%
 }
-\newcommand{\nu@numberedproof@prove@this@later}[2]{\makebox{}%
-  \nu@numberedproof@label@S{#1}{#2}
+\newcommand{\nu@numberedproof@prove@this@later}[2]{%\makebox{}%
+  \nu@numberedproof@label@S{#1}{#2}%
   \immediate\write\@auxout{\string\nu@numberedproof@append@prooflabellist{#2}{nu@proof@#2}}%
 }
 \newcommand{\nu@numberedproof@prove@item@later}[2]{%\makebox{}%
@@ -99,8 +99,6 @@
 
 \newcommand{\newprovelater}[4]{\newcommand{#1}{\nu@numberedproof@provelater@original{#2}{#3}{#4}}}
 
-
-  
 \newcommand{\callbackToAnnounceTheoremProvedHere}[1]{\ref{#1}}
 \newcommand{\callbackToAnnounceTheoremItemProvedHere}[2]{\ref{#1} -- \ref{#2}}
 \newcommand{\callbackToAnnounceProveLater}[1]{\marginpar{We will show this later in \pageref{#1}.}}
