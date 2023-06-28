@@ -20,12 +20,12 @@ ${TEXFILE}.pdf: ${TEXFILE}.dvi
 #${TEXFILE}.pdf: ${TEXFILE}.tex ${MAINTEXFILES} ${TEXFILE}.bbl
 #	${PDFLATEX} ${TEXFILE} && ${PDFLATEX} ${TEXFILE}
 
+bbl:${TEXFILE}.bbl
 ${TEXFILE}.bbl:
 	${LATEX} ${TEXFILE} && ${BIBTEX} ${TEXFILE}
-bbl:
-	${LATEX} ${TEXFILE} && ${BIBTEX} ${TEXFILE}
 
-ind:
+ind: ${TEXFILE}.ind
+${TEXFILE}.ind:
 	${LATEX} ${TEXFILE} && ${MENDEX} -U -d ${DICFILE} ${TEXFILE}
 
 view:
