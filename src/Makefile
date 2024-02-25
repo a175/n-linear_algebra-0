@@ -25,7 +25,7 @@ ${TEXFILE}.bbl:
 	${LATEX} ${TEXFILE} && ${BIBTEX} ${TEXFILE}
 
 ind: ${TEXFILE}.ind
-${TEXFILE}.ind:
+${TEXFILE}.ind: ${DICFILE}
 	${LATEX} ${TEXFILE} && ${MENDEX} -U -d ${DICFILE} ${TEXFILE}
 
 view:
