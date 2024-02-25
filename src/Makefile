@@ -7,6 +7,7 @@ TEXFILE=x2
 MAINTEXFILES=p.tex a.tex numberedproof.sty b.tex
 MENDEX=mendex
 DICFILE=terms.dic
+INDEXSTY=jpbase.ist
 
 all: pdf
 dvi: ${TEXFILE}.dvi
@@ -26,7 +27,8 @@ ${TEXFILE}.bbl:
 
 ind: ${TEXFILE}.ind
 ${TEXFILE}.ind: ${DICFILE}
-	${LATEX} ${TEXFILE} && ${MENDEX} -U -d ${DICFILE} ${TEXFILE}
+	${LATEX} ${TEXFILE} && ${MENDEX} -r -c -g -s ${INDEXSTY} -U -d ${DICFILE} -p any ${TEXFILE}
+
 
 view:
 	evince ${TEXFILE}.pdf &
