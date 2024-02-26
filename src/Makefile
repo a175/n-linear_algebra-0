@@ -33,4 +33,4 @@ ${TEXFILE}.ind: ${DICFILE}
 view:
 	evince ${TEXFILE}.pdf &
 clean:
-	rm -f ${TEXFILE}.dvi ${TEXFILE}.pdf ${TEXFILE}.log ${TEXFILE}.aux ${TEXFILE}.bbl ${TEXFILE}.blg texput.log
+	rm -f ${TEXFILE}.dvi ${TEXFILE}.pdf ${TEXFILE}.log ${TEXFILE}.aux ${TEXFILE}.bbl ${TEXFILE}.blg ${TEXFILE}.ind  ${TEXFILE}.idx  ${TEXFILE}.out texput.log

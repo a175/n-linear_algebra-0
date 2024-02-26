@@ -86,9 +86,11 @@
 \newnumberedproof{proofof}{numberedproof}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
 \newnumberedproof{answerof}{numberedanswer}{\callbackToAnnounceTheoremProvedHere}{\callbackToAnnounceTheoremItemProvedHere}
 
-\newcommand{\seealsoquiz}[1]{\marginpar{\Cref{#1}は関連する問題である.}}
-\newcommand{\seealsoQuiz}[1]{\marginpar{\Cref{#1}$\gets$}}
-\newcommand{\Seealsoquiz}[1]{\marginpar{$\to$\Cref{#1}}}
+\newcommand{\seealsoquiz}[1]{\marginpar{\footnotesize\Cref{#1}は関連する問題である.}}
+%\newcommand{\seealsoQuiz}[1]{\marginpar{\footnotesize\Cref{#1}$\gets$}}
+\newcommand{\seealsoQuiz}[1]{\marginpar{\footnotesize 躓いたら\Cref{#1}も確認.}}
+%\newcommand{\Seealsoquiz}[1]{\marginpar{\footnotesize$\to$\Cref{#1}}}
+\newcommand{\Seealsoquiz}[1]{}
 
 % Cref
 \crefname{section}{Section}{Sections}
@@ -301,9 +303,6 @@
 \newcommand{\der}{\partial}
 \newcommand{\numof}[1]{\left|#1\right|}
 %\newcommand{\numof}[1]{\#{#1}}
-\newcommand{\defit}[1]{\index{#1}\emph{#1}}
-%\newcommand{\defit}[1]{\emph{#1}}
-\newcommand{\Defit}[1]{(\index{#1}\emph{#1})}
 
 % Ideal
 \newcommand{\ideal}[2]{%
@@ -313,6 +312,16 @@
 \newcommand{\Provelater}{}
 
 \newcommand{\sectionX}[1]{\newpage\section*{#1}\addcontentsline{toc}{section}{#1}}
+
+
+
+\makeatletter
+\newcommand{\prev@index@word@nu}{}
+\newcommand{\defit}[1]{\renewcommand{\prev@index@word@nu}{#1}\index{#1}\emph{#1}}
+%\newcommand{\defit}[1]{\emph{#1}}
+\newcommand{\Defit}[1]{(\index{#1|see {\prev@index@word@nu}}\emph{#1})}
+\newcommand{\addindex}[1]{\index{#1|see {\prev@index@word@nu}}}
+\makeatother
 % misc (command)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
