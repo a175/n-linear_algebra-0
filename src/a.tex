@@ -1168,7 +1168,7 @@ $2$-次正方行列の場合のみについて証明をしている.
 \end{proof}
 
 
-\begin{proofof*}{thm:rank:prop}{left}
+\begin{proofof*}{thm:rank:prop:prod}{left}
   $(m,n)$-行列$A$から行基本変形を用いて階数$r$の被約階段行列$S$が得られるとする.
   このとき,
   \cref{lem:fundamental}
@@ -1191,7 +1191,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   $\rank(SB)\leq r$である.
 \end{proofof*}
 
-\begin{proofof*}{thm:rank:prop}{regularright}
+\begin{proofof*}{thm:rank:prop:prod}{regularright}
    $\rank(A)=\rank(AQ)$
   を示すために,
    $\rank(A)\leq\rank(AQ)$
@@ -1199,12 +1199,12 @@ $2$-次正方行列の場合のみについて証明をしている.
    $\rank(A)\geq\rank(AQ)$
   を示す.
   
-  \Cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  \Cref{thm:rank:prop:prod}の\cref{thm:rank:prop:left}
   より, $\rank(AQ)\leq \rank(A)$である.
   
   一方, 
   $X=AQ$, $Y=Q^{-1}$とすると,
-  \cref{thm:rank:prop}の\cref{thm:rank:prop:left}
+  \cref{thm:rank:prop:prod}の\cref{thm:rank:prop:left}
   より, $\rank(XY)\leq \rank(X)$である.
   $XY=AQQ^{-1}=A$であるので,
   $\rank(A)\leq\rank(AQ)$である.
@@ -1228,7 +1228,7 @@ $2$-次正方行列の場合のみについて証明をしている.
   $\transposed{A}\transposed{P}=\transposed{(PA)}=\transposed{S}$
   である.
   $\transposed{P}$は正則であるので,
-  \Cref{thm:rank:prop}の\cref{thm:rank:prop:regularright}より,
+  \Cref{thm:rank:prop:prod}の\cref{thm:rank:prop:regularright}より,
   $\rank(\transposed{A})=\rank(\transposed{A}\transposed{P})$である.
   一方
   $S$は階数$r$の被約階段行列であるので,
@@ -1263,13 +1263,13 @@ $2$-次正方行列の場合のみについて証明をしている.
   である.
   
 \end{proofof*}
-\begin{proofof*}{thm:rank:prop}{right}
+\begin{proofof*}{thm:rank:prop:prod}{right}
   \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
   $\rank(AB)=\rank(\transposed{(AB)})$
   であるが, $\transposed{(AB)}=\transposed{B}\transposed{A}$であるので,
   $\rank(AB)=\rank(\transposed{B}\transposed{A})$
   である.
-  \Cref{thm:rank:prop}の\Cref{thm:rank:prop:left}
+  \Cref{thm:rank:prop:prod}の\Cref{thm:rank:prop:left}
   より$\rank(\transposed{B}\transposed{A})\leq\rank(\transposed{B})$であるので,
   $\rank(AB)\leq\rank(\transposed{B})$.
   \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
@@ -1277,14 +1277,14 @@ $2$-次正方行列の場合のみについて証明をしている.
   $\rank(AB)\leq \rank(B)$である.
 \end{proofof*}
 
-\begin{proofof*}{thm:rank:prop}{regularleft}
+\begin{proofof*}{thm:rank:prop:prod}{regularleft}
   \Cref{thm:rank:prop}の\Cref{thm:rank:prop:trans}より,
   $\rank(PA)=\rank(\transposed{(PA)})$
   であるが, $\transposed{(PA)}=\transposed{A}\transposed{P}$であるので,
   $\rank(PA)=\rank(\transposed{A}\transposed{P})$
   である.
   $P$は正則であるので$\transposed{P}$も正則である.
-  よって, \Cref{thm:rank:prop}の\Cref{thm:rank:prop:regularright}より
+  よって, \Cref{thm:rank:prop:prod}の\Cref{thm:rank:prop:regularright}より
   $\rank(\transposed{A}\transposed{P})=\rank(\transposed{A})$
   であるので,
   $\rank(PA)=\rank(\transposed{A})$

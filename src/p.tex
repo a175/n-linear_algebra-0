@@ -4437,21 +4437,8 @@ $A\xx=\zzero$という方程式について考える.
   \provelater**{thm:rank:prop}
   \label{thm:rank:prop}
   $A$を$(m,n)$-行列とする.
-  $B$を$(n,k)$-行列とする.
   このとき次が成り立つ:
   \begin{enumerate}
-  \item
-    \label{thm:rank:prop:trans}
-    \provelater*{trans}
-    $\rank(A)=\rank(\transposed{A})$.
-  \item
-    \label{thm:rank:prop:left}
-    \provelater*{left}
-    $\rank(AB)\leq\rank(A)$.
-  \item
-    \label{thm:rank:prop:right}
-    \provelater*{right}
-    $\rank(AB)\leq\rank(B)$.
   \item
     \label{thm:rank:prop:row}
     \provelater*{row}
@@ -4461,16 +4448,38 @@ $A\xx=\zzero$という方程式について考える.
     \provelater*{col}
     $\rank(A)\leq n$.
   \item
+    \provelater*{fund}
+    \label{thm:rank:prop:fund}
+    $A$に行基本変形を用いて$A'$が得られるなら$\rank(A)=\rank(A')$.
+  \item
+    \label{thm:rank:prop:trans}
+    \provelater*{trans}
+    $\rank(A)=\rank(\transposed{A})$.
+  \end{enumerate}
+\end{theorem}
+また, 積に関して次が知られている:
+\begin{theorem}
+  \provelater**{thm:rank:prop:prod}
+  \label{thm:rank:prop:prod}
+  $A$を$(m,n)$-行列とする.
+  $B$を$(n,k)$-行列とする.
+  このとき次が成り立つ:
+  \begin{enumerate}
+  \item
+    \label{thm:rank:prop:left}
+    \provelater*{left}
+    $\rank(AB)\leq\rank(A)$.
+  \item
+    \label{thm:rank:prop:right}
+    \provelater*{right}
+    $\rank(AB)\leq\rank(B)$.
+  \item
     \provelater*{regularleft}
     $P$が$m$次正則行列なら$\rank(PA)=\rank(A)$.
   \item
     \label{thm:rank:prop:regularright}
     \provelater*{regularright}
     $Q$が$n$次正則行列なら$\rank(AQ)=\rank(A)$.
-  \item
-    \provelater*{fund}
-    \label{thm:rank:prop:fund}
-    $A$に行基本変形を用いて$A'$が得られるなら$\rank(A)=\rank(A')$.
   \end{enumerate}
 \end{theorem}
 
