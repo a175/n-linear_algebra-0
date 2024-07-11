@@ -27,7 +27,7 @@ $3$次正方行列などは, 本講義の範囲外である.
 定義から明らかなものも多く,
 線形代数の基本的な技術を学ぶという観点ではこれらを読む必要はない.
 また,
-\Cref{thm:unique:reducedecheron,thm:solution:syslineq}
+\Cref{thm:unique:reducedecheron,thm:solution:syslineq,thm:cht:general}
 は証明をしていない.
 \Cref{thm:unique:reducedecheron}
 は論理の組み立てからは重要な命題ではあるが,
@@ -38,6 +38,13 @@ $3$次正方行列などは, 本講義の範囲外である.
 一般のサイズでの議論であるので記号が煩雑になり混乱を与える可能性があること,
 この原稿が目的としている$2$次正方行列の場合にはすでに列挙により証明が済んでいること
 がその理由である.
+\Cref{thm:cht:general}
+は, 一般のサイズの命題であり,
+\Cref{thm:cht:general}自体には証明を与えていないが,
+この原稿が目的としている$2$次正方行列の場合は,
+\Cref{thm:cht:2dim}として紹介しており,
+証明を与えている.
+
 
 
 本講義は$2$次の正方行列について扱うことを目的としている.
@@ -7572,25 +7579,6 @@ $\|\bar\vv\|=1$であるので次がわかる.
   固有値$\lambda$に属する$A$の固有ベクトル$\vv$で$\|\vv\|=1$となるものが存在する.
 \end{cor}
 
-\begin{remark}
-  \label{thm:cht:general}
-  $A$を$n$次正方行列とする.
-  このとき,
-  $x$に関する多項式
-  $\det(A-xE_n)$
-  のことを$A$の固有多項式と呼ぶ.
-  $f(x)$を$A$の固有多項式とする.
-  つまり $f(x)=\det(A-xE_n)$とする.
-  このとき,
-  \begin{align*}
-    f(A)=O_{n,n}
-  \end{align*}
-  が成り立つ.
-  この定理はケーリー--ハミルトンの定理と呼ばれる.
-  $n=2$の場合は,
-  すでに,
-  \cref{thm:cht:2dim}として紹介した.
-\end{remark}
 
 
 \section{行列の対角化}
@@ -8209,6 +8197,149 @@ $E_2$も直交行列である.
   $A$を実対称行列とする.
   このとき, $P^{-1}AP$が対角行列となる直交行列$P$が存在する.
 \end{theorem}
+
+
+\section{固有多項式に関する補足}
+\subsection{正則行列の固有値}
+  $A$を$2$次正方行列とする.
+  $x$に関する多項式
+  \begin{align*}
+  \det(A-xE_2)
+  \end{align*}
+  を
+  $A$の固有多項式と呼んだ.
+  \begin{align*}
+    A=\begin{pmatrix}a&b\\c&d\end{pmatrix}
+  \end{align*}
+  のときには,
+  $A$の固有多項式$f(x)$は,
+  \begin{align*}
+    f(x)&=\det(\begin{pmatrix}a-x&b\\c&d-x\end{pmatrix}) \\
+      &=
+      (a-x)(d-x)-bc\\
+      &=x^2-(a+d)x+(ad-bc)
+  \end{align*}
+  である.
+  \begin{align*}
+    x^2-(a+d)x+(ad-bc)=0
+  \end{align*}
+  の解を$\lambda_1$, $\lambda_2$とすると,
+  これらは, $A$の固有値であった.
+
+  
+  $\lambda_1$, $\lambda_2$を解とする二次方程式で$x^2$の係数が$1$であるものは,
+  \begin{align*}
+    (x-\lambda_1)(x-\lambda_2)=0
+  \end{align*}
+  つまり,
+  \begin{align*}
+    x^2-(\lambda_1+\lambda_2)x+\lambda_1\lambda_2=0
+  \end{align*}
+  と書ける.
+  この方程式と, $f(A)=0$という方程式の係数を比較して,
+  \begin{align*}
+    \lambda_1\lambda_2 &= ad-bc\\
+    \lambda_1+\lambda_2 &= a+d
+  \end{align*}
+  が成り立つことがわかる.
+  より一般に,
+  $n$次方程式の解と係数の関係から,
+  次が成り立つことが知られている:
+  \begin{theorem}
+    \label{thm:det:eigen}
+    $A$を$n$次正方行列とし,
+    $f(x)$を$A$の固有多項式とする.
+    $\lambda_1,\ldots,\lambda_n$を$f(x)=0$の解
+    (つまり,
+    $A$の固有値)
+    とする.
+    このとき,
+    \begin{align*}
+      \det(A)=\lambda_1\cdots\lambda_n.
+    \end{align*}
+  \end{theorem}
+  また, $a_{i,j}$を$(i,j)$-成分とする$n$次正方行列に対し,
+  \begin{align*}
+    \tr(A)=a_{1,1}+a_{2,2}+\cdots+a_{n,n}
+  \end{align*}
+  とし,
+  $\tr(A)$を
+  \defit{$A$のトレース}
+  \Defit{$A$の跡}
+  \Defit{trace of $A$}
+  \addindex{トレース!行列の---}%
+  \addindex{行列の!---トレース}%
+  \addindex{跡!行列の---}%
+  \addindex{行列の!---跡}%
+  \addindex{trace!--- of a matrix}%
+  \addindex{of matrix!trace ---}%
+  と呼ぶ.
+  たとえば,
+  \begin{align*}
+    A=\begin{pmatrix}a&b\\c&d\end{pmatrix}
+  \end{align*}
+  のときには,
+  $\tr(A)=a+d$である.
+  この記号の下,
+  $n$次方程式の解と係数の関係から,
+  次が成り立つことが知られている:
+  \begin{theorem}
+    $A$を$n$次正方行列とし,
+    $f(x)$を$A$の固有多項式とする.
+    $\lambda_1,\ldots,\lambda_n$を$f(x)=0$の解
+    (つまり,
+    $A$の固有値)
+    とする.
+    このとき,
+    \begin{align*}
+      \tr(A)=\lambda_1+\cdots+\lambda_n.
+    \end{align*}
+  \end{theorem}
+
+  \Cref{thm:det:eigen}から,
+  固有値の積が行列式となるので,
+  以下がすぐわかる:
+  \begin{cor}
+    $A$を正方行列とする.
+    このとき, 以下は同値:
+    \begin{enumerate}
+    \item $A$は正則である.
+    \item $0$は$A$の固有値ではない.
+    \end{enumerate}
+  \end{cor}
+
+\subsection{ケーリー--ハミルトンの定理}
+  \cref{thm:cht:2dim}として,
+  \begin{align*}
+    A=\begin{pmatrix}a&b\\c&d\end{pmatrix}
+  \end{align*}
+  のときには,
+  \begin{align*}
+   A^2-(a+d)A+(ad-bc)E_2=O_{2,2}
+  \end{align*}
+  が成り立つことを紹介した.
+  このとき, $A$の固有多項式$f(x)$は,
+  \begin{align*}
+    f(x)&=x^2-(a+d)x+(ad-bc)
+  \end{align*}
+  である.
+  等式の左辺は固有多項式$f(x)$に$x=A$を代入して得られる
+  行列多項式$f(A)$と一致している.
+  より一般に次が成り立つことが,
+  ケーリー--ハミルトンの定理という名前で知られている: 
+\begin{theorem}[ケーリー--ハミルトンの定理]
+  \label{thm:cht:general}
+  $A$を$n$次正方行列とし,
+  $f(x)$を 
+  $A$の固有多項式とする.
+  つまり $f(x)=\det(A-xE_n)$とする.
+  このとき,
+  \begin{align*}
+    f(A)=O_{n,n}
+  \end{align*}
+  が成り立つ.
+\end{theorem}
+
 
 
 \sectionX{章末問題}
