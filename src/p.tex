@@ -1095,7 +1095,7 @@ $\alpha$による$A$のスカラー倍と呼ぶ.
   対角成分が$\alpha$であるスカラー行列は, $\alpha E_n$と表せる.
 \end{remark}
 
-\begin{remark}
+\begin{definition}
   $k$個の
   $(m,n)$-行列$A_1,\ldots,A_k$
   と数$\alpha_1,\ldots,\alpha_k$
@@ -1107,7 +1107,7 @@ $\alpha$による$A$のスカラー倍と呼ぶ.
   を与えることができる.
   これを
   \defit{$\alpha_1,\ldots,\alpha_k$を係数とする$A_1,\ldots,A_k$の線型結合}
-  \defit{$\alpha_1,\ldots,\alpha_k$を係数とする$A_1,\ldots,A_k$の一次結合}
+  \Defit{$\alpha_1,\ldots,\alpha_k$を係数とする$A_1,\ldots,A_k$の一次結合}
   \Defit{linear combination of $A_1,\ldots,A_k$ with coeficients $\alpha_1,\ldots,\alpha_k$}
   \addindex{線型結合!行列の---}%
   \addindex{線型!行列の---結合}%
@@ -1125,6 +1125,70 @@ $\alpha$による$A$のスカラー倍と呼ぶ.
   \addindex{結合!一次---}%
   \addindex{結合!行列の一次---}%
  と呼ぶことがある.
+\end{definition}
+\begin{example}
+  例えば,
+  \begin{align*}
+    E&=\begin{pmatrix}1&0\\0&1\end{pmatrix},\\
+    J&=\begin{pmatrix}0&1\\1&0\end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+    A&=\begin{pmatrix}2&1\\1&2\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    A&2E+J
+  \end{align*}
+  である.
+  このことを,
+  $A$は$E$と$J$の線型結合として表せると言い表す.
+\end{example}
+
+
+\begin{definition}
+  \label{def:linindep:genneral}
+  $A^{(1)}, A^{(2)},\ldots, A^{(k)}$を$k$個の$(m,n)$行列とする.
+  
+  次の条件を満たすとき,
+  $(A^{(1)}, A^{(2)},\ldots, A^{(k)})$は
+  \defit{一次独立}
+  \Defit{linearly independent}
+  \addindex{独立!一次---}%
+  \addindex{一次!---独立}%
+  \addindex{independent!linearly ---}%
+  \addindex{linearly!--- independent}%
+  \addindex{linear!---ly independent}%
+  であるという:
+  \begin{itemize}
+  \item
+    数$x_1,x_2,\ldots, x_k$が
+    $x_1A^{(1)}+x_2A^{(2)}+\cdots+x_kA^{(k)}=\zzero$
+    を満たすならば, $x_1=x_2=\cdots=0$.
+  \end{itemize}
+
+  $(A^{(1)}, A^{(2)},\ldots, A^{(k)})$
+  が一次独立でないとき,
+  $(A^{(1)}, A^{(2)},\ldots, A^{(k)})$
+  は
+  \defit{一次従属}
+  \Defit{linearly dependent}
+  \addindex{従属!一次---}%
+  \addindex{一次!---従属}%
+  \addindex{dependent!linearly ---}%
+  \addindex{linearly!--- dependent}%
+  \addindex{linear!---ly dependent}%
+  であるという.
+\end{definition}
+
+\begin{remark}
+  一次独立性については,
+  一般の行列よりも, ベクトルに対して考えることが多い.
+  \cref{chap:lintrans}でベクトルに関して扱うので,
+  その際に
+  \Cref{def:linindep}
+  として再度定義する.
+  例などは\Cref{sec:vect}で紹介する.
 \end{remark}
 
 \subsection{積}
@@ -4905,6 +4969,7 @@ $n$次正則行列が係数行列である場合の方程式の解の公式が
  関連する内容について, 難しいことも含めて, 詳しく書かれている.
 
 \section{ベクトル}
+\label{sec:vect}
 ここでは, ベクトルに関連する用語を紹介する.
 
 $a$, $b$を実数とする.
@@ -5104,7 +5169,9 @@ $\aaa$と$\bbb$を通る直線は
   \caption{直線の上の点}\label{fig:ptonline}
 \end{figure}
 
-
+\Cref{def:linindep:genral}で定義した用語を再掲する.
+ただし, \Cref{def:linindep:genral}では一般の行列に対して定義していたが,
+ここでは, ベクトルの場合に限って述べる.
 \begin{definition}
   \label{def:linindep}
   $\aaa^{(1)}, \aaa^{(2)},\ldots, \aaa^{(k)}$を$k$個の$2$項実ベクトルとする.
