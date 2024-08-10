@@ -3049,7 +3049,7 @@ $2$次正方行列においては,
   \end{align*}
   \begin{enumerate}
   \item $A$の逆行列を求めよ.
-  \item $\xx$に関する方程式$A\xx=\bbb$を解け.
+  \item ($A$の逆行列を用いて) $\xx$に関する方程式$A\xx=\bbb$を解け.
   \end{enumerate}
 \end{quiz}
 
@@ -4542,8 +4542,6 @@ $A\xx=\zzero$という方程式について考える.
   \end{enumerate}
 \end{prop}
 
-
-
 階数について, 次の性質が知られている.
 \begin{theorem}
   \provelater**{thm:rank:prop}
@@ -4594,6 +4592,14 @@ $A\xx=\zzero$という方程式について考える.
     $Q$が$n$次正則行列なら$\rank(AQ)=\rank(A)$.
   \end{enumerate}
 \end{theorem}
+また, 定義から次がすぐわかる:
+\begin{prop}
+  行列$A$に対し以下は同値:
+  \begin{enumerate}
+  \item $\rank(A)=0$.
+  \item $A$は零行列.
+  \end{enumerate}
+\end{prop}
 
 正方行列$A$が正則であるかを$\rank(A)$を使って判定をすることもできる.
 \begin{theorem}
@@ -4610,6 +4616,20 @@ $A\xx=\zzero$という方程式について考える.
     $A$に行基本変形を行って単位行列に変形できる.
   \end{enumerate}
 \end{theorem}
+
+
+\begin{remark}
+  $A$を$n$次正方行列とする.
+  このとき以下がわかる:
+  \begin{enumerate}
+  \item $A$が正則行列なら$\rank(A)=n$.
+  \item $A$が正則行列でもなく零行列でもないなら$0<\rank(A)<n$.
+  \item $A$が零行列なら$\rank(A)=0$.
+  \end{enumerate}
+  特に,
+  正則行列でもなく零行列でもない
+  二次正方行列$A$の階数は$1$である.
+\end{remark}
 
 \begin{remark}
   \label{thm:fund:inverse}
@@ -7390,11 +7410,12 @@ $\aaa$と$L$の距離を求めよ.
 
 \begin{quiz}
   \solvelater{quiz:5:15}
+  次で定まる線形変換を
+  行列とベクトルの積で表せ:
   \begin{align*}
     f(\begin{pmatrix}x\\y\end{pmatrix})
-      =\begin{pmatrix}x+3y\\2x+7y\end{pmatrix}
+      =\begin{pmatrix}x+3y\\2x+7y\end{pmatrix}.
   \end{align*}
-  を行列とベクトルの積で表せ.
 \end{quiz}
 \begin{quiz}
   \solvelater{quiz:5:16}
