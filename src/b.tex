@@ -3097,7 +3097,41 @@ $(a,b)=(1,-7)$を対象となる行列に代入すると
   であり,
   \Cref{orthomat:eq5} を満たさない.
 \end{answerof}
-
+\begin{checkanswer}%{quiz:5:10}
+  少なくとも得られたものが直交行列であることは,
+  以下のように確かめられる:
+  $x=4$,
+  $y=-3$のときには,
+  \begin{align*}
+    A=\frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}
+  \end{align*}
+  となる.
+  \begin{align*}
+    A\transposed{A}
+    =\frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}
+    \cdot\frac{1}{5}\begin{pmatrix}3&4\\-4&3\end{pmatrix}  
+    =\frac{1}{5}\frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}\begin{pmatrix}3&4\\-4&3\end{pmatrix}  
+        =\frac{1}{25}\begin{pmatrix}25&0\\0&25\end{pmatrix}
+        =E_2.
+  \end{align*}
+  $A\transposed{A}$が$E_2$と等しいので直交行列である.
+  
+  $x=-4$,
+  $y=3$のときには,
+  \begin{align*}
+    A=\frac{1}{5}\begin{pmatrix}3&4\\4&-3\end{pmatrix}
+  \end{align*}
+  となる.
+  \begin{align*}
+    A\transposed{A}
+    =\frac{1}{5}\begin{pmatrix}3&4\\4&-3\end{pmatrix}
+    \cdot\frac{1}{5}\begin{pmatrix}3&4\\4&-3\end{pmatrix}  
+    =\frac{1}{5}\frac{1}{5}\begin{pmatrix}3&4\\4&-3\end{pmatrix}\begin{pmatrix}3&4\\-4&3\end{pmatrix}  
+        =\frac{1}{25}\begin{pmatrix}25&0\\0&25\end{pmatrix}
+        =E_2.
+  \end{align*}
+  $A\transposed{A}$が$E_2$と等しいので直交行列である.
+\end{checkanswer}
 \begin{answerof}{quiz:5:p:1}
 \begin{align*}
   \aaa&=\begin{pmatrix}7\\-4\end{pmatrix}&
@@ -3474,7 +3508,29 @@ $\aaa=\pp+\qq$を満たすので
   \end{align*}
   とおけば$f(\xx)=A\xx$である.
 \end{answerof}
+\begin{checkanswer}%{quiz:5:15}
+$f(\xx)=A\xx$と書けることは次のように確かめられる:
 
+  \begin{align*}
+    f(\ee_1) &=f(\begin{pmatrix}1\\0\end{pmatrix})
+      =\begin{pmatrix}1+3\cdot0\\2\cdot 1+7\cdot 0 \end{pmatrix}
+      =\begin{pmatrix}1\\2\end{pmatrix}\\
+    A\ee_1&=\begin{pmatrix}1&3\\2&7\end{pmatrix}\begin{pmatrix}1\\0\end{pmatrix}
+      =\begin{pmatrix}1\cdot 1+3\cdot 0\\2\cdot1+7\cdot 0\end{pmatrix}
+      =\begin{pmatrix}1\\2\end{pmatrix}
+  \end{align*}
+  であるので$f(\ee_1)=A\ee_1$である.
+
+  \begin{align*}
+    f(\ee_2) &=f(\begin{pmatrix}0\\1\end{pmatrix})
+      =\begin{pmatrix}0+3\cdot1\\2\cdot 0+7\cdot 1 \end{pmatrix}
+      =\begin{pmatrix}3\\7\end{pmatrix}\\
+    A\ee_2&=\begin{pmatrix}1&3\\2&7\end{pmatrix}\begin{pmatrix}0\\1\end{pmatrix}
+      =\begin{pmatrix}1\cdot 0+3\cdot 1\\2\cdot0+7\cdot 1\end{pmatrix}
+      =\begin{pmatrix}3\\7\end{pmatrix}
+  \end{align*}
+  であるので$f(\ee_2)=A\ee_2$である.
+\end{checkanswer}
 
 \begin{answerof}{quiz:5:16}
   $f(\ee_1)$と$f(\ee_2)$を並べてできる$2$次正方行列を$A$とおくと,
@@ -3499,6 +3555,25 @@ $\aaa=\pp+\qq$を満たすので
   とかける.
 \end{answerof}
 
+\begin{checkanswer}%{quiz:5:16}
+  $f(\xx)=A\xx$となることは次のように確かめられる:
+
+  \begin{align*}
+    A\ee_1=
+    \begin{pmatrix}1&2\\-3&-9\end{pmatrix}\begin{pmatrix}1\\0\end{pmatrix}
+    =\begin{pmatrix}1\cdot 1+2\cdot 0\\-3\cdot 1+(-9)\cdot 0\end{pmatrix}
+    =\begin{pmatrix}1\\-3\end{pmatrix}
+  \end{align*}
+  となるので, $f(\ee_1)=A\ee_1$である.
+
+  \begin{align*}
+    A\ee_2=
+    \begin{pmatrix}1&2\\-3&-9\end{pmatrix}\begin{pmatrix}0\\1\end{pmatrix}
+    =\begin{pmatrix}1\cdot 0+2\cdot 1\\-3\cdot 0+(-9)\cdot 1\end{pmatrix}
+    =\begin{pmatrix}2\\-9\end{pmatrix}
+  \end{align*}
+  となるので, $f(\ee_2)=A\ee_2$である.
+\end{checkanswer}
 
 \begin{answerof}{quiz:5:17}
   $f(\xx)=A\xx$, $g(\xx)=B\xx$
@@ -3559,8 +3634,64 @@ $\aaa=\pp+\qq$を満たすので
       =\begin{pmatrix}-2&\frac{3}{2}\\1&\frac{-1}{2}\end{pmatrix}\xx
   \end{align*}
   と書ける.
-
 \end{answerof}
+\begin{checkanswer}%{quiz:5:18}
+  \begin{align*}
+    f^{-1}(\xx) = \begin{pmatrix}-2&\frac{3}{2}\\1&\frac{-1}{2}\end{pmatrix}\xx
+  \end{align*}
+  と書けることは以下のように確かめることができる:
+
+  \begin{align*}
+    f(\ee_1)=\begin{pmatrix}1&3\\2&4\end{pmatrix}\begin{pmatrix}1\\0\end{pmatrix}
+      =\begin{pmatrix}1\\2\end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    f^{-1}(\begin{pmatrix}1\\2\end{pmatrix})=\begin{pmatrix}1\\0\end{pmatrix}
+  \end{align*}
+  である. 一方,
+  \begin{align*}
+    \begin{pmatrix}-2&\frac{3}{2}\\1&\frac{-1}{2}\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix}
+      =
+      \begin{pmatrix}-2\cdot 1+\frac{3}{2}\cdot 2\\1\cdot 1+\frac{-1}{2}\cdot 2\end{pmatrix}
+      =
+      \begin{pmatrix}-2+3\\1-1\end{pmatrix}
+      =
+      \begin{pmatrix}1\\0\end{pmatrix}
+  \end{align*}
+  である.  よって
+  \begin{align*}
+    f^{-1}(\begin{pmatrix}1\\2\end{pmatrix})=
+      \begin{pmatrix}-2&\frac{3}{2}\\1&\frac{-1}{2}\end{pmatrix}\begin{pmatrix}1\\2\end{pmatrix}.
+  \end{align*}
+
+  また,
+  \begin{align*}
+    f(\ee_2)=\begin{pmatrix}1&3\\2&4\end{pmatrix}\begin{pmatrix}0\\1\end{pmatrix}
+      =\begin{pmatrix}3\\4\end{pmatrix}
+  \end{align*}
+  であるので,
+  \begin{align*}
+    f^{-1}(\begin{pmatrix}3\\4\end{pmatrix})=\begin{pmatrix}0\\1\end{pmatrix}
+  \end{align*}
+  である. 一方,
+  \begin{align*}
+    \begin{pmatrix}-2&\frac{3}{2}\\1&\frac{-1}{2}\end{pmatrix}\begin{pmatrix}3\\4\end{pmatrix}
+      =
+      \begin{pmatrix}-2\cdot 3+\frac{3}{2}\cdot 4\\1\cdot 3+\frac{-1}{2}\cdot 4\end{pmatrix}
+      =
+      \begin{pmatrix}-6+6\\3-2\end{pmatrix}
+      =
+      \begin{pmatrix}0\\1\end{pmatrix}
+  \end{align*}
+  である.  よって
+  \begin{align*}
+    f^{-1}(\begin{pmatrix}3\\4\end{pmatrix})=
+      \begin{pmatrix}-2&\frac{3}{2}\\1&\frac{-1}{2}\end{pmatrix}\begin{pmatrix}3\\4\end{pmatrix}.
+  \end{align*}
+  
+\end{checkanswer}
+
 
 \begin{answerof}{quiz:5:p:4}
   \begin{align*}
@@ -3852,7 +3983,21 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
  とすると$A=RB$を満たす.
 \end{answerof}
 
-
+\begin{checkanswer}%{quiz:5:20}
+\begin{align*}
+  R&=\frac{-1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}\\
+  B&=-\begin{pmatrix}5&7\\0&-1\end{pmatrix}
+\end{align*}
+が$A=RB$を満たすことは次のように確かめることができる.
+\begin{align*}
+  RB&=(\frac{-1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix})\cdot(-\begin{pmatrix}5&7\\0&-1\end{pmatrix})\\
+    &=\frac{1}{5}\begin{pmatrix}3&-4\\4&3\end{pmatrix}\begin{pmatrix}5&7\\0&-1\end{pmatrix}\\
+        &=\frac{1}{5}\begin{pmatrix}3\cdot 5-4\cdot 0&3\cdot 7+(-4)\cdot(-1)\\
+          4\cdot 5+3\cdot 0&4\cdot 7+3\cdot(-1)\end{pmatrix}\\
+        &=\frac{1}{5}\begin{pmatrix}15&25\\20&25\end{pmatrix}\\
+        &=\begin{pmatrix}3&5\\4&5\end{pmatrix}.
+\end{align*}
+\end{checkanswer}
 \section{固有値と固有ベクトルに関する問題}
 
 \begin{answerof}{quiz:6:1}
@@ -3870,9 +4015,34 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
   \begin{align*}
     (x-1)(x+5)=0
   \end{align*}
-  を解けばよい.  $A$の固有値は$1$, $5$である.  
+  を解けばよい.  $A$の固有値は$1$, $-5$である.  
 \end{answerof}
+\begin{checkanswer}%{quiz:6:1}
+  $1$が$A$の固有値であることは次のように確かめられる:
+  $\lambda=1$とすると
+  \begin{align*}
+    \det(A-\lambda E_2)
+    =\det(\begin{pmatrix}-4-\lambda&1\\5&-\lambda\end{pmatrix})
+    =\det(\begin{pmatrix}-4-1&1\\5&-1\end{pmatrix})
+    =\det(\begin{pmatrix}-5&1\\5&-1\end{pmatrix})
+      =-5\cdot(-1) -1\cdot5
+      =5-5=0
+  \end{align*}
+  となり, $\det(A-1 E_2)=0$.
 
+  $-5$が$A$の固有値であることは次のように確かめられる:
+  $\lambda=-5$とすると
+  \begin{align*}
+    \det(A-\lambda E_2)
+    &=\det(\begin{pmatrix}-4-\lambda&1\\5&-\lambda\end{pmatrix})\\
+    &=\det(\begin{pmatrix}-4-(-5)&1\\5&-(-5)\end{pmatrix})\\
+    &=\det(\begin{pmatrix}1&1\\5&5\end{pmatrix})\\
+      &=1\cdot5 -1\cdot5\\
+      &=5-5=0
+  \end{align*}
+  となり, $\det(A-(-5) E_2)=0$.
+
+\end{checkanswer}
 
 \begin{answerof}{quiz:6:2}
   $2$次正方行列$A$が対角化できることと,
@@ -4120,6 +4290,111 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
   \end{align*}
   となる.
 \end{answerof}
+\begin{checkanswer}%{quiz:6:4}
+  \begin{align*}
+    &\begin{pmatrix}\frac{t}{5}\\t\end{pmatrix}
+       &&(t\neq 0)
+  \end{align*}
+  が
+  固有値$1$に属する固有ベクトルであることは次のように確かめられる:
+  $t=5$のとき
+  \begin{align*}
+    \begin{pmatrix}\frac{t}{5}\\t\end{pmatrix}=\begin{pmatrix}1\\5\end{pmatrix}
+  \end{align*}
+  である.
+  また,
+  \begin{align*}
+    \begin{pmatrix}-4&1\\5&0\end{pmatrix}\begin{pmatrix}1\\5\end{pmatrix}
+   =\begin{pmatrix}-4\cdot 1+1\cdot 5\\5\cdot1+0\cdot5\end{pmatrix}
+   =\begin{pmatrix}1\\5\end{pmatrix}.    
+  \end{align*}
+  よって
+  \begin{align*}
+    \begin{pmatrix}1\\5\end{pmatrix}
+  \end{align*}
+  は固有値$1$に属する固有ベクトルである.
+\end{checkanswer}
+\begin{checkanswer}%{quiz:6:4}
+  \begin{align*}
+    &\begin{pmatrix}-t\\t\end{pmatrix}
+       &&(t\neq 0)
+  \end{align*}
+  が固有値$-5$に属する固有ベクトルであることは,
+  次のように確かめることができる:
+
+  $t=1$のとき
+  \begin{align*}
+    \begin{pmatrix}-t\\t\end{pmatrix}=\begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  である.
+  また,
+  \begin{align*}
+    \begin{pmatrix}-4&1\\5&0\end{pmatrix}\begin{pmatrix}-1\\1\end{pmatrix}
+   =\begin{pmatrix}-4\cdot(-1)+1\cdot 1\\5\cdot(-1)+0\cdot1\end{pmatrix}
+   =\begin{pmatrix}5\\-5\end{pmatrix}    
+   =-5\begin{pmatrix}-1\\1\end{pmatrix}.
+  \end{align*}
+  よって
+  \begin{align*}
+    \begin{pmatrix}-1\\1\end{pmatrix}
+  \end{align*}
+  は固有値$-5$に属する固有ベクトルである.
+\end{checkanswer}
+\begin{checkanswer}%{quiz:6:4}
+  もとめた$P^{-1}$, $P$で
+  \begin{align*}
+    P^{-1}AP=\begin{pmatrix}1&0\\0&-5\end{pmatrix}
+  \end{align*}
+  となることは,
+  次のように確かめることができる:
+
+  \begin{align*}
+    &\frac{1}{-6}\begin{pmatrix}-1&-1\\-5&1\end{pmatrix}
+    \begin{pmatrix}-4&1\\5&0\end{pmatrix}
+    \begin{pmatrix}1&1\\5&-1\end{pmatrix}\\
+   &=
+    \frac{1}{-6}\begin{pmatrix}-1&-1\\-5&1\end{pmatrix}
+    \begin{pmatrix}-4\cdot 1+1\cdot 5&-4\cdot 1+1\cdot -1\\5\cdot 1+0\cdot5&5\cdot 1+0\cdot(-1)\end{pmatrix}\\
+   &=
+    \frac{1}{-6}\begin{pmatrix}-1&-1\\-5&1\end{pmatrix}
+    \begin{pmatrix}1&-5\\5&5\end{pmatrix}\\
+   &=
+    \frac{1}{-6}\begin{pmatrix}-1\cdot 1-1\cdot 5&-1\cdot(-5)-1\cdot 5\\-5\cdot 1+1\cdot 5&-5\cdot(-5)+1\cdot 5\end{pmatrix}\\
+   &=
+    \frac{1}{-6}\begin{pmatrix}-6&0\\0&30\end{pmatrix}\\
+   &=
+    \begin{pmatrix}1&0\\0&-5\end{pmatrix}.
+  \end{align*}
+\end{checkanswer}
+
+\begin{checkanswer}%{quiz:6:4}
+  \begin{align*}
+   \frac{1}{-6}\begin{pmatrix}-1+(-5)^{n+1}&-1+(-5)^n\\-5-(-5)^{n+1}&-5-(-5)^n\end{pmatrix}
+  \end{align*}
+  は, $n=1$のとき,
+  \begin{align*}
+    \frac{1}{-6}\begin{pmatrix}-1+(-5)^{n+1}&-1+(-5)^n\\-5-(-5)^{n+1}&-5-(-5)^n\end{pmatrix}
+    &=\frac{1}{-6}\begin{pmatrix}-1+(-5)^{1+1}&-1+(-5)^1\\-5-(-5)^{1+1}&-5-(-5)^1\end{pmatrix}\\
+    &=\frac{1}{-6}\begin{pmatrix}24&-6\\-30&0\end{pmatrix}\\
+    &=\begin{pmatrix}-4&1\\5&0\end{pmatrix}
+  \end{align*}
+  となり$A$と等しい.
+
+  $n=2$のとき,
+  \begin{align*}
+    \frac{1}{-6}\begin{pmatrix}-1+(-5)^{n+1}&-1+(-5)^n\\-5-(-5)^{n+1}&-5-(-5)^n\end{pmatrix}
+    &=\frac{1}{-6}\begin{pmatrix}-1+(-5)^{2+1}&-1+(-5)^2\\-5-(-5)^{2+1}&-5-(-5)^2\end{pmatrix}\\
+    &=\frac{1}{-6}\begin{pmatrix}-126&24\\120&-30\end{pmatrix}\\
+    &=\begin{pmatrix}21&-4\\-20&5\end{pmatrix}
+  \end{align*}
+  であるが,
+  \begin{align*}
+    A^2&=\begin{pmatrix}-4&1\\5&0\end{pmatrix}\begin{pmatrix}-4&1\\5&0\end{pmatrix}\\
+      &=\begin{pmatrix}-4\cdot(-4)+1\cdot 5&-4\cdot1+ 1\cdot 0\\5\cdot -4+0\cdot 5&5\cdot 1+0\cdot 0\end{pmatrix}\\
+      &=\begin{pmatrix}21&-4\\-20&5\end{pmatrix}
+  \end{align*}
+  であるので, $A^2$と等しい.
+\end{checkanswer}
 
 
 \begin{answerof}{quiz:6:5}
@@ -4404,8 +4679,133 @@ $\aaa$から原点と$\bbb$を通る直線への直交射影$\pp$は,
   
 \end{answerof}
 
+\begin{checkanswer}%{quiz:6:6}
+  \begin{align*}
+     P=\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix}
+  \end{align*}
+  が直交行列であることは次のように確かめられる:
+  \begin{align*}
+    P\transposed{P}
+    &=
+    (\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix})
+    \cdot
+    (\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix})\\
+    &=
+    \frac{1}{\sqrt{5}}\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix})
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix}\\
+    &=
+    \frac{1}{\sqrt{5}}\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2\cdot 2+(-1)\cdot(-1)&2\cdot 1+(-1)\cdot 2\\
+      1\cdot 2+2\cdot(-1)&1\cdot 1+2\cdot 2
+    \end{pmatrix}\\
+   &=
+    \frac{1}{5}
+    \begin{pmatrix}
+      5&0\\
+      0&5
+    \end{pmatrix}
+   =E_2
+  \end{align*}.
+\end{checkanswer}
 
-
+\begin{checkanswer}%{quiz:6:6}
+  \begin{align*}
+     P=\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix}
+  \end{align*}
+  に対して$P^{-1}AP$が対角行列になることは以下のように確かめられる:
+  \begin{align*}
+    P^{-1}AP
+    &=
+    (\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix})
+    \begin{pmatrix}
+      2&2\\2&-1
+    \end{pmatrix}
+    (\frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix})\\
+    &=
+    \frac{1}{\sqrt{5}}
+    \frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      2&2\\2&-1
+    \end{pmatrix}
+    \begin{pmatrix}
+      2&-1\\
+      1&2
+    \end{pmatrix})\\
+    &=
+    \frac{1}{5}
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix}
+    \begin{pmatrix}2&-1
+      2\cdot 2+2\cdot 1&2\cdot(-1)+2\cdot 2\\
+      2\cdot 2+(-1)\cdot 1&2\cdot(-1)+(-1)\cdot 2
+    \end{pmatrix}\\
+    &=
+    \frac{1}{5}
+    \begin{pmatrix}
+      2&1\\
+      -1&2
+    \end{pmatrix}
+    \begin{pmatrix}
+      6&2\\
+      3&-4
+    \end{pmatrix}\\
+    &=
+    \frac{1}{5}
+    \begin{pmatrix}
+      2\cdot 6+1\cdot 3&2\cdot 2+1\cdot (-4)\\
+      -1\cdot 6+2\cdot 3&-1\cdot 2+2\cdot (-4)
+    \end{pmatrix}\\
+    &=
+    \frac{1}{5}
+    \begin{pmatrix}
+      15&0\\
+      0&-10
+    \end{pmatrix}\\
+    &=
+    \begin{pmatrix}
+      3&0\\
+      0&-2
+    \end{pmatrix}
+  \end{align*}
+\end{checkanswer}
 
 
 
