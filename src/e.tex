@@ -1,0 +1,496 @@
+\chapter{演習問題}
+
+\newcommand{\schoolCalender}[1]{%
+\ifcase#1%
+\or 4月14日%
+\or 4月21日%
+\or 4月28日%
+\or 5月12日%
+\or 5月14日(6)%
+\or 5月19日%
+\or 5月26日%
+\or 6月2日%
+\or 6月9日%
+\or 6月16日%
+\or 6月23日%
+\or 6月30日%
+\or 7月7日%
+\or 7月14日%
+\or 7月28日%
+\or 7月31日%
+\else %
+\fi
+}
+
+
+
+%% \section*{予習の進め方について}
+%% この講義は, 所謂反転授業の形式で行う.
+%% Moodleにある動画資料を予習し講義に臨み,
+%% 講義時間には簡単な解説および問題演習を行う.
+
+%% 予習用のノートと講義での解説のノートは分けたほうが良いと思われる.
+
+%% 予習はできるときに自分のペースで先に進むとよいと思う.
+%% 遅くとも, 以下のように予習を済ませることが望ましい:
+%% \begin{enumerate}
+%% \item \schoolCalender{2}の講義までに,
+%%   1. 行列に関する用語の定義
+%%   まで.
+%% \item \schoolCalender{3}の講義までに,
+%%   2. 行列の演算
+%%   まで.
+%% \item \schoolCalender{4}の講義までに,
+%%   3. 行列式と逆行列
+%%   まで.
+%% %%%%%%%%%% この年は, 5週目がイレギュラーな曜日
+%% \item \schoolCalender{6}の講義までに,
+%%   4. 連立方程式 (1)
+%%   まで.
+%% \item \schoolCalender{7}の講義までに,
+%%   5. 連立方程式 (2)
+%%   まで.
+%% \item \schoolCalender{9}の講義までに,
+%%   6. 一次独立性と基底
+%%   まで.
+%% \item \schoolCalender{10}の講義までに,
+%%   7. 内積とノルム
+%%   まで.
+%% \item \schoolCalender{11}の講義までに,
+%%   8. 平面上の線形変換
+%%   まで.
+%% \item \schoolCalender{13}の講義までに,
+%%   9. 固有値と固有ベクトル
+%%   まで.
+%% \item \schoolCalender{14}の講義までに,
+%%   10. 固有値と固有ベクトル(2)
+%%   まで.
+%% \end{enumerate}
+
+%% \newpage
+
+\section{1/15回目: \schoolCalender{1}}
+\Cref{sec:def:mat}に関する内容.
+% 行列に関する用語 (型, 成分, 行, 列, 転置) を対面で解説する.
+\subsection{問題}
+\begin{quiz}
+  次の行列$A$に対し, $\transposed{A}$を求めよ:
+  \begin{enumerate}
+  \item $A=\begin{pmatrix}
+    1&2\\
+    3&4\\
+    5&6
+    \end{pmatrix}$.
+  \item $A=\begin{pmatrix}
+    1\\
+    2
+    \end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+\subsection{WebWork}
+\begin{enumerate}
+\item Set01 Problem 1 (行列の用語の確認) を取り組め.
+\item Set01 Problem 3 (行列の成分) を取り組め.
+\item Set01 Problem 7 (行列の相等) を取り組め.
+\end{enumerate}
+
+%\endinput
+\newpage
+\section{2/15回目: \schoolCalender{2}}
+\Cref{sec:def:matop}に関する内容.
+% 零行列, 単位行列, クロネッカーのデルタについて対面で解説する.
+% 対面で和とスカラー倍を定義する.
+% 予習は   1. 行列に関する用語の定義
+\subsection{問題}
+\begin{quiz}
+  次の$A$, $B$に対し, $A+B$を計算せよ:
+  \begin{enumerate}
+  \item
+    $A=\begin{pmatrix}1&9\\2&-3\end{pmatrix}$,
+    $B=\begin{pmatrix}4&0\\5&7\end{pmatrix}$.
+  \item 
+    $A=\begin{pmatrix}2\\\pi\end{pmatrix}$,
+    $B=\begin{pmatrix}e\\5\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+\begin{quiz}
+  次の$A$, $c$に対し, $cA$を計算せよ:
+  \begin{enumerate}
+  \item
+    $c=-4$,
+    $A=\begin{pmatrix}1&\sqrt{-1}\\2&-3\end{pmatrix}$.
+  \item
+    $c=\pi$,
+    $A=\begin{pmatrix}e^2\\3\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+\subsection{WebWork}
+\begin{enumerate}
+\item Set01 Problem 2 (行列の用語の確認) を取り組め.
+\item Set01 Problem 4--6 (クロネッカーのデルタ) を取り組め.
+\item Set01 Problem 8 (成分の比較) を取り組め.
+\item Set01 Problem 14 (特別な形の行列) を取り組め.
+\item Set02 Problem 2--3, 11--12, 20, 23--24 (和)を取り組め.
+\item Set02 Problem 33--37 (和, スカラー倍)を取り組め.
+\end{enumerate}
+
+
+%\endinput
+\newpage
+\section{3/15回目: \schoolCalender{3}}
+\Cref{chap:mat}に関する内容.
+% 対面で行列の積について定義する.
+% 予習は 2. 行列の演算
+\subsection{問題}
+\begin{quiz}
+  以下の$A$, $B$に対し, $AB$を求めよ:
+  \begin{enumerate}
+  \item
+    $A=\begin{pmatrix}5&6\\7&8\end{pmatrix}$,
+    $B=\begin{pmatrix}e&\pi\\\sqrt{2}&\sqrt{3}\end{pmatrix}$.
+  \item
+    $A=\begin{pmatrix}1&2&0\\2&3&4\end{pmatrix}$,
+    $B=\begin{pmatrix}5&6\\7&8\\-1&5\end{pmatrix}$.
+  \item
+    $A=\begin{pmatrix}2&2&3\\1&3&4\end{pmatrix}$,
+    $B=\begin{pmatrix}5\\7\\6\end{pmatrix}$.
+  \item
+    $A=\begin{pmatrix}2&3\end{pmatrix}$,
+    $B=\begin{pmatrix}e\\\pi\end{pmatrix}$.
+  \item
+    $A=\begin{pmatrix}2\\3\end{pmatrix}$,
+    $B=\begin{pmatrix}e&\pi\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+\subsection{WebWork}
+\begin{enumerate}
+\item Set02 Problem 1(和と積が定義できるための条件)を取り組め.
+\item Set02 Problem 4--8, 13--14, 21--22, 25--26 (積)を取り組め.
+\item Set02 Problem 9--10, 15--16, 27--28 (行列の和と積) を取り組め.
+\item Set01 Problem 9 (転置) を取り組め.
+\item Set01 Problem 10--13 (対称行列, 歪対称行列) を取り組め.
+\end{enumerate}
+
+%\endinput
+\newpage
+\section{4/15回目: \schoolCalender{4}}
+\Cref{chap:inverse}に関する問題.
+%  3. 行列式と逆行列
+\subsection{問題}
+\begin{quiz}
+  次の行列$A$が正則かどうか調べ, 正則なら$A$の逆行列を求めよ:
+  \begin{enumerate}
+    \item $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$.
+    \item $A=\begin{pmatrix}1&1\\1&1\end{pmatrix}$.
+    \item $A=\begin{pmatrix}0&1\\1&0\end{pmatrix}$.
+    \item $A=\begin{pmatrix}\cos(\theta)&-\sin(\theta)\\\sin(\theta)&\cos(\theta)\end{pmatrix}$.
+    \item $A=\begin{pmatrix}t&1\\1&t\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+\subsection{WebWork}
+\begin{enumerate}
+\item Set03 Problem 1--3 (行列式) を取り組め.
+\item Set03 Problem 4 (行列式による方程式) を取り組め.
+\item Set03 Problem 5 (行列式と正則性) を取り組め.
+\item Set03 Problem 6--10 (逆行列) を取り組め.
+
+\item Set03 Problem 13--14 (逆行列と連立方程式) を取り組め.
+\end{enumerate}
+
+%\endinput
+\newpage
+\section{5/15回目: \schoolCalender{5}}
+\Cref{def:det:generic,thm:fund:inverse}に関する問題.
+(イレギュラーな曜日に割り振られた回)
+\subsection{問題}
+\begin{quiz}
+  次の行列$A$の行列式を求め,
+  正則かどうか判定せよ.
+  \begin{enumerate}
+  \item
+    $A=
+    \begin{pmatrix}
+      1&2&0&0\\
+      0&4&6&9\\
+      0&5&6&9\\
+      0&6&6&9
+    \end{pmatrix}$
+  \item
+    $A=
+    \begin{pmatrix}
+      1&0&3&4\\
+      0&4&6&9\\
+      0&3&5&8\\
+      0&1&1&1
+    \end{pmatrix}$
+\end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の行列が
+  正則かどうか判定し,
+  正則なら逆行列を求めよ.
+  \begin{enumerate}
+  \item
+    $A=
+    \begin{pmatrix}
+      1&2&3\\
+      0&4&8\\
+      0&4&6
+    \end{pmatrix}$
+  \item
+    $A=
+    \begin{pmatrix}
+      1&0&3\\
+      0&4&4\\
+      1&4&7
+    \end{pmatrix}$
+\end{enumerate}
+\end{quiz}
+
+
+\subsection{WebWork}
+\begin{enumerate}
+\item Set 05 Problem 1--8 (3次行列式)
+\item Set 05 Problem 9--13 (3次逆行列)
+\item Set 05 Problem 15--16 (3次逆行列と連立方程式)
+\item Set 05 Problem 14 (変数の入った3次逆行列)
+\end{enumerate}
+
+%\endinput
+\newpage
+\section{6/15回目: \schoolCalender{6}}
+\Cref{chap:systemoflineq}に関する問題.
+%  4 (1). 連立方程式 (1)
+% 被約階段行列と行基本変形と階数.
+\subsection{問題}
+\begin{quiz}
+  次の行列$A$に行基本変形をして得られる被役行階段行列を求めよ.
+  $A$の階数を答えよ. $A$が正方行列なら, $A$が正則かどうか答えよ.
+  \begin{enumerate}
+  \item $A=\begin{pmatrix}1&2&3\\1&3&3\\1&2&5\end{pmatrix}$.
+  \item $A=\begin{pmatrix}1&2\\1&3\\1&2\end{pmatrix}$.
+  \item $A=\begin{pmatrix}1&0&4\\1&1&5\\0&1&2\end{pmatrix}$.
+  \item $A=\begin{pmatrix}1&0&4\\0&2&2\\1&2&6\end{pmatrix}$.
+  \item $A=\begin{pmatrix}1&0&4\\1&&4\\0&0&1\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+
+\subsection{WebWork}
+\begin{enumerate}
+\item Set04 Problem 1--4, 12 (被役階段行列, ランク) を取り組め.
+\item Set04 Problem 5 (連立一次方程式の用語) を取り組め.
+\item Set06 Problem 1--4, 12 (被役階段行列の定義) を取り組め.
+\item Set06 Problem 5--10 (被役階段行列) を取り組め.
+\item Set06 Problem 11--14 (被役階段行列, ランク) を取り組め.
+
+\end{enumerate}
+
+%\endinput
+\newpage
+\section{7/15回目: \schoolCalender{7}}
+\Cref{chap:systemoflineq}に関する問題.
+%   4 (2). 連立方程式 (2)
+% 連立方程式全部
+% 連立方程式は行基本変形で被約階段行列に変形すれば解けること.
+% 正則性と解の自由度の話もする.
+\subsection{問題}
+\begin{quiz}
+  次の行列$A$を拡大係数行列とする連立一次方程式の解の空間を求めよ:
+  \begin{enumerate}
+  \item $A=\begin{pmatrix}0&1&0&2&3&0&1&0&5\\0&0&1&2&0&0&0&0&0\\0&0&0&0&0&1&0&0&9\\0&0&0&0&0&0&0&0&0
+  \end{pmatrix}$.
+  \item $A=\begin{pmatrix}1&2&3\\0&0&0\end{pmatrix}$.
+    \item $A=\begin{pmatrix}1&2&3\\2&3&5\end{pmatrix}$.
+    \item $A=\begin{pmatrix}1&2&3\\2&4&5\end{pmatrix}$.
+    \item $A=\begin{pmatrix}1&2&3\\2&4&6\end{pmatrix}$.
+    \item $A=\begin{pmatrix}0&0&0\\0&0&0\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の行列$A$と$\bbb$に対し,
+  $\xx$に関する方程式$A\xx=\bbb$の解の空間を求めよ.
+  また, 解を持つ場合には解の自由度も答えよ.
+  \begin{enumerate}
+    \item $A=\begin{pmatrix}1&2\\2&3\end{pmatrix}$,
+     $\bbb=\begin{pmatrix}3\\5\end{pmatrix}$.
+    \item $A=\begin{pmatrix}1&2\\2&4\end{pmatrix}$,
+    $\bbb=\begin{pmatrix}3\\6\end{pmatrix}$.
+    \item $A=\begin{pmatrix}0&0\\0&0\end{pmatrix}$,
+      $\bbb=\begin{pmatrix}0\\0\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+\subsection{WebWork}
+\begin{enumerate}
+\item Set04 Problem 6-11 (連立一次方程式) を取り組め.
+\end{enumerate}
+
+%\endinput
+\newpage
+\section{8/15回目: \schoolCalender{8}}
+\Cref{chap:systemoflineq}に関する問題.
+% 連立一次方程式/続き.
+\subsection{問題}
+\begin{quiz}
+  次の行列$A$を拡大係数行列とする連立一次方程式の解の空間を求めよ:
+  \begin{enumerate}
+  \item $A=\begin{pmatrix}0&1&0&2&3&0&1&0&5\\0&0&1&2&0&0&0&0&0\\0&0&0&0&0&1&0&0&9\\0&0&0&0&0&0&0&0&0\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+\begin{quiz}
+  次の行列$A$に対し$A\xx=\zzero$が$\xx=\zzero$以外の解を持つか判定せよ:
+  \begin{enumerate}
+  \item $A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$.
+  \item $A=\begin{pmatrix}2&1\\2&1\end{pmatrix}$.
+  \item $A=\begin{pmatrix}3&1\\2&1\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の行列$A$に対し$A\xx=\zzero$が$\xx=\zzero$以外の解を持つような$c$を求めよ:
+  \begin{enumerate}
+  \item $A=\begin{pmatrix}2-c&1\\1&2-c\end{pmatrix}$.
+  \item $A=\begin{pmatrix}3-c&1\\2&1-c\end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+\subsection{WebWork}
+\begin{enumerate}
+\item (Set06 Problem 16--22 (連立一次方程式) を取り組め.)
+\item (Set06 Problem 23 (変数の入った連立一次方程式) を取り組め.)
+\item Set02 Problem 9 (和と積)
+\item Set02 Problem 17--19 (羃の計算)
+\item Set02 Problem 29--31 (羃の計算)
+\end{enumerate}
+以下はすでに演習で扱った内容であるので,
+まだ取り組んでいない場合は適宜取り組め.
+\begin{enumerate}
+\item Set01 Problem 1--14
+\item Set02 Problem 1--8, 10--16, 20--28  33-37
+\item Set03 Problem 1--10, 13--14
+\item Set04 Problem 1--12
+\item Set06 Problem 1--14 16-22
+\end{enumerate}
+
+
+%\endinput
+\newpage
+\section{9/15回目: \schoolCalender{9}}
+\Cref{sec:vect}に関する問題.
+% ノルム, 内積は対面でやる.
+% 一次独立性と基底
+\subsection{問題}
+\begin{quiz}
+  次のベクトルの組が一次独立か判定せよ:
+  \begin{enumerate}
+    \item $(\begin{pmatrix}1\\2\\3\end{pmatrix},\begin{pmatrix}1\\2\\4\end{pmatrix})$.
+    \item $(\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}2\\2\end{pmatrix},\begin{pmatrix}3\\4\end{pmatrix})$.
+    \item $(\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}2\\5\end{pmatrix})$.
+    \item $(\begin{pmatrix}1\\1\end{pmatrix})$.
+    \item $(\begin{pmatrix}0\\0\end{pmatrix})$.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  次のベクトルの組$\RR^2$の基底であるか判定せよ:
+  \begin{enumerate}
+    \item $(\begin{pmatrix}1\\2\end{pmatrix},\begin{pmatrix}1\\3\end{pmatrix})$.
+    \item $(\begin{pmatrix}1\\2\end{pmatrix},\begin{pmatrix}2\\4\end{pmatrix})$.
+    \item $(\begin{pmatrix}1\\2\end{pmatrix})$.
+    \item $(\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix},\begin{pmatrix}1\\1\end{pmatrix})$.
+  \end{enumerate}
+\end{quiz}
+
+
+\subsection{WebWork}
+\begin{enumerate}
+  \item Set07 Problem 1--3 (一次独立性, 基底) を取り組め.
+  \item Set07 Problem 4--8 (内積とノルム) を取り組め.
+\end{enumerate}
+
+\endinput
+\newpage
+\section{10/15回目: \schoolCalender{10}}
+\subsection{問題}
+%   7. 内積とノルム
+\begin{quiz}
+\end{quiz}
+\subsection{WebWork}
+\begin{enumerate}
+  \item Set Problem を取り組め.
+\end{enumerate}
+
+\endinput
+\newpage
+\section{11/15回目: \schoolCalender{11}}
+\subsection{問題}
+\begin{quiz}
+\end{quiz}
+
+\subsection{WebWork}
+%   8. 平面上の線形変換
+\begin{enumerate}
+  \item Set Problem を取り組め.
+\end{enumerate}
+
+\endinput
+\newpage
+\section{12/15回目: \schoolCalender{12}}
+\subsection{問題}
+
+\subsection{WebWork}
+\begin{enumerate}
+  \item Set Problem を取り組め.
+\end{enumerate}
+
+\endinput
+\newpage
+\section{13/15回目: \schoolCalender{13}}
+\subsection{問題}
+
+\subsection{WebWork}
+\begin{enumerate}
+  \item Set Problem を取り組め.
+\end{enumerate}
+
+
+\endinput
+\newpage
+\section{14/15回目: \schoolCalender{14}}
+\subsection{問題}
+\begin{quiz}
+\end{quiz}
+
+\subsection{WebWork}
+\begin{enumerate}
+  \item Set Problem を取り組め.
+\end{enumerate}
+
+\endinput
+\newpage
+\section{15/15回目: \schoolCalender{15}}
+\subsection{問題}
+\begin{quiz}
+\end{quiz}
+
+\subsection{WebWork}
+\begin{enumerate}
+  \item Set Problem を取り組め.
+\end{enumerate}
+
+
+\begin{enumerate}
+%
+\item Set02 Problem 17--19, 29, 30--31 (行列の冪) を取り組め.
+\item Set02 Problem 32 (ケーリーハミルトンの定理) を取り組め.
+\item Set03 Problem 11--12 (行列式と面積) を取り組め.
+\item Set06 Problem 24 (クラメルの公式) を取り組め.
+\end{enumerate}
+
+\endinput
+\newpage
