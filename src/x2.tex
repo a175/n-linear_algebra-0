@@ -75,7 +75,10 @@
 \newcommand{\announceProveEachItemLater}[1]{%
   \marginpar{\footnotesize \zcref{#1}.}%
 }
-\newprovelater{\provelater}{\announceProveLater}{\announceProveEachItemLater}{\announceProveLater}
+\newcommand{\announceProveLaterX}[1]{%
+  \marginpar{\footnotesize 証明はそれぞれ.}%
+}
+\newprovelater{\provelater}{\announceProveLater}{\announceProveEachItemLater}{\announceProveLaterX}
 \newcommand{\announceSolveLater}[1]{%
   \marginpar{\footnotesize 略解は\zcref{#1}.}%
 }
